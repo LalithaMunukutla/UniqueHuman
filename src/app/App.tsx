@@ -3,12 +3,20 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Insight, UserProfile } from "@/lib/types";
 
+type Audience = "doctor" | "partner" | "friend";
+
 type Props = {
   profiles: UserProfile[];
   insightCounts: Record<string, number>;
 };
 
 type ChatMsg = { role: "user" | "assistant"; content: string };
+
+const AUDIENCES: { id: Audience; label: string; sub: string }[] = [
+  { id: "doctor", label: "Doctor", sub: "clinical brief" },
+  { id: "partner", label: "Partner", sub: "plain English" },
+  { id: "friend", label: "Friend", sub: "quick note" },
+];
 
 const SEVERITY_STYLES: Record<Insight["severity"], { dot: string; label: string; chip: string }> = {
   info: {
@@ -53,6 +61,14 @@ export default function App({ profiles, insightCounts }: Props) {
   const [streaming, setStreaming] = useState(false);
   const [draft, setDraft] = useState("");
   const chatBottomRef = useRef<HTMLDivElement | null>(null);
+
+  const [shareAlert, setShareAlert] = useState<Insight | null>(null);
+  const [shareAudience, setShareAudience] = useState<Audience>("doctor");
+  const [shareMessages, setShareMessages] = useState<
+    Partial<Record<Audience, string>>
+  >({});
+  const [shareLoading, setShareLoading] = useState(false);
+  const [shareCopied, setShareCopied] = useState(false);
 
   const selectedProfile = useMemo(
     () => profiles.find((p) => p.id === selectedUserId) ?? null,
@@ -132,6 +148,70 @@ export default function App({ profiles, insightCounts }: Props) {
     } finally {
       setStreaming(false);
     }
+  }
+
+  function openShare(alert: Insight) {
+    setShareAlert(alert);
+    setShareAudience("doctor");
+    setShareMessages({});
+    setShareCopied(false);
+    loadShareMessage(alert, "doctor");
+  }
+
+  function closeShare() {
+    setShareAlert(null);
+    setShareCopied(false);
+  }
+
+  async function loadShareMessage(alert: Insight, audience: Audience) {
+    setShareAudience(audience);
+    setShareCopied(false);
+    if (shareMessages[audience]) return;
+    setShareLoading(true);
+    try {
+      const res = await fetch("/api/share", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: selectedUserId, alert, audience }),
+      });
+      const data = (await res.json()) as { message?: string; error?: string };
+      if (data.message) {
+        setShareMessages((m) => ({ ...m, [audience]: data.message }));
+      } else {
+        setShareMessages((m) => ({
+          ...m,
+          [audience]: `[error: ${data.error ?? "unknown"}]`,
+        }));
+      }
+    } catch (err) {
+      setShareMessages((m) => ({
+        ...m,
+        [audience]: `[error: ${(err as Error).message}]`,
+      }));
+    } finally {
+      setShareLoading(false);
+    }
+  }
+
+  async function copyShareMessage() {
+    const msg = shareAlert && shareMessages[shareAudience];
+    if (!msg) return;
+    try {
+      await navigator.clipboard.writeText(msg);
+      setShareCopied(true);
+      setTimeout(() => setShareCopied(false), 1800);
+    } catch {
+      /* noop */
+    }
+  }
+
+  function buildSendHref(audience: Audience, message: string, headline: string): string {
+    const subject = `From ${selectedProfile?.name ?? ""} — ${headline}`;
+    if (audience === "doctor") {
+      return `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    }
+    // partner / friend: prefer SMS, but mailto fallback works in most clients
+    return `sms:?&body=${encodeURIComponent(message)}`;
   }
 
   return (
@@ -240,13 +320,15 @@ export default function App({ profiles, insightCounts }: Props) {
                 const sev = SEVERITY_STYLES[ins.severity];
                 const isActive = ins.id === activeAlertId;
                 return (
-                  <button
+                  <div
                     key={ins.id}
                     onClick={() => {
                       setActiveAlertId(ins.id);
                       setMessages([]);
                     }}
-                    className={`w-full text-left bg-white rounded-xl border transition-all ${
+                    role="button"
+                    tabIndex={0}
+                    className={`cursor-pointer w-full text-left bg-white rounded-xl border transition-all ${
                       isActive
                         ? "border-accent shadow-[0_8px_24px_-12px_rgba(239,62,109,0.25)]"
                         : "border-ink-200 hover:border-ink-300"
@@ -298,19 +380,46 @@ export default function App({ profiles, insightCounts }: Props) {
                           {ins.suggested_action}
                         </div>
                       </div>
-                      <div className="mt-3 text-[11px] text-ink-400 flex items-center gap-1.5">
-                        <span>Sources:</span>
-                        {ins.data_sources.map((s) => (
-                          <span
-                            key={s}
-                            className="bg-white border border-ink-200 rounded px-1.5 py-0.5"
+                      <div className="mt-3 flex items-center justify-between gap-2">
+                        <div className="text-[11px] text-ink-400 flex items-center gap-1.5 flex-wrap min-w-0">
+                          <span>Sources:</span>
+                          {ins.data_sources.map((s) => (
+                            <span
+                              key={s}
+                              className="bg-white border border-ink-200 rounded px-1.5 py-0.5"
+                            >
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                        <button
+                          type="button"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            openShare(ins);
+                          }}
+                          className="text-[11px] font-medium text-ink-600 hover:text-accent border border-ink-200 hover:border-accent/40 bg-white rounded-md px-2 py-1 transition-colors shrink-0 inline-flex items-center gap-1"
+                        >
+                          <svg
+                            width="11"
+                            height="11"
+                            viewBox="0 0 16 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
                           >
-                            {s}
-                          </span>
-                        ))}
+                            <path
+                              d="M11 5L8 2M8 2L5 5M8 2V10M3 9V12C3 13.1046 3.89543 14 5 14H11C12.1046 14 13 13.1046 13 12V9"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                          Share
+                        </button>
                       </div>
                     </div>
-                  </button>
+                  </div>
                 );
               })}
             </div>
@@ -411,6 +520,125 @@ export default function App({ profiles, insightCounts }: Props) {
           </form>
         </aside>
       </main>
+
+      {shareAlert && (
+        <div
+          className="fixed inset-0 z-40 bg-ink-900/40 backdrop-blur-sm flex items-center justify-center px-4"
+          onClick={closeShare}
+        >
+          <div
+            className="bg-white rounded-2xl shadow-2xl w-full max-w-[640px] max-h-[88vh] flex flex-col overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <header className="px-6 py-5 border-b border-ink-200">
+              <div className="flex items-start justify-between gap-4">
+                <div className="min-w-0">
+                  <div className="text-[11px] uppercase tracking-wider text-ink-400">
+                    Share alert
+                  </div>
+                  <div className="text-[15px] font-semibold text-ink-900 mt-0.5 leading-snug">
+                    {shareAlert.headline}
+                  </div>
+                  <div className="text-[12px] text-ink-500 mt-1">
+                    From {selectedProfile?.name} · Drafted for your care network
+                  </div>
+                </div>
+                <button
+                  onClick={closeShare}
+                  className="text-ink-400 hover:text-ink-700 text-lg leading-none -mr-1 -mt-1 p-1"
+                  aria-label="Close"
+                >
+                  ×
+                </button>
+              </div>
+            </header>
+
+            <div className="px-6 pt-4 border-b border-ink-100 flex gap-1.5">
+              {AUDIENCES.map((a) => {
+                const active = a.id === shareAudience;
+                return (
+                  <button
+                    key={a.id}
+                    onClick={() => loadShareMessage(shareAlert, a.id)}
+                    className={`flex-1 text-left px-3 py-2.5 rounded-t-lg border-b-2 transition-colors ${
+                      active
+                        ? "border-accent bg-accent-soft/40"
+                        : "border-transparent hover:bg-ink-50"
+                    }`}
+                  >
+                    <div
+                      className={`text-[13px] font-semibold ${
+                        active ? "text-accent" : "text-ink-700"
+                      }`}
+                    >
+                      {a.label}
+                    </div>
+                    <div className="text-[10px] text-ink-400 uppercase tracking-wider mt-0.5">
+                      {a.sub}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="flex-1 overflow-y-auto px-6 py-5 scrollbar-thin">
+              {shareLoading && !shareMessages[shareAudience] ? (
+                <div className="space-y-2 animate-pulse-soft">
+                  <div className="h-3 bg-ink-100 rounded w-11/12" />
+                  <div className="h-3 bg-ink-100 rounded w-full" />
+                  <div className="h-3 bg-ink-100 rounded w-10/12" />
+                  <div className="h-3 bg-ink-100 rounded w-9/12" />
+                  <div className="h-3 bg-ink-100 rounded w-11/12" />
+                  <div className="text-[11px] text-ink-400 mt-3">
+                    Drafting a {AUDIENCES.find((a) => a.id === shareAudience)?.label.toLowerCase()}-ready
+                    message…
+                  </div>
+                </div>
+              ) : (
+                <div className="text-[14px] text-ink-800 leading-relaxed whitespace-pre-wrap font-serif">
+                  {shareMessages[shareAudience] ?? ""}
+                </div>
+              )}
+            </div>
+
+            <footer className="px-6 py-4 border-t border-ink-200 bg-ink-50/60 flex items-center justify-between gap-3">
+              <div className="text-[11px] text-ink-400 leading-snug max-w-[280px]">
+                One alert, three audiences. Same evidence, calibrated tone.
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={copyShareMessage}
+                  disabled={!shareMessages[shareAudience]}
+                  className="text-[12px] font-medium text-ink-700 border border-ink-200 hover:border-ink-300 bg-white rounded-lg px-3 py-2 disabled:opacity-30 transition-colors"
+                >
+                  {shareCopied ? "Copied!" : "Copy"}
+                </button>
+                <a
+                  href={
+                    shareMessages[shareAudience]
+                      ? buildSendHref(
+                          shareAudience,
+                          shareMessages[shareAudience] ?? "",
+                          shareAlert.headline,
+                        )
+                      : "#"
+                  }
+                  onClick={(e) => {
+                    if (!shareMessages[shareAudience]) e.preventDefault();
+                  }}
+                  className={`text-[12px] font-semibold text-white bg-accent rounded-lg px-3.5 py-2 transition-colors ${
+                    shareMessages[shareAudience]
+                      ? "hover:bg-accent/90"
+                      : "opacity-30 pointer-events-none"
+                  }`}
+                >
+                  {shareAudience === "doctor" ? "Open in mail" : "Send"}
+                </a>
+              </div>
+            </footer>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

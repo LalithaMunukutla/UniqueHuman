@@ -32,7 +32,10 @@ pnpm dev                                 # open http://localhost:3000
 | user_009 Nina | None reported | Prediabetic phenotype emerging silently |
 | user_010 Carlos | None reported | Recurring alcohol → sleep → cardiac coupling |
 
-Each user sees 1–3 personalized alerts. Click any alert to chat about it — UniqueHuman has full context (profile, every record, every lab, 90 days of wearable data, baselines) every turn.
+Each user sees 1–3 personalized alerts. Click any alert to:
+
+- **Chat about it** — UniqueHuman has full context (profile, every record, every lab, 90 days of wearable data, baselines) every turn.
+- **Share it with your care network** — one click drafts the same alert as a clinical brief for your doctor, a plain-English note for your partner, and a casual heads-up for a friend. Same evidence, calibrated tone. Copy or open in your mail/SMS client.
 
 ## Architecture
 
@@ -46,11 +49,13 @@ src/lib/
   context.ts                     buildUserContext(userId) → markdown-formatted full context
   insights.ts                    Claude Opus call, structured JSON out, Zod-validated
   chat.ts                        Claude Sonnet streaming chat, full context every turn
+  share.ts                       Claude Sonnet — drafts an alert as a message for {doctor|partner|friend}
 src/app/
   page.tsx                       server component: load users + insight counts
-  App.tsx                        client component: rail + inbox + chat
+  App.tsx                        client component: rail + inbox + chat + share modal
   api/chat/route.ts              POST streaming chat endpoint
   api/insights/[userId]/route.ts GET cached insights
+  api/share/route.ts             POST: draft a share-with-care-network message
 ```
 
 ### Key design decisions
