@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { Insight, UserProfile } from "@/lib/types";
+import type { Insight, Plan, PlanCheckIn, UserProfile } from "@/lib/types";
 
 type Audience = "doctor" | "partner" | "friend";
 
@@ -70,6 +70,11 @@ export default function App({ profiles, insightCounts }: Props) {
   const [shareLoading, setShareLoading] = useState(false);
   const [shareCopied, setShareCopied] = useState(false);
 
+  const [plans, setPlans] = useState<Plan[]>([]);
+  const [creatingPlanFor, setCreatingPlanFor] = useState<string | null>(null);
+  const [expandedPlanId, setExpandedPlanId] = useState<string | null>(null);
+  const [checkInLoadingId, setCheckInLoadingId] = useState<string | null>(null);
+
   const selectedProfile = useMemo(
     () => profiles.find((p) => p.id === selectedUserId) ?? null,
     [profiles, selectedUserId],
@@ -86,6 +91,8 @@ export default function App({ profiles, insightCounts }: Props) {
     setInsights([]);
     setActiveAlertId(null);
     setMessages([]);
+    setPlans([]);
+    setExpandedPlanId(null);
     fetch(`/api/insights/${selectedUserId}`)
       .then((r) => r.json())
       .then((data: { insights: Insight[] }) => {
@@ -96,6 +103,13 @@ export default function App({ profiles, insightCounts }: Props) {
       .finally(() => {
         if (!cancelled) setLoadingInsights(false);
       });
+    fetch(`/api/plan/list/${selectedUserId}`)
+      .then((r) => r.json())
+      .then((data: { plans: Plan[] }) => {
+        if (cancelled) return;
+        setPlans(data.plans);
+      })
+      .catch(() => {});
     return () => {
       cancelled = true;
     };
@@ -202,6 +216,52 @@ export default function App({ profiles, insightCounts }: Props) {
       setTimeout(() => setShareCopied(false), 1800);
     } catch {
       /* noop */
+    }
+  }
+
+  async function createPlanFromAlert(alert: Insight) {
+    if (creatingPlanFor) return;
+    setCreatingPlanFor(alert.id);
+    try {
+      const res = await fetch("/api/plan/create", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: selectedUserId, alert }),
+      });
+      const data = (await res.json()) as { plan?: Plan; error?: string };
+      if (data.plan) {
+        setPlans((p) => [data.plan as Plan, ...p]);
+        setExpandedPlanId(data.plan.id);
+      }
+    } finally {
+      setCreatingPlanFor(null);
+    }
+  }
+
+  async function runCheckIn(planId: string) {
+    if (checkInLoadingId) return;
+    setCheckInLoadingId(planId);
+    try {
+      const res = await fetch("/api/plan/check-in", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId: selectedUserId, planId }),
+      });
+      const data = (await res.json()) as {
+        check_in?: PlanCheckIn;
+        error?: string;
+      };
+      if (data.check_in) {
+        setPlans((ps) =>
+          ps.map((p) =>
+            p.id === planId
+              ? { ...p, check_ins: [...p.check_ins, data.check_in as PlanCheckIn] }
+              : p,
+          ),
+        );
+      }
+    } finally {
+      setCheckInLoadingId(null);
     }
   }
 
@@ -315,6 +375,168 @@ export default function App({ profiles, insightCounts }: Props) {
                 scanning your last 90 days…
               </div>
             )}
+
+            {plans.length > 0 && (
+              <div className="max-w-[680px] mb-6">
+                <div className="text-[11px] uppercase tracking-wider text-ink-400 mb-2">
+                  Currently working on
+                </div>
+                <div className="space-y-2">
+                  {plans.map((plan) => {
+                    const expanded = plan.id === expandedPlanId;
+                    const lastCheckIn = plan.check_ins.at(-1) ?? null;
+                    return (
+                      <div
+                        key={plan.id}
+                        className="bg-gradient-to-br from-white to-accent-soft/30 rounded-xl border border-accent/30"
+                      >
+                        <button
+                          type="button"
+                          onClick={() =>
+                            setExpandedPlanId(expanded ? null : plan.id)
+                          }
+                          className="w-full text-left px-4 py-3 flex items-center gap-3"
+                        >
+                          <div className="h-8 w-8 rounded-full bg-accent text-white flex items-center justify-center shrink-0">
+                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                              <path
+                                d="M3 8.5L6.5 12L13 4.5"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-[13px] font-semibold text-ink-900 truncate">
+                              {plan.title}
+                            </div>
+                            <div className="text-[11px] text-ink-500 mt-0.5">
+                              {plan.duration_days}-day plan ·{" "}
+                              {plan.check_ins.length === 0
+                                ? "no check-ins yet"
+                                : `${plan.check_ins.length} check-in${plan.check_ins.length === 1 ? "" : "s"}`}
+                              {lastCheckIn && (
+                                <span
+                                  className={`ml-2 text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 rounded ${
+                                    lastCheckIn.verdict === "on_track"
+                                      ? "bg-emerald-100 text-emerald-800"
+                                      : lastCheckIn.verdict === "off_track"
+                                        ? "bg-red-100 text-red-800"
+                                        : lastCheckIn.verdict === "mixed"
+                                          ? "bg-amber-100 text-amber-800"
+                                          : "bg-ink-100 text-ink-600"
+                                  }`}
+                                >
+                                  {lastCheckIn.verdict.replace("_", " ")}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <div className="text-ink-400 text-[12px]">
+                            {expanded ? "▾" : "▸"}
+                          </div>
+                        </button>
+
+                        {expanded && (
+                          <div className="px-4 pb-4 pt-1 border-t border-accent/20">
+                            <div className="text-[12px] text-ink-600 leading-relaxed mb-3">
+                              {plan.rationale}
+                            </div>
+                            <div className="text-[10px] uppercase tracking-wider text-ink-400 mb-1.5">
+                              Tasks
+                            </div>
+                            <ul className="space-y-1 mb-3">
+                              {plan.tasks.map((t, i) => (
+                                <li
+                                  key={i}
+                                  className="text-[12px] text-ink-800 flex items-start gap-2"
+                                >
+                                  <span className="text-accent mt-0.5">•</span>
+                                  <span>
+                                    {t.description}{" "}
+                                    <span className="text-ink-400">
+                                      ({t.cadence})
+                                    </span>
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                            <div className="text-[10px] uppercase tracking-wider text-ink-400 mb-1">
+                              Success metric
+                            </div>
+                            <div className="text-[12px] text-ink-800 mb-3">
+                              {plan.success_metric.description}
+                              {plan.success_metric.target && (
+                                <span className="block text-ink-500 text-[11px] mt-0.5">
+                                  Target: {plan.success_metric.target}
+                                </span>
+                              )}
+                            </div>
+
+                            {plan.check_ins.length > 0 && (
+                              <div className="mt-3 space-y-2">
+                                <div className="text-[10px] uppercase tracking-wider text-ink-400">
+                                  Check-ins
+                                </div>
+                                {plan.check_ins.map((ci, i) => (
+                                  <div
+                                    key={i}
+                                    className="bg-white rounded-lg border border-ink-200 px-3 py-2"
+                                  >
+                                    <div className="flex items-center gap-2 mb-1">
+                                      <span
+                                        className={`text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 rounded ${
+                                          ci.verdict === "on_track"
+                                            ? "bg-emerald-100 text-emerald-800"
+                                            : ci.verdict === "off_track"
+                                              ? "bg-red-100 text-red-800"
+                                              : ci.verdict === "mixed"
+                                                ? "bg-amber-100 text-amber-800"
+                                                : "bg-ink-100 text-ink-600"
+                                        }`}
+                                      >
+                                        {ci.verdict.replace("_", " ")}
+                                      </span>
+                                      <span className="text-[10px] text-ink-400">
+                                        {new Date(ci.at).toLocaleString(undefined, {
+                                          month: "short",
+                                          day: "numeric",
+                                          hour: "numeric",
+                                          minute: "2-digit",
+                                        })}
+                                      </span>
+                                    </div>
+                                    <div className="text-[12px] text-ink-700 leading-relaxed">
+                                      {ci.body}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+
+                            <button
+                              type="button"
+                              onClick={() => runCheckIn(plan.id)}
+                              disabled={checkInLoadingId === plan.id}
+                              className="mt-3 text-[12px] font-medium text-accent bg-white border border-accent/30 hover:bg-accent-soft rounded-lg px-3 py-1.5 disabled:opacity-50 transition-colors"
+                            >
+                              {checkInLoadingId === plan.id
+                                ? "Checking in…"
+                                : plan.check_ins.length === 0
+                                  ? "How am I doing?"
+                                  : "Run another check-in"}
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
             <div className="space-y-3 max-w-[680px]">
               {insights.map((ins) => {
                 const sev = SEVERITY_STYLES[ins.severity];
@@ -376,8 +598,44 @@ export default function App({ profiles, insightCounts }: Props) {
                         <div className="text-[11px] uppercase tracking-wider text-ink-400 mt-0.5 shrink-0">
                           Next
                         </div>
-                        <div className="text-[13px] text-ink-700 leading-snug">
-                          {ins.suggested_action}
+                        <div className="flex-1 min-w-0">
+                          <div className="text-[13px] text-ink-700 leading-snug">
+                            {ins.suggested_action}
+                          </div>
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              createPlanFromAlert(ins);
+                            }}
+                            disabled={creatingPlanFor === ins.id}
+                            className="mt-2 text-[11px] font-semibold text-accent bg-accent-soft hover:bg-accent hover:text-white border border-accent/30 hover:border-accent rounded-md px-2.5 py-1 transition-colors disabled:opacity-60 inline-flex items-center gap-1.5"
+                          >
+                            {creatingPlanFor === ins.id ? (
+                              <>
+                                <span className="inline-block h-3 w-3 rounded-full border-2 border-current border-r-transparent animate-spin" />
+                                Drafting plan…
+                              </>
+                            ) : (
+                              <>
+                                <svg
+                                  width="11"
+                                  height="11"
+                                  viewBox="0 0 16 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8 3V13M3 8H13"
+                                    stroke="currentColor"
+                                    strokeWidth="1.8"
+                                    strokeLinecap="round"
+                                  />
+                                </svg>
+                                Make this a plan
+                              </>
+                            )}
+                          </button>
                         </div>
                       </div>
                       <div className="mt-3 flex items-center justify-between gap-2">

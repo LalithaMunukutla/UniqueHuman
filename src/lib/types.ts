@@ -110,6 +110,37 @@ export type Insight = {
   data_sources: string[];
 };
 
+export type PlanTask = {
+  description: string;
+  cadence: string;
+};
+
+export type PlanSuccessMetric = {
+  description: string;
+  target?: string;
+};
+
+export type Plan = {
+  id: string;
+  user_id: string;
+  alert_id: string;
+  source_alert_headline: string;
+  title: string;
+  duration_days: number;
+  rationale: string;
+  tasks: PlanTask[];
+  success_metric: PlanSuccessMetric;
+  daily_check_in_prompt: string;
+  created_at: string;
+  check_ins: PlanCheckIn[];
+};
+
+export type PlanCheckIn = {
+  at: string;
+  body: string;
+  verdict: "on_track" | "off_track" | "mixed" | "too_early";
+};
+
 export type UserContext = {
   profile: UserProfile;
   records: MedicalRecord[];

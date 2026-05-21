@@ -36,6 +36,7 @@ Each user sees 1–3 personalized alerts. Click any alert to:
 
 - **Chat about it** — UniqueHuman has full context (profile, every record, every lab, 90 days of wearable data, baselines) every turn.
 - **Share it with your care network** — one click drafts the same alert as a clinical brief for your doctor, a plain-English note for your partner, and a casual heads-up for a friend. Same evidence, calibrated tone. Copy or open in your mail/SMS client.
+- **Turn it into a plan** — convert any suggested action into a structured, time-boxed plan with concrete tasks and a measurable success metric. Plans persist across sessions (saved to `cache/plans.json`) and appear in a "Currently working on" strip. Hit "How am I doing?" any time and UniqueHuman runs a check-in against the user's recent data and tells them — with a verdict (`on_track` / `mixed` / `off_track` / `too_early`) and the specific numbers — whether the plan is working. This is the closed agentic loop: suggest → commit → track → report.
 
 ## Architecture
 
@@ -50,12 +51,17 @@ src/lib/
   insights.ts                    Claude Opus call, structured JSON out, Zod-validated
   chat.ts                        Claude Sonnet streaming chat, full context every turn
   share.ts                       Claude Sonnet — drafts an alert as a message for {doctor|partner|friend}
+  plan.ts                        Claude — turns an alert into a structured plan; runs check-ins against recent data
 src/app/
   page.tsx                       server component: load users + insight counts
-  App.tsx                        client component: rail + inbox + chat + share modal
+  App.tsx                        client component: rail + inbox + chat + share modal + plans strip
   api/chat/route.ts              POST streaming chat endpoint
   api/insights/[userId]/route.ts GET cached insights
   api/share/route.ts             POST: draft a share-with-care-network message
+  api/plan/create/route.ts       POST: generate + persist a new plan from an alert
+  api/plan/check-in/route.ts     POST: run a progress check-in against recent data
+  api/plan/list/[userId]/route.ts GET: list a user's saved plans
+cache/plans.json                 persisted user plans (created at runtime)
 ```
 
 ### Key design decisions
