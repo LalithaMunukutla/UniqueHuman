@@ -1,0 +1,243 @@
+{
+  "lab_results": [
+
+    {
+      "user_id": "user_002",
+      "results": [
+        {
+          "lab_id": "lab_002_1",
+          "date": "2022-11-02",
+          "ordered_by": "Dr. Samuel Torres",
+          "panel": "Diabetes Baseline",
+          "tests": [
+            { "name": "HbA1c", "value": 8.2, "unit": "%", "reference_range": "< 5.7", "interpretation": "high", "flag": "H" },
+            { "name": "Fasting glucose", "value": 142, "unit": "mg/dL", "reference_range": "70-99", "interpretation": "high", "flag": "H" },
+            { "name": "eGFR", "value": 84, "unit": "mL/min/1.73m2", "reference_range": "> 60", "interpretation": "normal", "flag": null },
+            { "name": "Urine microalbumin", "value": 18, "unit": "mg/g creatinine", "reference_range": "< 30", "interpretation": "normal", "flag": null },
+            { "name": "LDL cholesterol", "value": 148, "unit": "mg/dL", "reference_range": "< 100", "interpretation": "high", "flag": "H" },
+            { "name": "HDL cholesterol", "value": 38, "unit": "mg/dL", "reference_range": "> 40", "interpretation": "low", "flag": "L" },
+            { "name": "Triglycerides", "value": 210, "unit": "mg/dL", "reference_range": "< 150", "interpretation": "high", "flag": "H" }
+          ]
+        },
+        {
+          "lab_id": "lab_002_2",
+          "date": "2023-02-08",
+          "ordered_by": "Dr. Samuel Torres",
+          "panel": "Diabetes Follow-up",
+          "tests": [
+            { "name": "HbA1c", "value": 7.4, "unit": "%", "reference_range": "< 5.7", "interpretation": "high", "flag": "H" },
+            { "name": "Fasting glucose", "value": 118, "unit": "mg/dL", "reference_range": "70-99", "interpretation": "high", "flag": "H" },
+            { "name": "eGFR", "value": 86, "unit": "mL/min/1.73m2", "reference_range": "> 60", "interpretation": "normal", "flag": null }
+          ]
+        },
+        {
+          "lab_id": "lab_002_3",
+          "date": "2023-08-14",
+          "ordered_by": "Dr. Samuel Torres",
+          "panel": "Diabetes Follow-up",
+          "tests": [
+            { "name": "HbA1c", "value": 7.1, "unit": "%", "reference_range": "< 5.7", "interpretation": "high", "flag": "H" },
+            { "name": "Fasting glucose", "value": 108, "unit": "mg/dL", "reference_range": "70-99", "interpretation": "high", "flag": "H" },
+            { "name": "Urine microalbumin", "value": 22, "unit": "mg/g creatinine", "reference_range": "< 30", "interpretation": "normal", "flag": null },
+            { "name": "eGFR", "value": 85, "unit": "mL/min/1.73m2", "reference_range": "> 60", "interpretation": "normal", "flag": null }
+          ]
+        },
+        {
+          "lab_id": "lab_002_4",
+          "date": "2024-02-20",
+          "ordered_by": "Dr. Samuel Torres",
+          "panel": "Diabetes Annual Review",
+          "tests": [
+            { "name": "HbA1c", "value": 6.9, "unit": "%", "reference_range": "< 5.7", "interpretation": "high", "flag": "H" },
+            { "name": "Fasting glucose", "value": 98, "unit": "mg/dL", "reference_range": "70-99", "interpretation": "normal", "flag": null },
+            { "name": "LDL cholesterol", "value": 112, "unit": "mg/dL", "reference_range": "< 100", "interpretation": "borderline high", "flag": "H" },
+            { "name": "HDL cholesterol", "value": 44, "unit": "mg/dL", "reference_range": "> 40", "interpretation": "normal", "flag": null },
+            { "name": "Triglycerides", "value": 158, "unit": "mg/dL", "reference_range": "< 150", "interpretation": "borderline high", "flag": "H" },
+            { "name": "eGFR", "value": 87, "unit": "mL/min/1.73m2", "reference_range": "> 60", "interpretation": "normal", "flag": null },
+            { "name": "Urine microalbumin", "value": 19, "unit": "mg/g creatinine", "reference_range": "< 30", "interpretation": "normal", "flag": null }
+          ]
+        }
+      ]
+    },
+
+    {
+      "user_id": "user_003",
+      "results": [
+        {
+          "lab_id": "lab_003_1",
+          "date": "2022-06-10",
+          "ordered_by": "Dr. Lisa Huang",
+          "panel": "ME/CFS Baseline Workup",
+          "tests": [
+            { "name": "Hemoglobin", "value": 12.8, "unit": "g/dL", "reference_range": "12.0-16.0", "interpretation": "normal", "flag": null },
+            { "name": "Ferritin", "value": 18, "unit": "ng/mL", "reference_range": "15-150", "interpretation": "low-normal", "flag": null },
+            { "name": "Vitamin D (25-OH)", "value": 24, "unit": "ng/mL", "reference_range": "30-100", "interpretation": "insufficient", "flag": "L" },
+            { "name": "Vitamin B12", "value": 388, "unit": "pg/mL", "reference_range": "200-900", "interpretation": "normal", "flag": null },
+            { "name": "TSH", "value": 2.1, "unit": "mIU/L", "reference_range": "0.4-4.0", "interpretation": "normal", "flag": null },
+            { "name": "Morning cortisol", "value": 14.2, "unit": "mcg/dL", "reference_range": "6-23", "interpretation": "normal", "flag": null },
+            { "name": "ANA screen", "value": "negative", "unit": null, "reference_range": "negative", "interpretation": "normal", "flag": null }
+          ]
+        },
+        {
+          "lab_id": "lab_003_2",
+          "date": "2022-10-20",
+          "ordered_by": "Dr. Lisa Huang",
+          "panel": "Ferritin + Vitamin D Recheck",
+          "tests": [
+            { "name": "Ferritin", "value": 42, "unit": "ng/mL", "reference_range": "15-150", "interpretation": "normal", "flag": null },
+            { "name": "Vitamin D (25-OH)", "value": 31, "unit": "ng/mL", "reference_range": "30-100", "interpretation": "normal", "flag": null }
+          ]
+        },
+        {
+          "lab_id": "lab_003_3",
+          "date": "2024-04-02",
+          "ordered_by": "Dr. Lisa Huang",
+          "panel": "ME/CFS Annual Review",
+          "tests": [
+            { "name": "Hemoglobin", "value": 13.1, "unit": "g/dL", "reference_range": "12.0-16.0", "interpretation": "normal", "flag": null },
+            { "name": "Ferritin", "value": 62, "unit": "ng/mL", "reference_range": "15-150", "interpretation": "normal", "flag": null },
+            { "name": "Vitamin D (25-OH)", "value": 38, "unit": "ng/mL", "reference_range": "30-100", "interpretation": "normal", "flag": null },
+            { "name": "TSH", "value": 1.9, "unit": "mIU/L", "reference_range": "0.4-4.0", "interpretation": "normal", "flag": null }
+          ]
+        }
+      ]
+    },
+
+    {
+      "user_id": "user_006",
+      "results": [
+        {
+          "lab_id": "lab_006_1",
+          "date": "2022-05-11",
+          "ordered_by": "Dr. Kevin Osei",
+          "panel": "Hypertension Baseline",
+          "tests": [
+            { "name": "LDL cholesterol", "value": 158, "unit": "mg/dL", "reference_range": "< 100", "interpretation": "high", "flag": "H" },
+            { "name": "HDL cholesterol", "value": 41, "unit": "mg/dL", "reference_range": "> 40", "interpretation": "normal", "flag": null },
+            { "name": "Triglycerides", "value": 188, "unit": "mg/dL", "reference_range": "< 150", "interpretation": "high", "flag": "H" },
+            { "name": "Fasting glucose", "value": 94, "unit": "mg/dL", "reference_range": "70-99", "interpretation": "normal", "flag": null },
+            { "name": "Sodium", "value": 141, "unit": "mEq/L", "reference_range": "136-145", "interpretation": "normal", "flag": null },
+            { "name": "Potassium", "value": 4.1, "unit": "mEq/L", "reference_range": "3.5-5.0", "interpretation": "normal", "flag": null },
+            { "name": "eGFR", "value": 78, "unit": "mL/min/1.73m2", "reference_range": "> 60", "interpretation": "normal", "flag": null },
+            { "name": "Urine microalbumin", "value": 24, "unit": "mg/g creatinine", "reference_range": "< 30", "interpretation": "normal", "flag": null }
+          ]
+        },
+        {
+          "lab_id": "lab_006_2",
+          "date": "2022-06-28",
+          "ordered_by": "Dr. Kevin Osei",
+          "panel": "ARB Initiation Safety Check",
+          "tests": [
+            { "name": "Potassium", "value": 4.4, "unit": "mEq/L", "reference_range": "3.5-5.0", "interpretation": "normal", "flag": null },
+            { "name": "eGFR", "value": 76, "unit": "mL/min/1.73m2", "reference_range": "> 60", "interpretation": "normal", "flag": null },
+            { "name": "Creatinine", "value": 1.0, "unit": "mg/dL", "reference_range": "0.7-1.2", "interpretation": "normal", "flag": null }
+          ]
+        },
+        {
+          "lab_id": "lab_006_3",
+          "date": "2023-05-10",
+          "ordered_by": "Dr. Kevin Osei",
+          "panel": "Hypertension Annual",
+          "tests": [
+            { "name": "LDL cholesterol", "value": 128, "unit": "mg/dL", "reference_range": "< 100", "interpretation": "borderline high", "flag": "H" },
+            { "name": "HDL cholesterol", "value": 44, "unit": "mg/dL", "reference_range": "> 40", "interpretation": "normal", "flag": null },
+            { "name": "Triglycerides", "value": 162, "unit": "mg/dL", "reference_range": "< 150", "interpretation": "borderline high", "flag": "H" },
+            { "name": "eGFR", "value": 80, "unit": "mL/min/1.73m2", "reference_range": "> 60", "interpretation": "normal", "flag": null },
+            { "name": "Urine microalbumin", "value": 21, "unit": "mg/g creatinine", "reference_range": "< 30", "interpretation": "normal", "flag": null },
+            { "name": "Potassium", "value": 4.2, "unit": "mEq/L", "reference_range": "3.5-5.0", "interpretation": "normal", "flag": null }
+          ]
+        },
+        {
+          "lab_id": "lab_006_4",
+          "date": "2024-05-15",
+          "ordered_by": "Dr. Kevin Osei",
+          "panel": "Hypertension Annual",
+          "tests": [
+            { "name": "LDL cholesterol", "value": 119, "unit": "mg/dL", "reference_range": "< 100", "interpretation": "borderline high", "flag": "H" },
+            { "name": "HDL cholesterol", "value": 46, "unit": "mg/dL", "reference_range": "> 40", "interpretation": "normal", "flag": null },
+            { "name": "Triglycerides", "value": 144, "unit": "mg/dL", "reference_range": "< 150", "interpretation": "normal", "flag": null },
+            { "name": "eGFR", "value": 81, "unit": "mL/min/1.73m2", "reference_range": "> 60", "interpretation": "normal", "flag": null },
+            { "name": "Urine microalbumin", "value": 26, "unit": "mg/g creatinine", "reference_range": "< 30", "interpretation": "normal — trending up", "flag": null },
+            { "name": "Potassium", "value": 4.3, "unit": "mEq/L", "reference_range": "3.5-5.0", "interpretation": "normal", "flag": null }
+          ]
+        }
+      ]
+    },
+
+    {
+      "user_id": "user_007",
+      "results": [
+        {
+          "lab_id": "lab_007_1",
+          "date": "2023-03-22",
+          "ordered_by": "Dr. Fiona Walsh",
+          "panel": "Asthma Baseline + Allergen Panel",
+          "tests": [
+            { "name": "Spirometry FEV1", "value": 78, "unit": "% predicted", "reference_range": "> 80", "interpretation": "mildly reduced", "flag": "L" },
+            { "name": "Spirometry FVC", "value": 92, "unit": "% predicted", "reference_range": "> 80", "interpretation": "normal", "flag": null },
+            { "name": "FEV1/FVC ratio", "value": 0.72, "unit": null, "reference_range": "> 0.75", "interpretation": "mildly reduced — obstructive pattern", "flag": "L" },
+            { "name": "Post-bronchodilator FEV1 improvement", "value": 14, "unit": "%", "reference_range": "< 12 = not significant", "interpretation": "significant reversibility", "flag": "H" },
+            { "name": "IgE (total)", "value": 188, "unit": "IU/mL", "reference_range": "< 100", "interpretation": "elevated", "flag": "H" },
+            { "name": "Allergen IgE — grass pollen", "value": 4.2, "unit": "kU/L", "reference_range": "< 0.35", "interpretation": "high positive", "flag": "H" },
+            { "name": "Allergen IgE — dust mites", "value": 2.8, "unit": "kU/L", "reference_range": "< 0.35", "interpretation": "moderate positive", "flag": "H" },
+            { "name": "Allergen IgE — mold", "value": 0.2, "unit": "kU/L", "reference_range": "< 0.35", "interpretation": "negative", "flag": null }
+          ]
+        },
+        {
+          "lab_id": "lab_007_2",
+          "date": "2024-03-01",
+          "ordered_by": "Dr. Fiona Walsh",
+          "panel": "Asthma Annual Spirometry",
+          "tests": [
+            { "name": "Spirometry FEV1", "value": 84, "unit": "% predicted", "reference_range": "> 80", "interpretation": "normal — improved on ICS", "flag": null },
+            { "name": "Spirometry FVC", "value": 94, "unit": "% predicted", "reference_range": "> 80", "interpretation": "normal", "flag": null },
+            { "name": "FEV1/FVC ratio", "value": 0.78, "unit": null, "reference_range": "> 0.75", "interpretation": "normal", "flag": null }
+          ]
+        }
+      ]
+    },
+
+    {
+      "user_id": "user_008",
+      "results": [
+        {
+          "lab_id": "lab_008_1",
+          "date": "2024-01-10",
+          "ordered_by": "Dr. James Carr",
+          "panel": "Athlete Annual Panel",
+          "tests": [
+            { "name": "Hemoglobin", "value": 15.8, "unit": "g/dL", "reference_range": "13.5-17.5", "interpretation": "normal", "flag": null },
+            { "name": "Ferritin", "value": 28, "unit": "ng/mL", "reference_range": "15-150", "interpretation": "low-normal — monitor in athletes", "flag": null },
+            { "name": "Serum iron", "value": 72, "unit": "mcg/dL", "reference_range": "60-170", "interpretation": "normal", "flag": null },
+            { "name": "Vitamin D (25-OH)", "value": 44, "unit": "ng/mL", "reference_range": "30-100", "interpretation": "normal", "flag": null },
+            { "name": "Total testosterone", "value": 620, "unit": "ng/dL", "reference_range": "300-1000", "interpretation": "normal", "flag": null },
+            { "name": "CRP (high-sensitivity)", "value": 0.4, "unit": "mg/L", "reference_range": "< 3.0", "interpretation": "normal", "flag": null },
+            { "name": "Fasting glucose", "value": 82, "unit": "mg/dL", "reference_range": "70-99", "interpretation": "normal", "flag": null }
+          ]
+        }
+      ]
+    },
+
+    {
+      "user_id": "user_009",
+      "results": [
+        {
+          "lab_id": "lab_009_1",
+          "date": "2024-03-05",
+          "ordered_by": "Dr. Sandra Green",
+          "panel": "Wellness Screening",
+          "tests": [
+            { "name": "Fasting glucose", "value": 104, "unit": "mg/dL", "reference_range": "70-99", "interpretation": "impaired fasting glucose", "flag": "H" },
+            { "name": "HbA1c", "value": 5.8, "unit": "%", "reference_range": "< 5.7", "interpretation": "prediabetes range", "flag": "H" },
+            { "name": "LDL cholesterol", "value": 138, "unit": "mg/dL", "reference_range": "< 100", "interpretation": "high", "flag": "H" },
+            { "name": "HDL cholesterol", "value": 52, "unit": "mg/dL", "reference_range": "> 50", "interpretation": "normal", "flag": null },
+            { "name": "Triglycerides", "value": 142, "unit": "mg/dL", "reference_range": "< 150", "interpretation": "normal", "flag": null },
+            { "name": "TSH", "value": 2.8, "unit": "mIU/L", "reference_range": "0.4-4.0", "interpretation": "normal", "flag": null },
+            { "name": "Vitamin D (25-OH)", "value": 22, "unit": "ng/mL", "reference_range": "30-100", "interpretation": "insufficient", "flag": "L" }
+          ]
+        }
+      ]
+    }
+
+  ]
+}

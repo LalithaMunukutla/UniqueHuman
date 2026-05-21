@@ -1,0 +1,938 @@
+{
+  "generated_at": "2026-05-21T22:43:41.381Z",
+  "by_user": {
+    "user_001": [
+      {
+        "id": "user_001_1",
+        "user_id": "user_001",
+        "severity": "watch",
+        "headline": "Your HRV-sleep signature predicted your last 2 migraines — learn the pattern",
+        "body": "Looking at your October attacks, a consistent prodrome fingerprint is emerging: HRV drops to ~40 ms (vs. your 49.5 ± 4.5 ms baseline), sleep falls below 6 hours with efficiency in the high 60s-low 70s, and awakenings jump to 3-4. This happened on Oct 7 (HRV 41, sleep 5.9h, efficiency 72%) before the Oct 8 migraine, and again on Oct 21 (HRV 40, sleep 5.5h, efficiency 69%) before the Oct 22 attack. Your neurologist noted this HRV-migraine correlation back in March — the data now confirms it's a reliable 24-hour warning signal for you.",
+        "evidence": [
+          {
+            "label": "HRV on prodrome days",
+            "value": "41 ms, 40 ms",
+            "date": "Oct 7, Oct 21"
+          },
+          {
+            "label": "Your HRV baseline",
+            "value": "49.5 ± 4.5 ms"
+          },
+          {
+            "label": "Sleep on prodrome nights",
+            "value": "5.9h (72% eff), 5.5h (69% eff)",
+            "date": "Oct 7, Oct 21"
+          },
+          {
+            "label": "Your sleep baseline",
+            "value": "6.9 ± 0.5h, 82 ± 3.6% efficiency"
+          }
+        ],
+        "suggested_action": "Set a daily morning check: if HRV is below 43 ms AND last night's sleep was under 6h or efficiency below 74%, treat it as a prodrome day — hydrate aggressively, reduce screens, have sumatriptan ready, and consider a lighter schedule.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags",
+          "medical_records",
+          "profile"
+        ]
+      },
+      {
+        "id": "user_001_2",
+        "user_id": "user_001",
+        "severity": "info",
+        "headline": "You're currently in a stable window — 7 days since last attack, vitals at baseline",
+        "body": "Since recovering from your Oct 22 migraine, your metrics have returned to healthy baseline ranges: HRV has been 50-54 ms, sleep averaging 6.9h with ~81% efficiency, and resting HR back to 61-65 bpm. Your stress scores are steady around 3.3-3.9. With your typical inter-attack interval being 13-16 days based on your 2024 pattern (Aug 13→Aug 29→Sep 11→Sep 25→Oct 8→Oct 22), you're likely in a lower-risk window for the next few days, though weather triggers can override this.",
+        "evidence": [
+          {
+            "label": "HRV range post-attack",
+            "value": "50-54 ms",
+            "date": "Oct 23-29"
+          },
+          {
+            "label": "Sleep post-attack",
+            "value": "6.6-7.4h, 79-85% eff",
+            "date": "Oct 23-29"
+          },
+          {
+            "label": "Attack intervals (2024)",
+            "value": "16, 13, 14, 13, 14 days"
+          },
+          {
+            "label": "Days since last attack",
+            "value": "7 days",
+            "date": "Oct 22 → Oct 29"
+          }
+        ],
+        "suggested_action": "Use this stable window to bank good sleep — aim for 7+ hours with consistent bed/wake times to build resilience before the next pressure system or stressor hits.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags",
+          "profile"
+        ]
+      },
+      {
+        "id": "user_001_3",
+        "user_id": "user_001",
+        "severity": "watch",
+        "headline": "Magnesium level still unchecked — your neurologist ordered this 5 weeks ago",
+        "body": "At your September 20 appointment, Dr. Kim specifically recommended checking your magnesium level to confirm your nightly 400mg supplement is providing adequate coverage. No lab results have come through yet. Given that magnesium is part of your migraine prevention strategy, knowing whether you're actually replete could inform whether the dose needs adjustment — especially relevant since you're still having monthly attacks.",
+        "evidence": [
+          {
+            "label": "Lab ordered",
+            "value": "Magnesium level check",
+            "date": "Sep 20, 2024"
+          },
+          {
+            "label": "Lab results on file",
+            "value": "None"
+          },
+          {
+            "label": "Current Mg dose",
+            "value": "400mg nightly"
+          },
+          {
+            "label": "Attack frequency",
+            "value": "~2 per month (Oct: 2 attacks)"
+          }
+        ],
+        "suggested_action": "Schedule the magnesium blood draw this week — it's a simple test that could reveal whether your current dose is therapeutic or if you'd benefit from an adjustment.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "medical_records",
+          "lab_results",
+          "profile"
+        ]
+      }
+    ],
+    "user_002": [
+      {
+        "id": "user_002_1",
+        "user_id": "user_002",
+        "severity": "watch",
+        "headline": "Shift work still hammering your metabolic recovery — pattern persists across 8 weekends",
+        "body": "Every weekend you work nights, your HRV drops by 40-50% (from your baseline of 34 ± 7 ms down to 21-27 ms), sleep falls to 4-5 hours with efficiency in the low 60s, and stress spikes to 7-8/10. This pattern has repeated consistently through September and October. Dr. Torres noted in August 2023 that shift work was 'blunting medication benefit' — your data confirms this is still happening. While your HbA1c hit 6.9% in February (a major win), the physiological stress of these nights likely explains why progress has been slow. The 8-10 bpm resting HR jump on shift days signals your body is running in a higher metabolic state, which works against glucose control.",
+        "evidence": [
+          {
+            "label": "HRV on Oct 13-14 shift weekend",
+            "value": "24 ms → 25 ms",
+            "date": "Oct 13-14"
+          },
+          {
+            "label": "HRV on Oct 20-21 shift weekend",
+            "value": "23 ms → 27 ms",
+            "date": "Oct 20-21"
+          },
+          {
+            "label": "Sleep on shift nights",
+            "value": "4.3-5.3 hours, 59-65% efficiency",
+            "date": "Oct 6-7, 13-14, 20-21"
+          },
+          {
+            "label": "Resting HR on shift days",
+            "value": "74-80 bpm vs baseline 71 ± 4",
+            "date": "Oct shift weekends"
+          },
+          {
+            "label": "Stress on shift days",
+            "value": "6.9-8.2/10 vs baseline 5.6 ± 1.3",
+            "date": "Oct shift weekends"
+          }
+        ],
+        "suggested_action": "Before your next shift weekend, discuss with Dr. Torres whether strategic meal timing (front-loading protein, avoiding carbs after midnight) or a post-shift recovery protocol could buffer these glucose spikes.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "medical_records",
+          "symptom_flags",
+          "profile"
+        ]
+      },
+      {
+        "id": "user_002_2",
+        "user_id": "user_002",
+        "severity": "info",
+        "headline": "Your non-shift weeks show excellent metabolic stability — this is your template",
+        "body": "When you're not working nights, your numbers are textbook: HRV 36-41 ms, sleep 6.4-7.3 hours at 72-79% efficiency, resting HR 66-71 bpm, stress 4.3-5.6/10. The week of Oct 22-29 (no shifts) shows consistent recovery with HRV holding at 36-41 ms and sleep efficiency above 73% every night. This proves your current medication regimen and lifestyle work well — the variable is specifically the overnight shifts. Your body recovers within 2-3 days post-shift when given the chance.",
+        "evidence": [
+          {
+            "label": "HRV Oct 22-29 (no shifts)",
+            "value": "36-41 ms",
+            "date": "Oct 22-29"
+          },
+          {
+            "label": "Sleep Oct 22-29",
+            "value": "6.7-7.1 h, 73-79% efficiency",
+            "date": "Oct 22-29"
+          },
+          {
+            "label": "Resting HR Oct 22-29",
+            "value": "67-71 bpm",
+            "date": "Oct 22-29"
+          },
+          {
+            "label": "Recovery time post-shift",
+            "value": "2-3 days to baseline HRV",
+            "date": "Pattern across Oct"
+          }
+        ],
+        "suggested_action": "Document this contrast for your next visit — it's concrete evidence that shift work, not medication adherence or diet, is the primary barrier to further HbA1c improvement.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags"
+        ]
+      },
+      {
+        "id": "user_002_3",
+        "user_id": "user_002",
+        "severity": "watch",
+        "headline": "Your October HbA1c check is overdue — last was February",
+        "body": "Dr. Torres planned a 6-month follow-up after your February 2024 labs showed HbA1c at 6.9%. It's now late October — over 8 months since that draw. Given your consistent shift work pattern and the documented post-shift glucose spikes he mentioned, an updated HbA1c would tell you whether you've held that sub-7% achievement or if the cumulative shift stress has pushed it back up. Your wearable data suggests your non-shift periods are well-controlled, but the every-weekend night shifts may be dragging the average.",
+        "evidence": [
+          {
+            "label": "Last HbA1c",
+            "value": "6.9%",
+            "date": "Feb 20, 2024"
+          },
+          {
+            "label": "Time since last check",
+            "value": "8+ months",
+            "date": "As of Oct 29"
+          },
+          {
+            "label": "Planned recheck interval",
+            "value": "6 months",
+            "date": "Per Feb 2024 plan"
+          },
+          {
+            "label": "Shift work frequency",
+            "value": "8 weekends in past 2 months",
+            "date": "Sep-Oct 2024"
+          }
+        ],
+        "suggested_action": "Schedule your overdue HbA1c lab this week — knowing whether you're still under 7% will inform whether your current shift coping strategies are enough or need adjustment.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "lab_results",
+          "medical_records",
+          "symptom_flags"
+        ]
+      }
+    ],
+    "user_003": [
+      {
+        "id": "user_003_1",
+        "user_id": "user_003",
+        "severity": "watch",
+        "headline": "PEM crash cycle repeating every ~2 weeks — next risk window is Oct 26–28",
+        "body": "Looking at your symptom flags since August, you've had five overexertion-to-crash sequences, each spaced roughly 14–16 days apart (Aug 9, Aug 23, Sep 8, Sep 24, Oct 12). The pattern suggests you're recovering to baseline, then pushing past your energy envelope at a predictable interval — likely tied to recurring commitments or accumulated 'feeling better' confidence. Your Oct 12 crash was typical: steps jumped to 6,653 (vs. your 3,654 ± 1,219 baseline), HRV dropped from 34 to 21 ms, resting HR spiked to 81 bpm, and you logged two PEM days with sleep efficiency cratering to 57%. You're now 17 days out — statistically in the window where previous crashes have occurred.",
+        "evidence": [
+          {
+            "label": "Crash intervals",
+            "value": "Aug 9 → Aug 23 → Sep 8 → Sep 24 → Oct 12 (14–16 day spacing)"
+          },
+          {
+            "label": "Oct 12 steps",
+            "value": "6,653 vs. baseline 3,654 ± 1,219"
+          },
+          {
+            "label": "Oct 13–14 HRV",
+            "value": "21 → 20 ms vs. baseline 31 ± 4 ms"
+          },
+          {
+            "label": "Oct 13–14 sleep efficiency",
+            "value": "57% vs. baseline 69 ± 4%"
+          },
+          {
+            "label": "Days since last crash",
+            "value": "17 (as of Oct 29)"
+          }
+        ],
+        "suggested_action": "Review your calendar for the next 3–5 days — if there's a social event, travel, or accumulating small commitments, preemptively cut activity by 20–30% now rather than recovering after another crash.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags",
+          "profile"
+        ]
+      },
+      {
+        "id": "user_003_2",
+        "user_id": "user_003",
+        "severity": "info",
+        "headline": "Current two-week window is your most stable stretch since August",
+        "body": "Since recovering from the Oct 12–14 crash, your metrics have been remarkably consistent: resting HR 70–75 bpm (baseline 73 ± 3), HRV 32–35 ms (baseline 31 ± 4), sleep 7.7–8.6 hours at 67–73% efficiency, and steps staying within your envelope (3,201–4,201). No symptom flags for 15 days. This is what successful pacing looks like for your ME/CFS — your nervous system is in a recovery-friendly state. The risk isn't that something is wrong; it's that feeling stable often triggers the 'I can do more' impulse that preceded your previous five crashes.",
+        "evidence": [
+          {
+            "label": "Days without symptom flag",
+            "value": "15 (Oct 15–29)"
+          },
+          {
+            "label": "Resting HR range",
+            "value": "69–75 bpm",
+            "date": "Oct 15–29"
+          },
+          {
+            "label": "HRV range",
+            "value": "32–35 ms",
+            "date": "Oct 15–29"
+          },
+          {
+            "label": "Steps range",
+            "value": "3,201–4,201",
+            "date": "Oct 15–29"
+          }
+        ],
+        "suggested_action": "Protect this stability — treat 'feeling good' as a signal that pacing is working, not as permission to increase activity.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags",
+          "medical_records"
+        ]
+      },
+      {
+        "id": "user_003_3",
+        "user_id": "user_003",
+        "severity": "info",
+        "headline": "Your exercise minutes on crash days reached 47 — HR ceiling likely breached",
+        "body": "On Oct 12, you logged 47 minutes of exercise (vs. your typical 10–14 min/day), nearly 4x your average. Dr. Huang's guidance from April 2023 emphasized staying below 110 bpm to avoid triggering PEM. While we don't have continuous HR data, 47 exercise minutes combined with 6,653 steps strongly suggests sustained elevated heart rate beyond your anaerobic threshold. The 2–day crash that followed (HR jumping to 80–81 bpm at rest, HRV dropping to 20–21 ms) fits the classic ME/CFS post-exertional pattern your records describe.",
+        "evidence": [
+          {
+            "label": "Oct 12 exercise minutes",
+            "value": "47 min vs. typical 10–14 min"
+          },
+          {
+            "label": "Prescribed HR ceiling",
+            "value": "110 bpm (per Dr. Huang, Apr 2023)"
+          },
+          {
+            "label": "Post-crash resting HR",
+            "value": "80–81 bpm",
+            "date": "Oct 13–14"
+          },
+          {
+            "label": "Post-crash HRV",
+            "value": "20–21 ms",
+            "date": "Oct 13–14"
+          }
+        ],
+        "suggested_action": "If your wearable supports heart rate alerts, set a vibration warning at 105 bpm to give yourself a buffer before hitting the 110 bpm threshold.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "medical_records",
+          "symptom_flags"
+        ]
+      }
+    ],
+    "user_004": [
+      {
+        "id": "user_004_1",
+        "user_id": "user_004",
+        "severity": "watch",
+        "headline": "CPAP skips follow a biweekly pattern — next likely miss around Nov 8",
+        "body": "Looking at your last 90 days, you've skipped CPAP on a remarkably consistent ~14-day cycle: Aug 6, Aug 19, Sep 2, Sep 17, Oct 1, Oct 15, and Oct 25. That's 7 noncompliant nights at roughly 2-week intervals. Each skip produces the same physiological signature: resting HR spikes 9-12 bpm above your 66 bpm baseline, HRV crashes to the mid-20s (vs your 39 ms baseline), SpO2 drops to 93-94%, and the next day you're wiped — steps crater by 40-50% and stress jumps to 6+. Your January 2024 sleep medicine note explicitly correlated these non-compliance nights with next-day headache and fatigue. If this pattern is tied to a recurring event (weekend social, travel, forgetfulness on a certain day), identifying it could break the cycle.",
+        "evidence": [
+          {
+            "label": "Noncompliant nights",
+            "value": "Aug 6, Aug 19, Sep 2, Sep 17, Oct 1, Oct 15, Oct 25"
+          },
+          {
+            "label": "Resting HR on skip nights",
+            "value": "74-75 bpm vs 66 bpm baseline"
+          },
+          {
+            "label": "HRV on skip nights",
+            "value": "24-27 ms vs 39 ms baseline"
+          },
+          {
+            "label": "SpO2 on skip nights",
+            "value": "93-94% vs 97% baseline"
+          },
+          {
+            "label": "Steps day after Oct 25 skip",
+            "value": "4,305 (46% below baseline)",
+            "date": "Oct 26"
+          }
+        ],
+        "suggested_action": "Look at what's different about these nights — if it's a recurring commitment or alcohol use, plan ahead by keeping a travel CPAP setup ready or setting a phone reminder before the trigger event.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags",
+          "medical_records"
+        ]
+      },
+      {
+        "id": "user_004_2",
+        "user_id": "user_004",
+        "severity": "info",
+        "headline": "Good news: CPAP compliance trending up, and your BP confirms it matters",
+        "body": "Despite the biweekly skips, you've used CPAP 26 of the last 30 nights (87%) with an average of 6.7 hours per night — exceeding your clinician's 85%+ target and well above the 4-hour threshold for clinical benefit. The payoff is visible in your medical record: BP dropped from 144/92 at OSA diagnosis to 132/84 at your January check, and weight is down 7 lbs. Your wearable data shows you're maintaining stable sleep efficiency (75-80%), HRV in the high 30s-low 40s, and SpO2 at 97% on compliant nights. This is working — the goal now is closing the gap on those biweekly misses to get even more consistent results.",
+        "evidence": [
+          {
+            "label": "CPAP usage last 30 days",
+            "value": "26/30 nights (87%)"
+          },
+          {
+            "label": "Average CPAP hours",
+            "value": "6.7 h/night"
+          },
+          {
+            "label": "BP at diagnosis vs Jan 2024",
+            "value": "144/92 → 132/84"
+          },
+          {
+            "label": "Residual AHI on therapy",
+            "value": "3.1 events/hr (excellent)",
+            "date": "Jan 2024"
+          }
+        ],
+        "suggested_action": "Keep doing what you're doing on compliant nights — this data makes a strong case for therapy benefit when you next see Dr. Bell.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "medical_records"
+        ]
+      }
+    ],
+    "user_005": [
+      {
+        "id": "user_005_1",
+        "user_id": "user_005",
+        "severity": "info",
+        "headline": "Your anxiety early-warning system is working — and you're using it",
+        "body": "Looking back at October, your wearable data clearly predicted both anxiety spikes 1-2 days before they peaked: on Oct 16-17, your HRV dropped to 31/30 ms (vs your 42 ± 5 ms baseline), resting HR jumped to 72-73 bpm, and sleep efficiency fell to 67-71%. The same signature appeared Oct 2-3. Importantly, both episodes resolved within 48 hours — your recovery pattern is consistent and resilient. This predictability is clinically valuable: Dr. Patel noted in August that HRV drops precede your flares by 2-3 days, and your data confirms it.",
+        "evidence": [
+          {
+            "label": "HRV during Oct 16-17 spike",
+            "value": "31 → 30 ms",
+            "date": "Oct 16-17"
+          },
+          {
+            "label": "Your HRV baseline",
+            "value": "42.2 ± 4.6 ms"
+          },
+          {
+            "label": "Resting HR during spike",
+            "value": "72-73 bpm vs 67 ± 3 baseline",
+            "date": "Oct 16-17"
+          },
+          {
+            "label": "Sleep efficiency during spike",
+            "value": "71% → 67%",
+            "date": "Oct 16-17"
+          },
+          {
+            "label": "Recovery time",
+            "value": "~48 hours to baseline"
+          }
+        ],
+        "suggested_action": "When you notice HRV dipping below 35 ms with rising resting HR, that's your 24-48 hour warning — consider preemptively using propranolol or a CBT grounding technique before the anxiety fully surfaces.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "medical_records",
+          "symptom_flags",
+          "profile"
+        ]
+      },
+      {
+        "id": "user_005_2",
+        "user_id": "user_005",
+        "severity": "watch",
+        "headline": "Biweekly anxiety pattern detected — possible work cycle trigger",
+        "body": "Your anxiety spikes in the past 3 months follow a striking ~14-day rhythm: Aug 7-8, Aug 14-15, Aug 21-22, Sep 4-5, Sep 18-19, Oct 2-3, Oct 16-17. This regularity suggests an external trigger on a predictable schedule — potentially bi-weekly work deadlines, recurring meetings, or a reporting cycle. Work deadlines are a known trigger for you. If you can identify the calendar event driving this pattern, you may be able to intervene upstream rather than reacting downstream.",
+        "evidence": [
+          {
+            "label": "Anxiety spike dates",
+            "value": "Aug 7-8, 14-15, 21-22; Sep 4-5, 18-19; Oct 2-3, 16-17"
+          },
+          {
+            "label": "Interval between episodes",
+            "value": "~13-15 days consistently"
+          },
+          {
+            "label": "Known trigger from profile",
+            "value": "work deadlines"
+          }
+        ],
+        "suggested_action": "Review your work calendar for recurring bi-weekly events (sprint reviews, reports due, team meetings) landing around these dates — if confirmed, discuss workload pacing or pre-deadline propranolol timing with Dr. Patel.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "symptom_flags",
+          "profile",
+          "wearable"
+        ]
+      },
+      {
+        "id": "user_005_3",
+        "user_id": "user_005",
+        "severity": "info",
+        "headline": "Strong 12-day stable streak supports your medication taper discussion",
+        "body": "Since Oct 18, you've had 12 consecutive days with no anxiety flags, HRV consistently 41-46 ms, resting HR 64-68 bpm, and sleep averaging 7.1 hours at 78% efficiency. This is your longest stable run in the 30-day window and aligns with the 'well-controlled' status from your August review. Dr. Patel recommended 12 more stable months before considering a venlafaxine taper — this streak is evidence you're on track, but the bi-weekly spike pattern suggests you're not yet at the sustained stability needed for tapering.",
+        "evidence": [
+          {
+            "label": "Current stable streak",
+            "value": "12 days",
+            "date": "Oct 18-29"
+          },
+          {
+            "label": "HRV range during streak",
+            "value": "41-46 ms"
+          },
+          {
+            "label": "GAD-7 at last review",
+            "value": "6 (mild)",
+            "date": "Aug 22, 2024"
+          },
+          {
+            "label": "Taper guidance from Dr. Patel",
+            "value": "Wait 12 stable months"
+          }
+        ],
+        "suggested_action": "Continue logging wearable data through early 2025 — if you can break the bi-weekly spike pattern, you'll have strong evidence for the taper conversation at your next psychiatry visit.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "medical_records",
+          "symptom_flags"
+        ]
+      }
+    ],
+    "user_006": [
+      {
+        "id": "user_006_1",
+        "user_id": "user_006",
+        "severity": "act",
+        "headline": "Weekly high-sodium pattern persists — your biggest modifiable BP lever is slipping",
+        "body": "You've logged high-sodium days every Monday and Tuesday for 12 consecutive weeks (24 flagged days since Aug 5). This isn't random — it's a weekly rhythm, likely tied to weekend eating patterns carrying into Monday or specific meal routines early in the week. Your wearable confirms the physiological hit: on high-sodium days, your resting HR averages 76-79 bpm versus 70-72 on clean days, and sleep efficiency drops to 62-67% versus 72-77%. Dr. Osei specifically noted sodium as your 'highest modifiable risk factor' in May, and your microalbumin is creeping up (21 → 26 mg/g) — still normal, but the kidney is starting to register the pressure load. Breaking this weekly pattern is more impactful than adding a third medication.",
+        "evidence": [
+          {
+            "label": "High-sodium days (12 weeks)",
+            "value": "24 Mon/Tue pairs",
+            "date": "Aug 5 – Oct 22"
+          },
+          {
+            "label": "Resting HR on high-sodium days",
+            "value": "75-79 bpm vs 70-72 baseline"
+          },
+          {
+            "label": "Sleep efficiency on high-sodium days",
+            "value": "62-67% vs 72-77%"
+          },
+          {
+            "label": "Microalbumin trend",
+            "value": "21 → 26 mg/g",
+            "date": "May 2023 → May 2024"
+          }
+        ],
+        "suggested_action": "Audit your Sunday-Monday meal sources — identify the 2-3 foods driving the pattern and swap or pre-plan alternatives before this weekend.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags",
+          "medical_records",
+          "lab_results"
+        ]
+      },
+      {
+        "id": "user_006_2",
+        "user_id": "user_006",
+        "severity": "watch",
+        "headline": "High-sodium nights disrupt your sleep in a way that matters for nocturnal BP",
+        "body": "Your 24h ambulatory BP monitoring showed a 'non-dipper' pattern — your BP doesn't fall enough at night, which is why Dr. Osei moved Losartan to evening dosing. The wearable data reveals what's undermining that strategy: on high-sodium days, you average 4-5 awakenings and 63-67% sleep efficiency, versus 1-2 awakenings and 72-77% efficiency on low-sodium days. Fragmented sleep directly prevents the nocturnal BP dip your medication is designed to support. Your morning headaches (noted May 2024) likely reflect mornings after these disrupted nights.",
+        "evidence": [
+          {
+            "label": "Awakenings (high-sodium nights)",
+            "value": "4-5 vs 1-2 on clean nights"
+          },
+          {
+            "label": "Sleep efficiency (high-sodium)",
+            "value": "62-67% vs 72-77%"
+          },
+          {
+            "label": "Nocturnal pattern",
+            "value": "Non-dipper on 24h monitoring",
+            "date": "May 2023, May 2024"
+          },
+          {
+            "label": "Morning headaches",
+            "value": "Reported",
+            "date": "May 2024"
+          }
+        ],
+        "suggested_action": "Track whether morning headaches cluster on Tuesdays and Wednesdays (post-sodium nights) — if so, you have confirmation that sodium is driving your nocturnal BP spikes.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags",
+          "medical_records"
+        ]
+      },
+      {
+        "id": "user_006_3",
+        "user_id": "user_006",
+        "severity": "info",
+        "headline": "Good week — your baseline metrics are stable when sodium is controlled",
+        "body": "Since Oct 23, you've had no high-sodium flags, and your metrics reflect it: resting HR 70-72 bpm (baseline 73 ± 2.4), HRV 36-38 ms (baseline 36 ± 1.4), sleep efficiency 70-77%, and stress scores 4.4-5.6 (below your 5.4 baseline). This is what your body looks like when sodium isn't spiking your system. The question is whether you can extend this pattern through the weekend into Monday-Tuesday, breaking the 12-week cycle.",
+        "evidence": [
+          {
+            "label": "Resting HR (Oct 23-29)",
+            "value": "70-72 bpm",
+            "date": "Oct 23-29"
+          },
+          {
+            "label": "Sleep efficiency (Oct 23-29)",
+            "value": "70-77%"
+          },
+          {
+            "label": "Days since last high-sodium flag",
+            "value": "7 days",
+            "date": "Oct 22 → Oct 29"
+          }
+        ],
+        "suggested_action": "Use this clean week as your reference point — screenshot your metrics and compare to next Tuesday to see if you held the line.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags"
+        ]
+      }
+    ],
+    "user_007": [
+      {
+        "id": "user_007_1",
+        "user_id": "user_007",
+        "severity": "watch",
+        "headline": "AQI spikes reliably trigger rescue inhaler use — your pattern is clear",
+        "body": "Over the past 30 days, every day AQI exceeded 100, you needed your rescue inhaler (Oct 4 at AQI 134, Oct 11 at AQI 114, Oct 18 at AQI 143). On those same days, your SpO2 dipped to 95-96%, below your 97.4 ± 0.9% baseline. The good news: when AQI stays below 100, you've had zero rescue inhaler days this month. Your current regimen is working — but your threshold for outdoor activity remains firm at AQI 100, exactly as Dr. Walsh prescribed.",
+        "evidence": [
+          {
+            "label": "AQI / Inhaler / SpO2",
+            "value": "134 / 1 puff / 95%",
+            "date": "Oct 4"
+          },
+          {
+            "label": "AQI / Inhaler / SpO2",
+            "value": "114 / 1 puff / 95%",
+            "date": "Oct 11"
+          },
+          {
+            "label": "AQI / Inhaler / SpO2",
+            "value": "143 / 1 puff / 96%",
+            "date": "Oct 18"
+          },
+          {
+            "label": "Your SpO2 baseline",
+            "value": "97.4 ± 0.9%",
+            "date": "90-day average"
+          },
+          {
+            "label": "High AQI days in 90 days",
+            "value": "20 flagged events",
+            "date": "Aug–Oct 2024"
+          }
+        ],
+        "suggested_action": "Bookmark an AQI app and set alerts for 100+; on those days, move workouts indoors or reschedule — you've proven you can avoid rescue inhaler use when you do.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags",
+          "medical_records"
+        ]
+      },
+      {
+        "id": "user_007_2",
+        "user_id": "user_007",
+        "severity": "info",
+        "headline": "Your asthma control is objectively excellent — FEV1 normalized",
+        "body": "Your March 2024 spirometry showed FEV1 at 84% predicted and FEV1/FVC ratio of 0.78 — both now in normal range, up from 78% and 0.72 at diagnosis. This reflects genuine airway improvement on your ICS regimen. Your wearable data supports this: SpO2 averages 97-98% on most days, resting HR and HRV are stable at baseline, and rescue inhaler use is limited to high-AQI exposures only. The controller therapy is doing its job.",
+        "evidence": [
+          {
+            "label": "FEV1 % predicted",
+            "value": "78% → 84%",
+            "date": "Mar 2023 → Mar 2024"
+          },
+          {
+            "label": "FEV1/FVC ratio",
+            "value": "0.72 → 0.78",
+            "date": "Mar 2023 → Mar 2024"
+          },
+          {
+            "label": "Rescue inhaler days (Oct)",
+            "value": "3 of 29 days",
+            "date": "Oct 2024"
+          },
+          {
+            "label": "Average SpO2 (last 30 days)",
+            "value": "97.6%",
+            "date": "Sep 30–Oct 29"
+          }
+        ],
+        "suggested_action": "Keep taking fluticasone twice daily as prescribed — your consistency is paying off. Consider scheduling your next annual spirometry for early 2025 to confirm continued improvement.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "lab_results",
+          "medical_records",
+          "wearable"
+        ]
+      }
+    ],
+    "user_008": [
+      {
+        "id": "user_008_1",
+        "user_id": "user_008",
+        "severity": "watch",
+        "headline": "HRV rebounds quickly after heavy training — recovery system working well",
+        "body": "Your Oct 24-25 heavy training block dropped HRV to 62 and 59 ms (vs. your 76.7 ± 7.2 ms baseline), with resting HR climbing to 53-56 bpm. By Oct 26-28, HRV rebounded to 78-81 ms and resting HR normalized to 49-51 bpm — a textbook 48-72 hour recovery window. This matches the pattern from Oct 10-11 where HRV dropped to 55-62 ms then fully recovered within 2 days. Your autonomic nervous system is adapting well to your training load.",
+        "evidence": [
+          {
+            "label": "HRV during heavy training",
+            "value": "62 → 59 ms",
+            "date": "Oct 24-25"
+          },
+          {
+            "label": "HRV post-recovery",
+            "value": "79 → 78 → 81 ms",
+            "date": "Oct 26-28"
+          },
+          {
+            "label": "Resting HR peak",
+            "value": "56 bpm",
+            "date": "Oct 25"
+          },
+          {
+            "label": "Resting HR normalized",
+            "value": "49 bpm",
+            "date": "Oct 28"
+          },
+          {
+            "label": "Your HRV baseline",
+            "value": "76.7 ± 7.2 ms"
+          }
+        ],
+        "suggested_action": "Your current recovery pattern supports the bi-weekly heavy training rhythm — maintain the 10-13 day spacing between blocks to keep HRV bouncing back fully.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags",
+          "medical_records"
+        ]
+      },
+      {
+        "id": "user_008_2",
+        "user_id": "user_008",
+        "severity": "info",
+        "headline": "Ferritin at 28 ng/mL — borderline for an endurance athlete",
+        "body": "While technically normal (ref 15-150), a ferritin of 28 ng/mL sits at the lower end for someone with your training volume. Sports medicine research suggests endurance athletes often perform better with ferritin above 50 ng/mL. With your consistent high-step counts (14,218 daily average) and regular heavy training blocks, you're losing iron through sweat and foot-strike hemolysis. This isn't urgent, but worth tracking at your next labs.",
+        "evidence": [
+          {
+            "label": "Ferritin",
+            "value": "28 ng/mL",
+            "date": "Jan 10, 2024"
+          },
+          {
+            "label": "Hemoglobin",
+            "value": "15.8 g/dL (normal)",
+            "date": "Jan 10, 2024"
+          },
+          {
+            "label": "Average daily steps",
+            "value": "14,218"
+          },
+          {
+            "label": "Heavy training blocks",
+            "value": "7 in 90 days"
+          }
+        ],
+        "suggested_action": "Request ferritin be included in your next panel — if it's trended down from 28, discuss iron-rich food timing or low-dose supplementation with Dr. Carr.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "lab_results",
+          "wearable",
+          "medical_records"
+        ]
+      }
+    ],
+    "user_009": [
+      {
+        "id": "user_009_1",
+        "user_id": "user_009",
+        "severity": "watch",
+        "headline": "Prediabetes markers from March remain unaddressed — trajectory matters now",
+        "body": "Your March labs showed HbA1c at 5.8% and fasting glucose at 104 mg/dL — both in prediabetes range. Dr. Green recommended lifestyle changes and a 12-month recheck, but your wearable data shows activity levels have barely budged: you're averaging ~4,700 steps/day over the past 30 days versus the 3,800 baseline she noted, still well below her 7,000-step target. Without intervention, prediabetes commonly progresses to type 2 diabetes within 3-5 years. You're 7 months in with minimal movement on the key modifiable factor.",
+        "evidence": [
+          {
+            "label": "HbA1c",
+            "value": "5.8%",
+            "date": "2024-03-05"
+          },
+          {
+            "label": "Fasting glucose",
+            "value": "104 mg/dL",
+            "date": "2024-03-05"
+          },
+          {
+            "label": "Steps (last 30d avg)",
+            "value": "~4,700/day",
+            "date": "Sep 30 – Oct 29"
+          },
+          {
+            "label": "Dr. Green's target",
+            "value": "7,000 steps/day",
+            "date": "2024-03-05"
+          }
+        ],
+        "suggested_action": "Schedule your follow-up labs now (you're due by March 2025) and commit to adding 1,000 steps/day this week — even a 15-minute walk after dinner.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "lab_results",
+          "medical_records",
+          "wearable"
+        ]
+      },
+      {
+        "id": "user_009_2",
+        "user_id": "user_009",
+        "severity": "watch",
+        "headline": "Sleep efficiency stuck at 68% — you're losing 2+ hours in bed each night",
+        "body": "Across 30 days, your sleep efficiency averages 67%, meaning for every 6.5 hours in bed, you're only getting ~4.3 hours of actual restorative sleep. Combined with your low HRV (30-31 ms, below population norms for your age) and the fatigue you reported in March, this fragmented sleep pattern is likely perpetuating your low energy and may be impairing glucose regulation. Poor sleep independently worsens insulin sensitivity — a compounding factor for your prediabetes risk.",
+        "evidence": [
+          {
+            "label": "Sleep efficiency (baseline)",
+            "value": "68 ± 2.2%",
+            "date": "90-day baseline"
+          },
+          {
+            "label": "Sleep efficiency (last 30d)",
+            "value": "65-71% range",
+            "date": "Sep 30 – Oct 29"
+          },
+          {
+            "label": "HRV (last 30d)",
+            "value": "29-32 ms",
+            "date": "Sep 30 – Oct 29"
+          },
+          {
+            "label": "Chief complaint",
+            "value": "low energy, poor sleep",
+            "date": "2024-03-05"
+          }
+        ],
+        "suggested_action": "Try a fixed wake time (±30 min, even weekends) for two weeks and track whether efficiency improves — this is the single most effective sleep hygiene lever.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "medical_records"
+        ]
+      },
+      {
+        "id": "user_009_3",
+        "user_id": "user_009",
+        "severity": "info",
+        "headline": "Vitamin D insufficiency flagged in March — supplement status unknown",
+        "body": "Your Vitamin D level was 22 ng/mL in March, below the 30 ng/mL threshold for sufficiency. Low vitamin D is associated with fatigue, poor sleep quality, and impaired glucose metabolism — all patterns present in your data. If you haven't started supplementation, this is a low-effort intervention that could help multiple symptoms. If you have been supplementing, a recheck would confirm whether your dose is adequate.",
+        "evidence": [
+          {
+            "label": "Vitamin D (25-OH)",
+            "value": "22 ng/mL",
+            "date": "2024-03-05"
+          },
+          {
+            "label": "Reference range",
+            "value": "30-100 ng/mL",
+            "date": "2024-03-05"
+          }
+        ],
+        "suggested_action": "If not already supplementing, start 2,000-4,000 IU vitamin D3 daily with a fatty meal; if you are, request a recheck at your next lab draw.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "lab_results",
+          "medical_records"
+        ]
+      }
+    ],
+    "user_010": [
+      {
+        "id": "user_010_1",
+        "user_id": "user_010",
+        "severity": "watch",
+        "headline": "Twice-weekly alcohol pattern tanking your sleep and recovery — every week since August",
+        "body": "Your data shows a consistent pattern: every Monday/Tuesday pair for 12 consecutive weeks, you log alcohol nights. On these nights, your HRV drops from your baseline of 33 ± 5 ms down to 24–28 ms, resting heart rate spikes 6–8 bpm above baseline (to 81–85 bpm), sleep efficiency plummets to 56–62% (vs. your 68% baseline), and you wake 5–7 times per night instead of 2–3. This isn't occasional — it's a stable, predictable physiological cost that accumulates. Your body takes 2–3 days to recover each cycle before the next round hits.",
+        "evidence": [
+          {
+            "label": "Alcohol nights logged",
+            "value": "24 nights over 12 weeks",
+            "date": "Aug 5 – Oct 22"
+          },
+          {
+            "label": "HRV on alcohol nights",
+            "value": "24–28 ms",
+            "date": "Oct 21–22"
+          },
+          {
+            "label": "HRV on recovery days",
+            "value": "35–38 ms",
+            "date": "Oct 23–27"
+          },
+          {
+            "label": "Resting HR spike",
+            "value": "81–85 bpm vs. 77 ± 3.5 baseline",
+            "date": "Oct 21–22"
+          },
+          {
+            "label": "Sleep efficiency drop",
+            "value": "56–61% vs. 68% baseline",
+            "date": "Oct 21–22"
+          }
+        ],
+        "suggested_action": "Try reducing to one alcohol night this week instead of two — track whether your Thursday HRV and sleep efficiency recover faster.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags",
+          "profile"
+        ]
+      },
+      {
+        "id": "user_010_2",
+        "user_id": "user_010",
+        "severity": "info",
+        "headline": "Your non-drinking stretches show what your body can actually do",
+        "body": "When you string together 4–5 alcohol-free days (like Oct 23–27), your metrics normalize impressively: HRV climbs to 36–38 ms, sleep efficiency hits 69–73%, awakenings drop to 2–3, and resting HR settles to 74–79 bpm. You're currently in a good stretch — today's HRV of 34 ms and 71% sleep efficiency show you're recovered from last week. This creates a natural experiment: your body clearly responds well to these breaks, which suggests the Monday-Tuesday pattern is the primary drag on your baseline, not underlying poor health.",
+        "evidence": [
+          {
+            "label": "HRV recovery stretch",
+            "value": "36–38 ms",
+            "date": "Oct 24–27"
+          },
+          {
+            "label": "Sleep efficiency recovery",
+            "value": "69–73%",
+            "date": "Oct 23–27"
+          },
+          {
+            "label": "Awakenings on good nights",
+            "value": "2–3",
+            "date": "Oct 23–27"
+          },
+          {
+            "label": "Today's metrics",
+            "value": "HRV 34, sleep eff 71%",
+            "date": "Oct 29"
+          }
+        ],
+        "suggested_action": "Screenshot today's metrics as your 'clean baseline' reference — useful if you decide to experiment with changes.",
+        "noticed_at": "2024-10-29",
+        "data_sources": [
+          "wearable",
+          "symptom_flags"
+        ]
+      }
+    ]
+  }
+}

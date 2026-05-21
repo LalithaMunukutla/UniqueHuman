@@ -1,0 +1,449 @@
+{
+  "medical_records": [
+
+    {
+      "record_id": "rec_001_1",
+      "user_id": "user_001",
+      "date": "2023-09-14",
+      "visit_type": "specialist_consult",
+      "provider": { "name": "Dr. Rachel Kim", "specialty": "Neurology" },
+      "chief_complaint": "Increasing migraine frequency — 6-8 attacks per month over past 3 months",
+      "vitals": { "bp": "118/76", "hr": 64, "weight_lbs": 138, "temp_f": 98.4, "spo2_pct": 99 },
+      "assessment": "Episodic migraine with aura. Frequency increase likely linked to new stressors and irregular sleep. No red flag features. Neurological exam normal.",
+      "diagnoses": ["Migraine with aura (G43.109)"],
+      "medications": [
+        { "action": "prescribed", "name": "Sumatriptan", "dose": "50mg", "instructions": "Take at onset of aura or headache. May repeat once after 2 hours. Max 2 doses per 24 hours." },
+        { "action": "prescribed", "name": "Magnesium glycinate", "dose": "400mg", "instructions": "Take nightly as preventive supplement." }
+      ],
+      "lab_orders": [],
+      "plan": "Trigger diary for 8 weeks. Prioritize sleep consistency. Return if frequency exceeds 8 days per month — will discuss preventive medication at that threshold.",
+      "follow_up": "2024-03-14"
+    },
+    {
+      "record_id": "rec_001_2",
+      "user_id": "user_001",
+      "date": "2024-03-18",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Rachel Kim", "specialty": "Neurology" },
+      "chief_complaint": "Follow-up migraine management. Frequency stable at 5-6 per month.",
+      "vitals": { "bp": "116/74", "hr": 63, "weight_lbs": 137, "temp_f": 98.2, "spo2_pct": 99 },
+      "assessment": "Good response to acute triptan therapy. Trigger diary confirms barometric pressure drops and poor sleep as primary triggers. Frequency below preventive threshold.",
+      "diagnoses": ["Migraine with aura (G43.109)"],
+      "medications": [
+        { "action": "continued", "name": "Sumatriptan", "dose": "50mg", "instructions": "No change." },
+        { "action": "continued", "name": "Magnesium glycinate", "dose": "400mg", "instructions": "No change." }
+      ],
+      "lab_orders": [],
+      "plan": "Continue current regimen. Patient educated on weather trigger patterns and early intervention. Wearable HRV data reviewed — low HRV nights correlate with attack days.",
+      "follow_up": "2024-09-18"
+    },
+    {
+      "record_id": "rec_001_3",
+      "user_id": "user_001",
+      "date": "2024-09-20",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Rachel Kim", "specialty": "Neurology" },
+      "chief_complaint": "Routine follow-up. Reports 2 severe attacks in August — both preceded by storm fronts.",
+      "vitals": { "bp": "117/75", "hr": 64, "weight_lbs": 138, "temp_f": 98.3, "spo2_pct": 99 },
+      "assessment": "Stable episodic migraine. Weather sensitivity well-established. No change in aura pattern. August attacks severe but self-limited with sumatriptan.",
+      "diagnoses": ["Migraine with aura (G43.109)"],
+      "medications": [
+        { "action": "continued", "name": "Sumatriptan", "dose": "50mg", "instructions": "No change." },
+        { "action": "continued", "name": "Magnesium glycinate", "dose": "400mg", "instructions": "No change." }
+      ],
+      "lab_orders": ["Serum magnesium level"],
+      "plan": "Monitor barometric pressure app. Pre-treat with additional hydration and reduced screen time on pressure-drop days. Check magnesium level to confirm supplementation is adequate.",
+      "follow_up": "2025-03-01"
+    },
+
+    {
+      "record_id": "rec_002_1",
+      "user_id": "user_002",
+      "date": "2022-11-02",
+      "visit_type": "annual_physical",
+      "provider": { "name": "Dr. Samuel Torres", "specialty": "Internal Medicine" },
+      "chief_complaint": "Annual physical. Fatigue and increased thirst for past 6 months.",
+      "vitals": { "bp": "138/88", "hr": 78, "weight_lbs": 201, "temp_f": 98.6, "spo2_pct": 97 },
+      "assessment": "New diagnosis of type 2 diabetes based on fasting glucose 142 mg/dL and HbA1c 8.2%. Concurrent stage 1 hypertension. BMI 29.4.",
+      "diagnoses": ["Type 2 diabetes mellitus (E11.9)", "Hypertension (I10)"],
+      "medications": [
+        { "action": "prescribed", "name": "Metformin", "dose": "500mg", "instructions": "Once daily with dinner. Titrate to 1000mg twice daily over 4 weeks if tolerated." }
+      ],
+      "lab_orders": ["HbA1c", "Fasting glucose", "Comprehensive metabolic panel", "Lipid panel", "Urine microalbumin"],
+      "plan": "Diabetes education referral. Low-glycemic diet counseling. 150 min moderate exercise per week target. Recheck HbA1c in 3 months.",
+      "follow_up": "2023-02-02"
+    },
+    {
+      "record_id": "rec_002_2",
+      "user_id": "user_002",
+      "date": "2023-02-08",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Samuel Torres", "specialty": "Internal Medicine" },
+      "chief_complaint": "3-month diabetes follow-up. HbA1c recheck.",
+      "vitals": { "bp": "134/86", "hr": 75, "weight_lbs": 196, "temp_f": 98.4, "spo2_pct": 97 },
+      "assessment": "HbA1c improved to 7.4%. Weight down 5 lbs. Metformin well-tolerated at full dose. GI side effects resolved. BP improving but still above target.",
+      "diagnoses": ["Type 2 diabetes mellitus (E11.9)", "Hypertension (I10)"],
+      "medications": [
+        { "action": "uptitrated", "name": "Metformin", "dose": "1000mg", "instructions": "Twice daily with meals." }
+      ],
+      "lab_orders": ["HbA1c", "Fasting glucose", "Comprehensive metabolic panel"],
+      "plan": "Continue titrated Metformin. Add SGLT-2 inhibitor if HbA1c remains above 7% at next visit. Reinforce dietary carbohydrate reduction and consistent meal timing.",
+      "follow_up": "2023-08-08"
+    },
+    {
+      "record_id": "rec_002_3",
+      "user_id": "user_002",
+      "date": "2023-08-14",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Samuel Torres", "specialty": "Internal Medicine" },
+      "chief_complaint": "6-month diabetes review. HbA1c still above 7%.",
+      "vitals": { "bp": "130/84", "hr": 74, "weight_lbs": 194, "temp_f": 98.5, "spo2_pct": 97 },
+      "assessment": "HbA1c 7.1%. Marginal improvement. Shift work disrupting meal timing and sleep — likely blunting medication benefit. BP well-controlled.",
+      "diagnoses": ["Type 2 diabetes mellitus (E11.9)"],
+      "medications": [
+        { "action": "prescribed", "name": "Empagliflozin", "dose": "10mg", "instructions": "Once daily in the morning. Monitor for UTI symptoms." },
+        { "action": "continued", "name": "Metformin", "dose": "1000mg", "instructions": "Twice daily with meals." }
+      ],
+      "lab_orders": ["HbA1c", "Urine microalbumin", "eGFR"],
+      "plan": "Added SGLT-2 inhibitor for additional glucose lowering and cardiovascular protection. Discuss sleep and meal timing strategies for shift workers. Target HbA1c below 7%.",
+      "follow_up": "2024-02-14"
+    },
+    {
+      "record_id": "rec_002_4",
+      "user_id": "user_002",
+      "date": "2024-02-20",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Samuel Torres", "specialty": "Internal Medicine" },
+      "chief_complaint": "Annual diabetes review. Patient reports feeling better overall.",
+      "vitals": { "bp": "128/82", "hr": 72, "weight_lbs": 191, "temp_f": 98.4, "spo2_pct": 98 },
+      "assessment": "HbA1c 6.9% — first time below 7%. Combined Metformin + Empagliflozin working well. Weight down 10 lbs from baseline. BP at target.",
+      "diagnoses": ["Type 2 diabetes mellitus (E11.9)"],
+      "medications": [
+        { "action": "continued", "name": "Metformin", "dose": "1000mg", "instructions": "Twice daily with meals." },
+        { "action": "continued", "name": "Empagliflozin", "dose": "10mg", "instructions": "Once daily morning." }
+      ],
+      "lab_orders": ["HbA1c", "Lipid panel", "Comprehensive metabolic panel", "Urine microalbumin"],
+      "plan": "Maintain current regimen. Continue monitoring glucose patterns around shift work days — data shows spikes on days after night shifts. Next HbA1c in 6 months.",
+      "follow_up": "2024-08-20"
+    },
+
+    {
+      "record_id": "rec_003_1",
+      "user_id": "user_003",
+      "date": "2022-06-10",
+      "visit_type": "specialist_consult",
+      "provider": { "name": "Dr. Lisa Huang", "specialty": "Infectious Disease / Post-Viral Clinic" },
+      "chief_complaint": "Persistent fatigue, cognitive difficulties, and unrefreshing sleep for 4 months following COVID-19 infection.",
+      "vitals": { "bp": "108/70", "hr": 88, "weight_lbs": 122, "temp_f": 98.1, "spo2_pct": 97 },
+      "assessment": "Presentation consistent with post-viral fatigue syndrome / early ME/CFS. Orthostatic tachycardia noted on standing test (HR increase 28 bpm). Cognitive testing shows reduced processing speed.",
+      "diagnoses": ["Post-viral fatigue syndrome (G93.3)", "Orthostatic intolerance"],
+      "medications": [
+        { "action": "prescribed", "name": "Vitamin D", "dose": "2000IU", "instructions": "Once daily with food." }
+      ],
+      "lab_orders": ["Full blood count", "Thyroid function", "Ferritin", "Vitamin D", "Vitamin B12", "ANA screen", "Cortisol morning"],
+      "plan": "Strict pacing and energy envelope management. Graded exercise contraindicated at this stage. Refer to ME/CFS specialist. Follow up with lab results in 4 weeks.",
+      "follow_up": "2022-07-15"
+    },
+    {
+      "record_id": "rec_003_2",
+      "user_id": "user_003",
+      "date": "2022-07-18",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Lisa Huang", "specialty": "Infectious Disease / Post-Viral Clinic" },
+      "chief_complaint": "Lab results review. Fatigue unchanged.",
+      "vitals": { "bp": "106/68", "hr": 90, "weight_lbs": 121, "temp_f": 98.0, "spo2_pct": 97 },
+      "assessment": "Labs unremarkable except low-normal ferritin (18 ng/mL) and Vitamin D insufficiency (24 ng/mL). No secondary cause for fatigue identified. ME/CFS diagnosis confirmed per Canadian Consensus Criteria.",
+      "diagnoses": ["Myalgic Encephalomyelitis / Chronic Fatigue Syndrome (G93.3)"],
+      "medications": [
+        { "action": "prescribed", "name": "Low-dose naltrexone", "dose": "4.5mg", "instructions": "Once nightly. Titrate from 1.5mg over 6 weeks." },
+        { "action": "continued", "name": "Vitamin D", "dose": "2000IU", "instructions": "Once daily." },
+        { "action": "prescribed", "name": "Ferrous sulfate", "dose": "325mg", "instructions": "Every other day to improve absorption. Take with Vitamin C." }
+      ],
+      "lab_orders": ["Repeat ferritin in 12 weeks"],
+      "plan": "LDN trial for 3 months — may reduce neuroinflammation and improve sleep quality. Strict activity pacing remains cornerstone of management. Heart rate monitoring to stay below anaerobic threshold.",
+      "follow_up": "2022-10-20"
+    },
+    {
+      "record_id": "rec_003_3",
+      "user_id": "user_003",
+      "date": "2023-04-05",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Lisa Huang", "specialty": "Infectious Disease / Post-Viral Clinic" },
+      "chief_complaint": "6-month check-in. Mild improvement in sleep, PEM still significant.",
+      "vitals": { "bp": "110/72", "hr": 82, "weight_lbs": 123, "temp_f": 98.2, "spo2_pct": 97 },
+      "assessment": "Partial response to LDN. Sleep quality improved per patient report and wearable data. Post-exertional malaise remains the dominant symptom — any activity above moderate threshold triggers 2-3 day crash.",
+      "diagnoses": ["Myalgic Encephalomyelitis / Chronic Fatigue Syndrome (G93.3)"],
+      "medications": [
+        { "action": "continued", "name": "Low-dose naltrexone", "dose": "4.5mg", "instructions": "No change." },
+        { "action": "continued", "name": "Vitamin D", "dose": "2000IU", "instructions": "No change." },
+        { "action": "discontinued", "name": "Ferrous sulfate", "instructions": "Ferritin normalized to 62 ng/mL." }
+      ],
+      "lab_orders": ["Ferritin", "Vitamin D level"],
+      "plan": "Reinforce heart rate ceiling of 110 bpm during any activity. Sleep consistency critical — irregular sleep timing worsens PEM severity. Cognitive pacing equally important as physical pacing.",
+      "follow_up": "2023-10-05"
+    },
+    {
+      "record_id": "rec_003_4",
+      "user_id": "user_003",
+      "date": "2024-04-02",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Lisa Huang", "specialty": "Infectious Disease / Post-Viral Clinic" },
+      "chief_complaint": "Annual review. Stable but not improving further.",
+      "vitals": { "bp": "112/72", "hr": 80, "weight_lbs": 124, "temp_f": 98.2, "spo2_pct": 97 },
+      "assessment": "ME/CFS stable at moderate severity. No deterioration over past 12 months. PEM pattern predictable — overexertion events cluster around social and travel commitments.",
+      "diagnoses": ["Myalgic Encephalomyelitis / Chronic Fatigue Syndrome (G93.3)"],
+      "medications": [
+        { "action": "continued", "name": "Low-dose naltrexone", "dose": "4.5mg", "instructions": "No change." },
+        { "action": "continued", "name": "Vitamin D", "dose": "2000IU", "instructions": "No change." }
+      ],
+      "lab_orders": ["Full blood count", "Thyroid function", "Vitamin D"],
+      "plan": "Continue current regimen. Patient educated on pre-activity planning to budget energy expenditure. Wearable HRV and resting HR useful early warning signals for impending crash.",
+      "follow_up": "2025-04-01"
+    },
+
+    {
+      "record_id": "rec_004_1",
+      "user_id": "user_004",
+      "date": "2023-01-19",
+      "visit_type": "specialist_consult",
+      "provider": { "name": "Dr. Andrew Bell", "specialty": "Sleep Medicine" },
+      "chief_complaint": "Loud snoring, daytime sleepiness, non-restorative sleep. Partner reports witnessed apneas.",
+      "vitals": { "bp": "144/92", "hr": 70, "weight_lbs": 224, "temp_f": 98.5, "spo2_pct": 96 },
+      "assessment": "High clinical suspicion for OSA. Epworth Sleepiness Scale 14/24. Overnight oximetry shows significant desaturation events. Neck circumference 17.5 inches.",
+      "diagnoses": ["Suspected obstructive sleep apnea"],
+      "medications": [],
+      "lab_orders": ["Home sleep apnea test (HSAT)"],
+      "plan": "Home sleep study ordered. Avoid alcohol within 3 hours of bed pending diagnosis. Sleep position therapy (avoid supine) as interim measure.",
+      "follow_up": "2023-02-16"
+    },
+    {
+      "record_id": "rec_004_2",
+      "user_id": "user_004",
+      "date": "2023-02-20",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Andrew Bell", "specialty": "Sleep Medicine" },
+      "chief_complaint": "HSAT results review.",
+      "vitals": { "bp": "142/90", "hr": 68, "weight_lbs": 222, "temp_f": 98.4, "spo2_pct": 96 },
+      "assessment": "HSAT confirms moderate-severe OSA. AHI 22.4 events/hour. Oxygen nadir 84%. CPAP therapy indicated.",
+      "diagnoses": ["Obstructive sleep apnea, moderate-severe (G47.33)"],
+      "medications": [
+        { "action": "prescribed", "name": "CPAP therapy", "dose": "Auto-titrating 6-10 cmH2O", "instructions": "Use every night. Target 7+ hours. Download compliance data monthly." }
+      ],
+      "lab_orders": [],
+      "plan": "CPAP setup with DME provider. Follow-up in 4 weeks for compliance and efficacy review. Weight loss strongly encouraged — 10% body weight reduction can reduce AHI by 26%.",
+      "follow_up": "2023-03-20"
+    },
+    {
+      "record_id": "rec_004_3",
+      "user_id": "user_004",
+      "date": "2024-01-15",
+      "visit_type": "annual_physical",
+      "provider": { "name": "Dr. Andrew Bell", "specialty": "Sleep Medicine" },
+      "chief_complaint": "Annual CPAP review. Reports feeling much better on therapy.",
+      "vitals": { "bp": "132/84", "hr": 65, "weight_lbs": 217, "temp_f": 98.4, "spo2_pct": 97 },
+      "assessment": "CPAP compliance 78% of nights (usage >4h). Residual AHI 3.1 on therapy — excellent control. BP improved significantly since OSA treatment. Weight down 7 lbs.",
+      "diagnoses": ["Obstructive sleep apnea, controlled on CPAP (G47.33)"],
+      "medications": [
+        { "action": "continued", "name": "CPAP therapy", "dose": "Fixed 8 cmH2O", "instructions": "Titrated to fixed pressure based on 12-month auto data. Continue nightly." }
+      ],
+      "lab_orders": [],
+      "plan": "Increase CPAP compliance target to 85%+ of nights. Correlation between non-compliance nights and next-day headache and fatigue is clear in data. Continue weight management.",
+      "follow_up": "2025-01-15"
+    },
+
+    {
+      "record_id": "rec_005_1",
+      "user_id": "user_005",
+      "date": "2022-08-03",
+      "visit_type": "specialist_consult",
+      "provider": { "name": "Dr. Maya Patel", "specialty": "Psychiatry" },
+      "chief_complaint": "Persistent excessive worry, muscle tension, sleep onset difficulty for over 1 year. PHQ-9: 8. GAD-7: 14.",
+      "vitals": { "bp": "122/80", "hr": 82, "weight_lbs": 148, "temp_f": 98.3, "spo2_pct": 98 },
+      "assessment": "Meets DSM-5 criteria for Generalized Anxiety Disorder. Moderate severity. No evidence of bipolar or psychotic features. Sleep disturbance secondary to anxiety rumination.",
+      "diagnoses": ["Generalized anxiety disorder (F41.1)"],
+      "medications": [
+        { "action": "prescribed", "name": "Venlafaxine", "dose": "37.5mg", "instructions": "Once daily with food. Titrate to 75mg after 2 weeks if tolerated." }
+      ],
+      "lab_orders": ["Thyroid function (rule out hyperthyroidism)", "Full blood count"],
+      "plan": "SNRI initiated. CBT referral placed — 12-session program. Review in 6 weeks. Avoid abrupt discontinuation of venlafaxine.",
+      "follow_up": "2022-09-14"
+    },
+    {
+      "record_id": "rec_005_2",
+      "user_id": "user_005",
+      "date": "2022-09-14",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Maya Patel", "specialty": "Psychiatry" },
+      "chief_complaint": "Medication review. Partial improvement. Still significant anxiety around work deadlines.",
+      "vitals": { "bp": "120/78", "hr": 76, "weight_lbs": 148, "temp_f": 98.2, "spo2_pct": 98 },
+      "assessment": "GAD-7 reduced from 14 to 10. Partial response to venlafaxine 75mg. Sleep improving. Situational anxiety spikes remain prominent, particularly around deadlines.",
+      "diagnoses": ["Generalized anxiety disorder (F41.1)"],
+      "medications": [
+        { "action": "continued", "name": "Venlafaxine", "dose": "75mg", "instructions": "No change." },
+        { "action": "prescribed", "name": "Propranolol", "dose": "10mg", "instructions": "As needed for acute anxiety situations — presentations, high-stress events. Max once daily." }
+      ],
+      "lab_orders": [],
+      "plan": "Add propranolol PRN for situational anxiety. Continue CBT. Wearable HRV monitoring useful for detecting anxiety build-up before it becomes symptomatic.",
+      "follow_up": "2023-03-14"
+    },
+    {
+      "record_id": "rec_005_3",
+      "user_id": "user_005",
+      "date": "2024-08-22",
+      "visit_type": "annual_physical",
+      "provider": { "name": "Dr. Maya Patel", "specialty": "Psychiatry" },
+      "chief_complaint": "Annual review. Well-controlled anxiety. Asks about medication taper.",
+      "vitals": { "bp": "118/76", "hr": 68, "weight_lbs": 147, "temp_f": 98.2, "spo2_pct": 98 },
+      "assessment": "GAD-7 score 6 — mild. Excellent response to combined venlafaxine and CBT. Sleep consistent. HRV trending up over past 6 months per wearable data. Discusses taper — advised to wait 12 more stable months.",
+      "diagnoses": ["Generalized anxiety disorder, well-controlled (F41.1)"],
+      "medications": [
+        { "action": "continued", "name": "Venlafaxine", "dose": "75mg", "instructions": "No change. Do not taper without medical supervision." },
+        { "action": "continued", "name": "Propranolol", "dose": "10mg", "instructions": "PRN as needed." }
+      ],
+      "lab_orders": [],
+      "plan": "Maintain current regimen for minimum 12 months given recent stability. Early warning signs to watch for: sleep deterioration, HRV drop, increased resting HR over baseline — all precede anxiety flares by 2-3 days.",
+      "follow_up": "2025-08-01"
+    },
+
+    {
+      "record_id": "rec_006_1",
+      "user_id": "user_006",
+      "date": "2022-05-11",
+      "visit_type": "annual_physical",
+      "provider": { "name": "Dr. Kevin Osei", "specialty": "Internal Medicine" },
+      "chief_complaint": "Routine physical. No complaints. Hypertension found incidentally.",
+      "vitals": { "bp": "148/94", "hr": 76, "weight_lbs": 208, "temp_f": 98.5, "spo2_pct": 97 },
+      "assessment": "Stage 1-2 hypertension on repeat measurement. No evidence of end-organ damage. No secondary causes identified. Metabolic panel normal except borderline LDL.",
+      "diagnoses": ["Hypertension (I10)"],
+      "medications": [
+        { "action": "prescribed", "name": "Amlodipine", "dose": "5mg", "instructions": "Once daily. May cause ankle swelling — monitor." }
+      ],
+      "lab_orders": ["Comprehensive metabolic panel", "Lipid panel", "Urinalysis", "ECG"],
+      "plan": "DASH diet counseling. Sodium target under 2g per day. Reduce alcohol. 30 min aerobic exercise 5x per week. Recheck in 6 weeks.",
+      "follow_up": "2022-06-22"
+    },
+    {
+      "record_id": "rec_006_2",
+      "user_id": "user_006",
+      "date": "2022-06-28",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Kevin Osei", "specialty": "Internal Medicine" },
+      "chief_complaint": "BP recheck. Patient reports dietary changes, less alcohol.",
+      "vitals": { "bp": "140/88", "hr": 74, "weight_lbs": 205, "temp_f": 98.4, "spo2_pct": 97 },
+      "assessment": "Partial BP response to amlodipine and lifestyle. Still above target 130/80. Add ARB for better control.",
+      "diagnoses": ["Hypertension (I10)"],
+      "medications": [
+        { "action": "continued", "name": "Amlodipine", "dose": "5mg", "instructions": "No change." },
+        { "action": "prescribed", "name": "Losartan", "dose": "50mg", "instructions": "Once daily. Monitor potassium. Avoid NSAIDs." }
+      ],
+      "lab_orders": ["Electrolytes", "eGFR in 2 weeks after ARB start"],
+      "plan": "Combination therapy. 24-hour ambulatory BP monitoring in 3 months to assess true BP burden including nighttime dipping pattern.",
+      "follow_up": "2022-09-28"
+    },
+    {
+      "record_id": "rec_006_3",
+      "user_id": "user_006",
+      "date": "2023-05-10",
+      "visit_type": "annual_physical",
+      "provider": { "name": "Dr. Kevin Osei", "specialty": "Internal Medicine" },
+      "chief_complaint": "Annual physical. BP well-controlled per home readings.",
+      "vitals": { "bp": "130/82", "hr": 72, "weight_lbs": 201, "temp_f": 98.4, "spo2_pct": 98 },
+      "assessment": "BP at target on dual therapy. Weight down 7 lbs. LDL improved to 128 mg/dL. No end-organ damage on ECG or urine. 24h ambulatory showed non-dipping pattern — BP does not fall adequately at night.",
+      "diagnoses": ["Hypertension (I10)"],
+      "medications": [
+        { "action": "continued", "name": "Amlodipine", "dose": "5mg", "instructions": "No change." },
+        { "action": "uptitrated", "name": "Losartan", "dose": "100mg", "instructions": "Dose increase to improve nocturnal dipping. Take in evening." }
+      ],
+      "lab_orders": ["Lipid panel", "Comprehensive metabolic panel", "Urine microalbumin"],
+      "plan": "Losartan moved to evening dosing to improve nocturnal BP dipping. Sleep quality directly impacts BP control — poor sleep nights show BP spikes next morning.",
+      "follow_up": "2024-05-10"
+    },
+    {
+      "record_id": "rec_006_4",
+      "user_id": "user_006",
+      "date": "2024-05-15",
+      "visit_type": "annual_physical",
+      "provider": { "name": "Dr. Kevin Osei", "specialty": "Internal Medicine" },
+      "chief_complaint": "Annual physical. Reports occasional morning headaches.",
+      "vitals": { "bp": "132/84", "hr": 71, "weight_lbs": 198, "temp_f": 98.5, "spo2_pct": 98 },
+      "assessment": "BP averaging 132/84 — slightly above target. Morning headaches consistent with nocturnal hypertension. Repeat 24h ambulatory shows improvement in dipping but still non-dipper pattern.",
+      "diagnoses": ["Hypertension (I10)"],
+      "medications": [
+        { "action": "continued", "name": "Amlodipine", "dose": "5mg", "instructions": "No change." },
+        { "action": "continued", "name": "Losartan", "dose": "100mg", "instructions": "Evening dosing." }
+      ],
+      "lab_orders": ["Comprehensive metabolic panel", "Lipid panel", "Urine microalbumin", "ECG"],
+      "plan": "Reinforce sodium restriction — still highest modifiable risk factor. Wearable data shows BP correlates closely with sleep quality and stress scores. Next visit consider adding spironolactone if still above target.",
+      "follow_up": "2025-05-01"
+    },
+
+    {
+      "record_id": "rec_007_1",
+      "user_id": "user_007",
+      "date": "2023-03-22",
+      "visit_type": "urgent_care",
+      "provider": { "name": "Dr. Fiona Walsh", "specialty": "Pulmonology" },
+      "chief_complaint": "Acute wheezing and chest tightness during outdoor run. Used albuterol with partial relief.",
+      "vitals": { "bp": "124/78", "hr": 96, "weight_lbs": 142, "temp_f": 98.6, "spo2_pct": 95 },
+      "assessment": "Acute asthma exacerbation, mild-moderate. SpO2 95% improved to 98% post-bronchodilator. AQI was 112 on day of event. Exercise-induced component likely. Spirometry shows FEV1/FVC 0.72.",
+      "diagnoses": ["Asthma, mild persistent (J45.30)"],
+      "medications": [
+        { "action": "prescribed", "name": "Albuterol inhaler", "dose": "90mcg per actuation", "instructions": "2 puffs as needed for symptoms. Use 15 min before exercise." },
+        { "action": "prescribed", "name": "Fluticasone inhaled", "dose": "44mcg", "instructions": "2 puffs twice daily as controller. Rinse mouth after." }
+      ],
+      "lab_orders": ["Spirometry with bronchodilator reversibility", "Allergen panel (dust mites, mold, grass pollen)"],
+      "plan": "Initiate ICS controller therapy. Avoid outdoor exercise when AQI above 100. Pre-exercise bronchodilator use mandatory. Follow up in 6 weeks.",
+      "follow_up": "2023-05-03"
+    },
+    {
+      "record_id": "rec_007_2",
+      "user_id": "user_007",
+      "date": "2023-05-08",
+      "visit_type": "follow_up",
+      "provider": { "name": "Dr. Fiona Walsh", "specialty": "Pulmonology" },
+      "chief_complaint": "Asthma follow-up. Improved on ICS. Still occasional wheeze on cold mornings.",
+      "vitals": { "bp": "122/76", "hr": 74, "weight_lbs": 142, "temp_f": 98.4, "spo2_pct": 98 },
+      "assessment": "Good response to ICS. Rescue inhaler use down from daily to 2x per week. Allergen panel: positive for grass pollen and dust mites. Cold air trigger confirmed by patient history.",
+      "diagnoses": ["Asthma, mild persistent, controlled (J45.30)"],
+      "medications": [
+        { "action": "continued", "name": "Albuterol inhaler", "dose": "90mcg", "instructions": "PRN and pre-exercise." },
+        { "action": "continued", "name": "Fluticasone inhaled", "dose": "44mcg", "instructions": "Twice daily." }
+      ],
+      "lab_orders": [],
+      "plan": "Asthma well-controlled on current regimen. Allergen avoidance counseling for dust mites. Scarf over mouth in cold air. Monitor AQI daily — threshold for outdoor activity is AQI under 100.",
+      "follow_up": "2024-03-01"
+    },
+
+    {
+      "record_id": "rec_008_1",
+      "user_id": "user_008",
+      "date": "2024-01-10",
+      "visit_type": "annual_physical",
+      "provider": { "name": "Dr. James Carr", "specialty": "Sports Medicine" },
+      "chief_complaint": "Annual athlete physical. No complaints. Pre-season clearance.",
+      "vitals": { "bp": "112/68", "hr": 48, "weight_lbs": 174, "temp_f": 98.4, "spo2_pct": 99 },
+      "assessment": "Excellent cardiovascular fitness. Resting HR 48 bpm consistent with athletic conditioning. VO2 max estimated 58 mL/kg/min. No musculoskeletal issues. Occasional fatigue during heavy training blocks — within normal range.",
+      "diagnoses": [],
+      "medications": [],
+      "lab_orders": ["Full blood count", "Iron studies", "Vitamin D", "Testosterone"],
+      "plan": "No concerns. Ensure adequate caloric and protein intake during training blocks. Monitor HRV — sustained HRV drop over 5+ days indicates overtraining. Rest week protocol if HRV drops 15% from baseline.",
+      "follow_up": "2025-01-10"
+    },
+
+    {
+      "record_id": "rec_009_1",
+      "user_id": "user_009",
+      "date": "2024-03-05",
+      "visit_type": "annual_physical",
+      "provider": { "name": "Dr. Sandra Green", "specialty": "General Practice" },
+      "chief_complaint": "Annual physical. Reports low energy, poor sleep, and weight gain over past year.",
+      "vitals": { "bp": "126/82", "hr": 74, "weight_lbs": 163, "temp_f": 98.5, "spo2_pct": 98 },
+      "assessment": "No active conditions. Borderline low HRV on wearable data submitted. BMI 27.8 — overweight range. Sedentary lifestyle confirmed (avg 3,800 steps/day by wearable). Sleep 6h average.",
+      "diagnoses": [],
+      "medications": [],
+      "lab_orders": ["Thyroid function", "Full blood count", "Fasting glucose", "HbA1c", "Lipid panel"],
+      "plan": "Lifestyle intervention counseling. Target 7,000 steps per day as starting goal. Sleep hygiene education — 7-8h target. Recheck labs in 12 months. Flag if fasting glucose trends toward prediabetes range.",
+      "follow_up": "2025-03-05"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "users": [
+    {
+      "id": "user_001",
+      "name": "Sarah Chen",
+      "age": 34,
+      "sex": "female",
+      "condition": "Migraine with aura",
+      "medications": ["Sumatriptan 50mg as needed", "Magnesium glycinate 400mg nightly"],
+      "known_triggers": ["barometric pressure drops", "poor sleep", "skipped meals", "red wine"]
+    },
+    {
+      "id": "user_002",
+      "name": "Marcus Williams",
+      "age": 47,
+      "sex": "male",
+      "condition": "Type 2 diabetes",
+      "medications": ["Metformin 1000mg twice daily", "Empagliflozin 10mg daily"],
+      "known_triggers": ["high-carb meals", "irregular sleep", "missed medication", "sedentary periods"]
+    },
+    {
+      "id": "user_003",
+      "name": "Priya Nair",
+      "age": 28,
+      "sex": "female",
+      "condition": "ME/CFS (Myalgic Encephalomyelitis)",
+      "medications": ["Low-dose naltrexone 4.5mg nightly", "Vitamin D 2000IU daily"],
+      "known_triggers": ["physical overexertion", "disrupted sleep", "psychological stress", "heat exposure"]
+    },
+    {
+      "id": "user_004",
+      "name": "James O'Brien",
+      "age": 55,
+      "sex": "male",
+      "condition": "Obstructive sleep apnea",
+      "medications": ["CPAP therapy 8 cmH2O nightly"],
+      "known_triggers": ["alcohol before bed", "sleeping supine", "weight gain", "sedatives"]
+    },
+    {
+      "id": "user_005",
+      "name": "Elena Vasquez",
+      "age": 41,
+      "sex": "female",
+      "condition": "Generalized anxiety disorder",
+      "medications": ["Venlafaxine 75mg daily", "Propranolol 10mg as needed"],
+      "known_triggers": ["work deadlines", "poor sleep", "caffeine excess", "social conflict"]
+    },
+    {
+      "id": "user_006",
+      "name": "David Park",
+      "age": 52,
+      "sex": "male",
+      "condition": "Hypertension",
+      "medications": ["Amlodipine 5mg daily", "Losartan 100mg daily (evening)"],
+      "known_triggers": ["high sodium intake", "poor sleep", "work stress", "alcohol"]
+    },
+    {
+      "id": "user_007",
+      "name": "Aisha Okafor",
+      "age": 31,
+      "sex": "female",
+      "condition": "Asthma (mild persistent)",
+      "medications": ["Albuterol inhaler as needed", "Fluticasone 44mcg inhaled twice daily"],
+      "known_triggers": ["air quality index above 100", "cold air", "exercise without warm-up", "respiratory infections"]
+    },
+    {
+      "id": "user_008",
+      "name": "Tom Reid",
+      "age": 26,
+      "sex": "male",
+      "condition": null,
+      "medications": [],
+      "known_triggers": []
+    },
+    {
+      "id": "user_009",
+      "name": "Nina Sharma",
+      "age": 38,
+      "sex": "female",
+      "condition": null,
+      "medications": [],
+      "known_triggers": []
+    },
+    {
+      "id": "user_010",
+      "name": "Carlos Mendez",
+      "age": 44,
+      "sex": "male",
+      "condition": null,
+      "medications": [],
+      "known_triggers": []
+    }
+  ]
+}
