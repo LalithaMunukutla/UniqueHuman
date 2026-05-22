@@ -1,0 +1,915 @@
+{
+  "generated_at": "2026-05-22T00:12:54.414Z",
+  "by_user": {
+    "user_001": {
+      "user_id": "user_001",
+      "generated_for": "2024-10-29",
+      "summary": "Sarah is currently 7 days post-migraine with stable vitals and good HRV recovery. Her attack cycle shows a consistent 13-14 day interval (Aug 13 → Aug 29 → Sep 11 → Sep 25 → Oct 8 → Oct 22), placing the next expected prodrome around Nov 3-5 and attack Nov 4-6. The early part of this week looks calm; elevated risk builds toward the weekend.",
+      "watch_for": [
+        "HRV dropping below 42ms on any morning — this preceded both October attacks by 1 day",
+        "Sleep under 6 hours or efficiency below 75% — both prodrome nights showed this pattern",
+        "Barometric pressure drops — known primary trigger; check weather forecast for storm fronts Nov 2-5",
+        "Stress creeping above 5.0 combined with short sleep — this stacking pattern preceded the Oct 21 prodrome"
+      ],
+      "days": [
+        {
+          "date": "2024-10-30",
+          "day_label": "Wed Oct 30",
+          "risk": "low",
+          "one_liner": "Day 8 post-attack; stable recovery window with strong recent vitals.",
+          "drivers": [
+            "Only 8 days since last migraine — well before typical 13-14 day cycle point",
+            "HRV holding at 50-51ms range (above baseline) for past 4 days",
+            "Sleep quantity and efficiency normalized since Oct 23"
+          ]
+        },
+        {
+          "date": "2024-10-31",
+          "day_label": "Thu Oct 31",
+          "risk": "low",
+          "one_liner": "Mid-cycle; no accumulating destabilizers visible in current trajectory.",
+          "drivers": [
+            "Day 9 post-attack — still in protected window",
+            "Resting HR stable at 61-65 range (baseline)",
+            "No stress elevation pattern emerging"
+          ]
+        },
+        {
+          "date": "2024-11-01",
+          "day_label": "Fri Nov 1",
+          "risk": "low",
+          "one_liner": "Approaching cycle midpoint but no early warning signals yet.",
+          "drivers": [
+            "Day 10 post-attack — entering late-cycle territory but not peak risk",
+            "If HRV and sleep remain stable through tonight, weekend risk stays moderate"
+          ]
+        },
+        {
+          "date": "2024-11-02",
+          "day_label": "Sat Nov 2",
+          "risk": "watch",
+          "one_liner": "Entering the 11-13 day window where prodromes have historically begun.",
+          "drivers": [
+            "Day 11 post-attack — within 2-3 days of typical prodrome onset",
+            "Weekend schedule changes may disrupt sleep consistency",
+            "Watch for HRV dip below 45ms as early signal"
+          ]
+        },
+        {
+          "date": "2024-11-03",
+          "day_label": "Sun Nov 3",
+          "risk": "elevated",
+          "one_liner": "Peak prodrome risk window based on 13-14 day cycle pattern.",
+          "drivers": [
+            "Day 12 post-attack — matches timing of Oct 21 prodrome (13 days after Oct 8 attack)",
+            "Cycle intervals: Aug 13→29 (16d), Aug 29→Sep 11 (13d), Sep 11→25 (14d), Sep 25→Oct 8 (13d), Oct 8→22 (14d)",
+            "If no HRV drop or sleep disruption by tonight, risk may shift to Nov 4"
+          ]
+        },
+        {
+          "date": "2024-11-04",
+          "day_label": "Mon Nov 4",
+          "risk": "elevated",
+          "one_liner": "Secondary peak — if prodrome hits Nov 3, this is likely attack day; if not, prodrome may land here.",
+          "drivers": [
+            "Day 13 post-attack — within tightest cluster of prior attack intervals",
+            "Monday work stress historically a mild compounding factor",
+            "Pattern: prodrome one day, attack the next (100% consistency in visible data)"
+          ]
+        },
+        {
+          "date": "2024-11-05",
+          "day_label": "Tue Nov 5",
+          "risk": "watch",
+          "one_liner": "Tail end of high-risk window; attack likely if prodrome occurred Nov 4.",
+          "drivers": [
+            "Day 14 post-attack — outer edge of typical cycle",
+            "If no prodrome by end of Nov 4, this represents a stretch beyond usual pattern (positive sign)",
+            "Remain vigilant for delayed onset if sleep or HRV destabilized over weekend"
+          ]
+        }
+      ]
+    },
+    "user_002": {
+      "user_id": "user_002",
+      "generated_for": "2024-10-29",
+      "summary": "This week carries a predictable risk pattern centered on the weekend shift work block (Nov 2-3). Marcus is currently in a stable mid-week window with good HRV and sleep metrics, but his consistent pattern shows glucose dysregulation reliably follows his biweekly shift rotations. The post-shift recovery days (Nov 4-5) warrant close attention.",
+      "watch_for": [
+        "Fasting glucose elevation on Mon Nov 4 and Tue Nov 5 — his data consistently shows 24-48h glucose lag after shift weekends",
+        "Sleep dropping below 5h on shift nights — when this happens, next-day resting HR rises 8-12 bpm above baseline",
+        "Stress scores above 7 for two consecutive days — this pattern preceded his worst dysregulation windows in Oct 6-7 and Oct 13-14",
+        "Meal timing drift during shift days — his medical notes specifically flag this as blunting medication benefit"
+      ],
+      "days": [
+        {
+          "date": "2024-10-30",
+          "day_label": "Wed Oct 30",
+          "risk": "low",
+          "one_liner": "Midweek stable window with strong baseline metrics from the past week.",
+          "drivers": [
+            "Day 9 since last shift block — well into recovery",
+            "HRV averaging 38ms over past 7 days (above his 34ms baseline)",
+            "Sleep efficiency 75% average this week — consistent",
+            "No destabilizing pattern in this window"
+          ]
+        },
+        {
+          "date": "2024-10-31",
+          "day_label": "Thu Oct 31",
+          "risk": "low",
+          "one_liner": "Continued stable stretch; pre-shift buffer day.",
+          "drivers": [
+            "Strong trailing metrics — resting HR 67-71 bpm range past 4 days",
+            "Stress scores stable at 4.3-5.5 range",
+            "No historical pattern of Thursday destabilization"
+          ]
+        },
+        {
+          "date": "2024-11-01",
+          "day_label": "Fri Nov 1",
+          "risk": "watch",
+          "one_liner": "Day before predicted shift block — preparation day where glucose management matters most.",
+          "drivers": [
+            "Shift block historically starts Saturday — his pattern is every 2 weeks (Oct 20-21, Oct 6-7, Sep 29-30)",
+            "Pre-shift meal timing and medication adherence on Friday sets up weekend resilience",
+            "No acute risk, but choices today affect Sat-Mon trajectory"
+          ]
+        },
+        {
+          "date": "2024-11-02",
+          "day_label": "Sat Nov 2",
+          "risk": "elevated",
+          "one_liner": "First shift night predicted — expect sleep disruption, elevated stress, and HRV drop.",
+          "drivers": [
+            "Biweekly shift pattern predicts shift_work flag (Oct 20, Oct 6, Sep 22, Sep 8 — all Sundays, paired with Saturdays)",
+            "His shift days consistently show: sleep 4.3-5.2h, HRV 21-27ms, stress 7-8+",
+            "Resting HR typically jumps 6-10 bpm on shift days",
+            "Meal timing disruption during shifts is documented glucose disruptor"
+          ]
+        },
+        {
+          "date": "2024-11-03",
+          "day_label": "Sun Nov 3",
+          "risk": "high",
+          "one_liner": "Second consecutive shift night — cumulative sleep debt and peak dysregulation window.",
+          "drivers": [
+            "Back-to-back shift nights show compounding effect: Oct 7 (HR 76, HRV 21, sleep 4.3h), Oct 14 (HR 80, HRV 25, sleep 4.6h)",
+            "Second shift day historically his worst metrics of any two-week cycle",
+            "Two nights of <5h sleep with 5+ awakenings predicts next-day glucose spikes",
+            "Stress scores peak on day 2 of shifts (8.1-8.2 range)"
+          ]
+        },
+        {
+          "date": "2024-11-04",
+          "day_label": "Mon Nov 4",
+          "risk": "elevated",
+          "one_liner": "Post-shift recovery day — glucose dysregulation typically lags 24h behind sleep disruption.",
+          "drivers": [
+            "His pattern shows physiological recovery lags behavioral recovery by 1-2 days",
+            "Oct 8 and Oct 15 (post-shift Mondays/Tuesdays) show HRV still suppressed, HR elevated",
+            "Medical notes specifically flag 'spikes on days after night shifts'",
+            "Sleep rebound likely but glucose control still catching up"
+          ]
+        },
+        {
+          "date": "2024-11-05",
+          "day_label": "Tue Nov 5",
+          "risk": "watch",
+          "one_liner": "Second recovery day — metrics typically normalizing but not yet baseline.",
+          "drivers": [
+            "By Tuesday post-shift, his HRV usually recovers to 36-40ms range",
+            "Still within glucose lag window flagged in medical records",
+            "Should see stress returning to 4-5 range if recovery on track"
+          ]
+        }
+      ]
+    },
+    "user_003": {
+      "user_id": "user_003",
+      "generated_for": "2024-10-29",
+      "summary": "The most notable feature of this week is the approach of Priya's ~14-day PEM cycle window. Her last crash sequence began Oct 12, placing the next vulnerability zone around Oct 26-28. She passed through that window without incident, which is encouraging, but the pattern isn't perfectly clockwork — the next elevated-risk zone extends through early November. Current biomarkers (HRV 33-34, RHR 72) are stable and within her baseline, so no imminent destabilization signal, but vigilance warranted as she enters days 17-23 post-crash.",
+      "watch_for": [
+        "HRV dropping below 28ms on any morning — historically precedes crashes by 24-48h",
+        "Step count exceeding 5500 or exercise minutes above 30 — known overexertion threshold",
+        "Sleep efficiency falling below 60% two nights in a row — early recovery-compromise signal",
+        "Resting HR climbing above 78 bpm — stress/autonomic strain marker"
+      ],
+      "days": [
+        {
+          "date": "2024-10-30",
+          "day_label": "Wed Oct 30",
+          "risk": "low",
+          "one_liner": "Day 17 post-crash with stable biomarkers; no specific destabilizing pattern.",
+          "drivers": [
+            "HRV stable at 34ms (above her mean of 31)",
+            "RHR 72 bpm (within normal range)",
+            "Activity levels appropriately paced past 5 days",
+            "Sleep consistency maintained"
+          ]
+        },
+        {
+          "date": "2024-10-31",
+          "day_label": "Thu Oct 31",
+          "risk": "watch",
+          "one_liner": "Entering the outer edge of her historical inter-crash interval; Halloween activities could add unexpected exertion.",
+          "drivers": [
+            "Day 18 post-crash — approaching the 14±3 day cycle range",
+            "Social/activity pressure common on holidays",
+            "No current biomarker warning signs"
+          ]
+        },
+        {
+          "date": "2024-11-01",
+          "day_label": "Fri Nov 1",
+          "risk": "watch",
+          "one_liner": "Cycle-based vulnerability continues; any post-Halloween recovery deficit could compound.",
+          "drivers": [
+            "Day 19 post-crash — still within extended vulnerability window",
+            "Potential sleep disruption carryover from Oct 31",
+            "Baseline metrics need monitoring"
+          ]
+        },
+        {
+          "date": "2024-11-02",
+          "day_label": "Sat Nov 2",
+          "risk": "elevated",
+          "one_liner": "Peak of the projected cycle window; weekend activities historically cluster with overexertion events.",
+          "drivers": [
+            "Day 20 post-crash — center of the extended vulnerability zone",
+            "4 of 5 prior overexertion events occurred on weekends",
+            "Cumulative week effects may be present",
+            "Her Aug 23 and Sep 24 crashes were both Saturday-triggered"
+          ]
+        },
+        {
+          "date": "2024-11-03",
+          "day_label": "Sun Nov 3",
+          "risk": "elevated",
+          "one_liner": "Daylight saving time transition adds sleep disruption risk to an already sensitive window.",
+          "drivers": [
+            "Day 21 post-crash — still elevated-cycle territory",
+            "DST clock change (fall back) can fragment sleep architecture",
+            "Irregular sleep timing documented as worsening PEM severity",
+            "Weekend social/activity exposure continues"
+          ]
+        },
+        {
+          "date": "2024-11-04",
+          "day_label": "Mon Nov 4",
+          "risk": "watch",
+          "one_liner": "Post-weekend recovery day; if Saturday/Sunday were well-paced, risk normalizes.",
+          "drivers": [
+            "Day 22 post-crash — exiting peak window",
+            "Post-DST adjustment may still affect sleep quality",
+            "Monday typically lower-activity day in her pattern"
+          ]
+        },
+        {
+          "date": "2024-11-05",
+          "day_label": "Tue Nov 5",
+          "risk": "low",
+          "one_liner": "If no overexertion occurred over the weekend, she likely cleared the cycle window safely.",
+          "drivers": [
+            "Day 23 post-crash — outside typical inter-crash interval",
+            "Routine weekday with lower exertion probability",
+            "No specific destabilizing factors identified"
+          ]
+        }
+      ]
+    },
+    "user_004": {
+      "user_id": "user_004",
+      "generated_for": "2024-10-29",
+      "summary": "James is currently in a stable window with 4 consecutive nights of CPAP compliance and normal vitals. However, his pattern shows CPAP noncompliance events approximately every 13-14 days (Aug 6→19→Sep 2→17→Oct 1→15→25), placing the next likely skip around Nov 7-8 — outside this forecast window. The main risk this week is an unscheduled noncompliance night, which his data shows causes next-day fatigue, elevated resting HR (+8-10 bpm), and significantly reduced activity.",
+      "watch_for": [
+        "Resting HR spiking above 72 bpm on any morning — reliably signals CPAP was skipped or ineffective the prior night",
+        "SpO2 dropping below 94% — only occurs on noncompliant nights in his data",
+        "Weekend nights (Fri/Sat) — 5 of his 7 noncompliance events in 90 days fell on these nights, likely alcohol-related",
+        "Sleep efficiency falling below 65% with awakenings >6 — early sign of untreated apnea night"
+      ],
+      "days": [
+        {
+          "date": "2024-10-30",
+          "day_label": "Wed Oct 30",
+          "risk": "low",
+          "one_liner": "Day 5 of compliance streak; midweek nights historically stable for James.",
+          "drivers": [
+            "4 consecutive CPAP nights with good hours (6.5-7.5h)",
+            "Resting HR normalized at 63 bpm today",
+            "HRV stable at 38ms — within baseline",
+            "Midweek — noncompliance events cluster on weekends in his pattern"
+          ]
+        },
+        {
+          "date": "2024-10-31",
+          "day_label": "Thu Oct 31",
+          "risk": "low",
+          "one_liner": "Continued stable trajectory; no destabilizing pattern in this window.",
+          "drivers": [
+            "Only 6 days since last noncompliance (Oct 25) — too soon for his 13-14 day cycle",
+            "Thursday nights show 0 noncompliance events in 90-day data",
+            "Current vitals all within personal baseline"
+          ]
+        },
+        {
+          "date": "2024-11-01",
+          "day_label": "Fri Nov 1",
+          "risk": "watch",
+          "one_liner": "Friday night — elevated probability of CPAP skip based on weekend pattern.",
+          "drivers": [
+            "Friday/Saturday nights account for 5 of 7 noncompliance events",
+            "Alcohol (known trigger) more likely on weekend evenings",
+            "7 days post-last skip — approaching but not yet in typical cycle window",
+            "If compliant tonight, strong protective effect through weekend"
+          ]
+        },
+        {
+          "date": "2024-11-02",
+          "day_label": "Sat Nov 2",
+          "risk": "watch",
+          "one_liner": "Saturday night carries similar weekend risk; monitor for Friday night compliance.",
+          "drivers": [
+            "If Friday CPAP was skipped, today will show post-noncompliant symptoms (elevated HR, low steps, high stress)",
+            "Saturday nights are peak noncompliance risk in his data",
+            "8 days into cycle — still below his 13-14 day typical interval"
+          ]
+        },
+        {
+          "date": "2024-11-03",
+          "day_label": "Sun Nov 3",
+          "risk": "low",
+          "one_liner": "Sunday recovery day; if weekend compliance held, smooth sailing.",
+          "drivers": [
+            "Sunday nights show no noncompliance in 90-day data",
+            "If Fri/Sat were compliant, this extends streak to 9 nights",
+            "No specific destabilizing pattern in this window"
+          ]
+        },
+        {
+          "date": "2024-11-04",
+          "day_label": "Mon Nov 4",
+          "risk": "low",
+          "one_liner": "Back to weekday pattern; historically very stable.",
+          "drivers": [
+            "Monday-Thursday nights show 2 of 7 noncompliance events (Oct 1, Oct 15 — both Tuesdays)",
+            "10 days post-last skip — still below cycle peak",
+            "Workweek routine supports compliance"
+          ]
+        },
+        {
+          "date": "2024-11-05",
+          "day_label": "Tue Nov 5",
+          "risk": "watch",
+          "one_liner": "Tuesday has shown occasional noncompliance; 11 days into cycle approaches risk window.",
+          "drivers": [
+            "Both Oct 1 and Oct 15 skips were Tuesday nights",
+            "11 days since Oct 25 event — entering the 13±2 day window where his skips cluster",
+            "Elevated vigilance warranted as cycle approaches",
+            "Not yet 'elevated' — he sometimes extends to 14+ days"
+          ]
+        }
+      ]
+    },
+    "user_005": {
+      "user_id": "user_005",
+      "generated_for": "2024-10-29",
+      "summary": "Elena is currently in a stable window with 12 consecutive days since her last anxiety spike (Oct 16-17). However, her established ~14-day cycle pattern suggests elevated risk around Oct 30-31. Current metrics remain solid (HRV 41-46ms, sleep >7h), which may buffer against a full spike, but vigilance is warranted early this week.",
+      "watch_for": [
+        "HRV dropping below 35ms on consecutive mornings — historically precedes anxiety spikes by 1-2 days",
+        "Sleep efficiency falling below 72% with increased awakenings (3+) — early warning signal",
+        "Resting HR rising above 70 bpm for 2+ days — seen in lead-up to Oct 2 and Oct 16 spikes",
+        "Any work deadline or social conflict this week — known situational triggers that stack with physiological vulnerability"
+      ],
+      "days": [
+        {
+          "date": "2024-10-30",
+          "day_label": "Wed Oct 30",
+          "risk": "watch",
+          "one_liner": "Day 13 post-spike aligns with the early edge of her ~14-day anxiety cycle window.",
+          "drivers": [
+            "Prior spikes occurred on day 14 intervals (Aug 7→21, Sep 4→18, Oct 2→16)",
+            "Oct 30 is day 13-14 from Oct 16-17 spike — entering vulnerable window",
+            "Current HRV (41ms) slightly below recent trend (44-46ms past 4 days)",
+            "No acute sleep disruption yet — provides some buffer"
+          ]
+        },
+        {
+          "date": "2024-10-31",
+          "day_label": "Thu Oct 31",
+          "risk": "elevated",
+          "one_liner": "Peak cycle vulnerability day — if physiological warning signs appear today, a spike is likely imminent.",
+          "drivers": [
+            "Day 14-15 post-spike — center of historical anxiety cycle window",
+            "Pattern shows 2-day spike clusters (Aug 7-8, 14-15, 21-22, Sep 4-5, 18-19, Oct 2-3, 16-17)",
+            "If HRV drops or sleep fragments tonight, tomorrow's risk escalates further",
+            "Holiday activities may add social/schedule disruption"
+          ]
+        },
+        {
+          "date": "2024-11-01",
+          "day_label": "Fri Nov 1",
+          "risk": "watch",
+          "one_liner": "Still within cycle window; risk depends heavily on whether Wed-Thu showed early warning signs.",
+          "drivers": [
+            "Day 15-16 post-spike — tail end of typical vulnerability window",
+            "If no HRV/sleep deterioration by now, spike likely avoided this cycle",
+            "Post-holiday recovery day — potential for sleep catch-up",
+            "Monitor for delayed stress response from week's events"
+          ]
+        },
+        {
+          "date": "2024-11-02",
+          "day_label": "Sat Nov 2",
+          "risk": "low",
+          "one_liner": "Moving past the typical cycle window with no destabilizing pattern visible.",
+          "drivers": [
+            "Day 16-17 post-spike — outside historical spike timing",
+            "Weekend day — reduced work-related trigger exposure",
+            "Recent baseline stability (12 days of good sleep/HRV) suggests resilience"
+          ]
+        },
+        {
+          "date": "2024-11-03",
+          "day_label": "Sun Nov 3",
+          "risk": "low",
+          "one_liner": "Stable weekend day with no specific destabilizing factors in this window.",
+          "drivers": [
+            "No work deadline exposure typical for Sunday",
+            "Well past the 14-day cycle peak",
+            "Daylight saving time ends — minor sleep schedule disruption possible but historically not a trigger for Elena"
+          ]
+        },
+        {
+          "date": "2024-11-04",
+          "day_label": "Mon Nov 4",
+          "risk": "low",
+          "one_liner": "Start of new work week; baseline risk only unless specific deadline pressure emerges.",
+          "drivers": [
+            "Monday work re-entry — mild baseline stressor",
+            "No cycle-based vulnerability in this window",
+            "If metrics remained stable through Oct 30-Nov 1, carry-forward resilience expected"
+          ]
+        },
+        {
+          "date": "2024-11-05",
+          "day_label": "Tue Nov 5",
+          "risk": "low",
+          "one_liner": "No specific risk factors visible; standard baseline day.",
+          "drivers": [
+            "Day 19-20 of current stable stretch if no spike occurred",
+            "No physiological or calendar-based triggers identified",
+            "Continue monitoring for any emerging HRV/sleep changes that would signal next cycle"
+          ]
+        }
+      ]
+    },
+    "user_006": {
+      "user_id": "user_006",
+      "generated_for": "2024-10-29",
+      "summary": "David enters this week in a stable cardiovascular window — resting HR has been at or below baseline for 8 consecutive days, HRV is solid, and stress scores have settled. The main watch is his consistent Monday-Tuesday high-sodium pattern, which has occurred every week for the past 3 months and reliably elevates resting HR by 4-8 bpm with degraded sleep efficiency the following 1-2 days.",
+      "watch_for": [
+        "Monday-Tuesday sodium spike — if it recurs Nov 4-5, expect HR elevation and sleep fragmentation by Wednesday",
+        "Sleep efficiency dropping below 65% two nights in a row — historically precedes morning headaches",
+        "Resting HR climbing above 76 bpm — marker that BP is likely running high",
+        "Stress score sustained above 6.5 for 2+ days — known BP destabilizer for David"
+      ],
+      "days": [
+        {
+          "date": "2024-10-30",
+          "day_label": "Wed Oct 30",
+          "risk": "low",
+          "one_liner": "Stable baseline continues with no sodium spike in the past 7 days.",
+          "drivers": [
+            "Resting HR 70 bpm yesterday — at floor of personal range",
+            "HRV 36-38 ms over past week — solid autonomic tone",
+            "No high-sodium days since Oct 21-22",
+            "Stress trending down (4.6 yesterday vs 5.4 baseline)"
+          ]
+        },
+        {
+          "date": "2024-10-31",
+          "day_label": "Thu Oct 31",
+          "risk": "low",
+          "one_liner": "No destabilizing patterns visible; Halloween social eating is only wildcard.",
+          "drivers": [
+            "Continued stable HR and HRV trajectory",
+            "Sleep duration and efficiency both solid",
+            "No pattern-based risk factors for Thursdays"
+          ]
+        },
+        {
+          "date": "2024-11-01",
+          "day_label": "Fri Nov 1",
+          "risk": "low",
+          "one_liner": "End of week typically stable in David's pattern; weekend transition.",
+          "drivers": [
+            "Fridays historically show no elevated sodium or stress",
+            "Exercise minutes have been consistent (14-21 min/day)",
+            "Sleep pattern remains regular"
+          ]
+        },
+        {
+          "date": "2024-11-02",
+          "day_label": "Sat Nov 2",
+          "risk": "low",
+          "one_liner": "Weekend day with no specific risk drivers in historical pattern.",
+          "drivers": [
+            "Saturdays and Sundays show no high-sodium flags in 90-day data",
+            "Weekend stress scores typically lower",
+            "No scheduled stressors visible"
+          ]
+        },
+        {
+          "date": "2024-11-03",
+          "day_label": "Sun Nov 3",
+          "risk": "low",
+          "one_liner": "Daylight saving time ends — minor sleep disruption possible but not significant.",
+          "drivers": [
+            "Clock change may shift sleep timing slightly",
+            "Historically stable day in David's pattern",
+            "Pre-Monday baseline day"
+          ]
+        },
+        {
+          "date": "2024-11-04",
+          "day_label": "Mon Nov 4",
+          "risk": "elevated",
+          "one_liner": "High-probability sodium spike day based on 12-week Monday-Tuesday pattern.",
+          "drivers": [
+            "High-sodium flag occurred every Monday for 12 consecutive weeks (Aug 5 through Oct 21)",
+            "Pattern shows resting HR rises 4-8 bpm within 24-48 hours of sodium days",
+            "Sleep efficiency typically drops to 62-67% range following sodium spike",
+            "Work week restart historically correlates with stress bump"
+          ]
+        },
+        {
+          "date": "2024-11-05",
+          "day_label": "Tue Nov 5",
+          "risk": "elevated",
+          "one_liner": "Second day of expected sodium pattern; cumulative effect on HR and sleep likely.",
+          "drivers": [
+            "Tuesday has shown high-sodium flag every week since Aug 6",
+            "Two consecutive sodium days compound cardiovascular stress",
+            "If pattern holds, expect resting HR 75-79 bpm by Wed-Thu",
+            "Sleep efficiency may drop to low 60s with increased awakenings"
+          ]
+        }
+      ]
+    },
+    "user_007": {
+      "user_id": "user_007",
+      "generated_for": "2024-10-29",
+      "summary": "A stable week ahead for Aisha's asthma. AQI has been consistently below threshold since Oct 18, SpO2 and HRV remain at baseline, and no respiratory stress signals are present. The main variable is the unpredictable nature of AQI spikes — historically occurring roughly weekly — so one elevated-air-quality day is plausible but not predictable to a specific date.",
+      "watch_for": [
+        "AQI crossing 100 — check morning forecast before outdoor exercise; pre-treat with albuterol and consider indoor workout if above threshold",
+        "Cold air exposure as fall temperatures drop — use scarf technique if morning temps below 45°F",
+        "Any early signs of respiratory infection (congestion, sore throat) — historically a destabilizer for her asthma control",
+        "SpO2 dipping below 96% on consecutive days — would signal subclinical airway tightening before symptoms appear"
+      ],
+      "days": [
+        {
+          "date": "2024-10-30",
+          "day_label": "Wed Oct 30",
+          "risk": "low",
+          "one_liner": "Stable baseline with no specific triggers in view.",
+          "drivers": [
+            "12 consecutive days without rescue inhaler use",
+            "SpO2 steady at 97-98% range",
+            "HRV at baseline (43-45ms recent trend)",
+            "Yesterday's AQI 63 — well below threshold"
+          ]
+        },
+        {
+          "date": "2024-10-31",
+          "day_label": "Thu Oct 31",
+          "risk": "low",
+          "one_liner": "No destabilizing pattern; asthma well-controlled on current regimen.",
+          "drivers": [
+            "Spirometry normalized on ICS (FEV1 84%, ratio 0.78 as of March)",
+            "Rescue inhaler use pattern: only on high-AQI days (>100)",
+            "Sleep and stress metrics stable — no systemic strain"
+          ]
+        },
+        {
+          "date": "2024-11-01",
+          "day_label": "Fri Nov 1",
+          "risk": "watch",
+          "one_liner": "Approaching typical interval for an AQI spike based on historical pattern.",
+          "drivers": [
+            "High-AQI events in data occur roughly every 7 days (last was Oct 18 — day 14 by Nov 1)",
+            "Pattern not clockwork but statistically due for an elevated day soon",
+            "No physiologic warning signs currently — this is environmental vigilance only"
+          ]
+        },
+        {
+          "date": "2024-11-02",
+          "day_label": "Sat Nov 2",
+          "risk": "watch",
+          "one_liner": "Weekend outdoor activity likely; AQI check before exercise remains key.",
+          "drivers": [
+            "Higher step counts on recent weekends suggest outdoor activity preference",
+            "If AQI spikes above 100, outdoor exertion without pre-treatment is her documented trigger",
+            "No current respiratory compromise — risk is situational, not physiologic"
+          ]
+        },
+        {
+          "date": "2024-11-03",
+          "day_label": "Sun Nov 3",
+          "risk": "low",
+          "one_liner": "No specific risk drivers; standard asthma maintenance.",
+          "drivers": [
+            "Assuming AQI remained acceptable through weekend",
+            "Controller therapy adherence appears consistent (stable SpO2, no rescue use)",
+            "No infection signals in recent data"
+          ]
+        },
+        {
+          "date": "2024-11-04",
+          "day_label": "Mon Nov 4",
+          "risk": "low",
+          "one_liner": "Start of week with stable respiratory baseline expected.",
+          "drivers": [
+            "17+ days since last rescue inhaler use (assuming no weekend need)",
+            "HRV and resting HR at personal baseline",
+            "No cumulative exposure or stress building"
+          ]
+        },
+        {
+          "date": "2024-11-05",
+          "day_label": "Tue Nov 5",
+          "risk": "low",
+          "one_liner": "No elevated risk; asthma remains well-controlled.",
+          "drivers": [
+            "Consistent pattern of good control when AQI stays below 100",
+            "Cold-air season beginning but no acute cold snap predicted in this window",
+            "No destabilizing pattern identified for this specific day"
+          ]
+        }
+      ]
+    },
+    "user_008": {
+      "user_id": "user_008",
+      "generated_for": "2024-10-29",
+      "summary": "Tom is in excellent shape with no chronic condition to destabilize. His consistent ~14-day heavy training cycle suggests the next block falls around Nov 7-8, which is the only window warranting attention. HRV recovered well after the Oct 24-25 block (59→81 ms by Oct 28), indicating robust adaptive capacity.",
+      "watch_for": [
+        "HRV dropping below 65 ms for 2+ consecutive mornings — early sign of accumulated training load",
+        "Resting HR climbing above 54 bpm without corresponding heavy training day — may indicate incomplete recovery or illness onset",
+        "If heavy training block starts earlier than expected (Nov 5-6), monitor for compounding fatigue given only 10-11 days since last block"
+      ],
+      "days": [
+        {
+          "date": "2024-10-30",
+          "day_label": "Wed Oct 30",
+          "risk": "low",
+          "one_liner": "Standard training day with strong recovery markers from last heavy block.",
+          "drivers": [
+            "HRV back to 73-81 ms range — full recovery from Oct 24-25 block",
+            "5 days out from last heavy training — well within rest window",
+            "All vitals tracking at or near personal baselines"
+          ]
+        },
+        {
+          "date": "2024-10-31",
+          "day_label": "Thu Oct 31",
+          "risk": "low",
+          "one_liner": "Continued recovery phase; no physiological stressors predicted.",
+          "drivers": [
+            "6 days post heavy training — typical recovery window for Tom is 10-14 days",
+            "No pattern of illness or injury in historical data",
+            "Stress levels stable (2.1-2.9 range)"
+          ]
+        },
+        {
+          "date": "2024-11-01",
+          "day_label": "Fri Nov 1",
+          "risk": "low",
+          "one_liner": "Routine training day; physiology stable.",
+          "drivers": [
+            "One week since last heavy block — mid-recovery",
+            "Sleep duration and efficiency consistently strong",
+            "No destabilizing patterns in this window"
+          ]
+        },
+        {
+          "date": "2024-11-02",
+          "day_label": "Sat Nov 2",
+          "risk": "low",
+          "one_liner": "Weekend day with no specific risk factors.",
+          "drivers": [
+            "8 days from last heavy training",
+            "Historical pattern shows heavy blocks every ~14 days — still 5-6 days out",
+            "Ferritin was low-normal in January — worth monitoring if fatigue emerges, but no current signal"
+          ]
+        },
+        {
+          "date": "2024-11-03",
+          "day_label": "Sun Nov 3",
+          "risk": "low",
+          "one_liner": "Stable day; may see gradual training intensity increase as next block approaches.",
+          "drivers": [
+            "9 days post heavy training",
+            "Typical build phase begins around day 10-12 before next heavy block",
+            "No adverse signals expected"
+          ]
+        },
+        {
+          "date": "2024-11-04",
+          "day_label": "Mon Nov 4",
+          "risk": "low",
+          "one_liner": "Entering the lead-up to next heavy training cycle; baseline metrics should remain stable.",
+          "drivers": [
+            "10 days since last block — training volume likely increasing",
+            "Watch for early HRV dip if intensity ramps faster than usual",
+            "No specific concern at this point"
+          ]
+        },
+        {
+          "date": "2024-11-05",
+          "day_label": "Tue Nov 5",
+          "risk": "watch",
+          "one_liner": "Approaching predicted heavy training window (Nov 7-8); minor overtraining risk if block starts early.",
+          "drivers": [
+            "11 days since last heavy block — next one predicted in 2-3 days based on 14-day cycle",
+            "If heavy training begins Nov 5-6 (earlier than pattern), recovery time is shortened",
+            "No current physiological warning signs — this is precautionary positioning"
+          ]
+        }
+      ]
+    },
+    "user_009": {
+      "user_id": "user_009",
+      "generated_for": "2024-10-29",
+      "summary": "Nina's week ahead looks metabolically stable with no acute risk signals. Her wearable data shows remarkably consistent patterns — steady low HRV (~30ms), chronic sleep deficit (~6.4h with 68% efficiency), and sedentary activity (~4,500 steps). The main concern isn't a crash this week but the slow drift toward metabolic dysfunction: her March labs showed prediabetes-range HbA1c (5.8%) and impaired fasting glucose (104), and nothing in her lifestyle metrics suggests improvement since then.",
+      "watch_for": [
+        "Sleep efficiency staying below 70% with frequent awakenings — may indicate undiagnosed sleep disorder worth discussing with Dr. Green",
+        "Fasting glucose likely still elevated given unchanged activity/sleep patterns — consider repeat labs given 8 months since last check",
+        "Stress scores occasionally spiking to 5.7 without obvious trigger — worth noting if these cluster"
+      ],
+      "days": [
+        {
+          "date": "2024-10-30",
+          "day_label": "Wed Oct 30",
+          "risk": "low",
+          "one_liner": "Continuation of stable but suboptimal baseline — no destabilizing pattern detected.",
+          "drivers": [
+            "HRV steady at 30-31ms range (her normal)",
+            "Recent sleep slightly improved (7.1h on Oct 28, Oct 22)",
+            "Steps trending up slightly this week (5,100-5,300 range)"
+          ]
+        },
+        {
+          "date": "2024-10-31",
+          "day_label": "Thu Oct 31",
+          "risk": "low",
+          "one_liner": "No specific destabilizing pattern in this window.",
+          "drivers": [
+            "No symptom flag events in 90-day history to predict recurrence",
+            "Vital signs remain within her narrow baseline range",
+            "No cyclical patterns identified in her data"
+          ]
+        },
+        {
+          "date": "2024-11-01",
+          "day_label": "Fri Nov 1",
+          "risk": "low",
+          "one_liner": "Weekend transition — historically no change in her patterns between weekdays/weekends.",
+          "drivers": [
+            "Activity and sleep metrics show no weekend effect in her data",
+            "Stress scores stable mid-week"
+          ]
+        },
+        {
+          "date": "2024-11-02",
+          "day_label": "Sat Nov 2",
+          "risk": "low",
+          "one_liner": "No acute risk — underlying metabolic trajectory unchanged.",
+          "drivers": [
+            "No trigger exposures or pattern disruptions visible",
+            "Consistent sedentary pattern continues"
+          ]
+        },
+        {
+          "date": "2024-11-03",
+          "day_label": "Sun Nov 3",
+          "risk": "low",
+          "one_liner": "Daylight saving time ends — minor sleep disruption possible but unlikely to cause acute issue for Nina.",
+          "drivers": [
+            "Clock change may slightly improve sleep timing",
+            "Her sleep efficiency already chronically low, so marginal effect expected"
+          ]
+        },
+        {
+          "date": "2024-11-04",
+          "day_label": "Mon Nov 4",
+          "risk": "low",
+          "one_liner": "New week begins with no predictive signals of destabilization.",
+          "drivers": [
+            "No identified Monday-specific patterns in her history",
+            "HRV and resting HR expected to remain stable"
+          ]
+        },
+        {
+          "date": "2024-11-05",
+          "day_label": "Tue Nov 5",
+          "risk": "low",
+          "one_liner": "Stable trajectory continues — 8-month mark since labs, repeat testing reasonable.",
+          "drivers": [
+            "No acute risk factors identified",
+            "Chronic prediabetes risk persists but not an acute daily event",
+            "Consider scheduling follow-up labs given March baseline"
+          ]
+        }
+      ]
+    },
+    "user_010": {
+      "user_id": "user_010",
+      "generated_for": "2024-10-29",
+      "summary": "Carlos shows a highly consistent Monday-Tuesday alcohol pattern that has repeated every week for 12+ weeks straight. Based on this rhythm, next week's alcohol nights will likely fall on Mon Nov 4 and Tue Nov 5, bringing predictable sleep disruption (drop to ~5.4h, efficiency ~60%, elevated resting HR ~85 bpm, HRV crash to ~25-28ms). The rest of the week should recover to his baseline.",
+      "watch_for": [
+        "If alcohol nights extend to Wednesday this week, expect compounded sleep debt and slower HRV recovery",
+        "Resting HR staying above 80 bpm for 3+ consecutive days signals incomplete recovery",
+        "Sleep efficiency dropping below 55% on back-to-back nights — currently bottoming at 56-62% on alcohol nights",
+        "Any break in the Mon-Tue pattern could indicate either positive behavior change or a shift to different trigger days"
+      ],
+      "days": [
+        {
+          "date": "2024-10-30",
+          "day_label": "Wed Oct 30",
+          "risk": "low",
+          "one_liner": "Day 1 of recovery window; pattern predicts no alcohol tonight and improving sleep.",
+          "drivers": [
+            "Mon-Tue alcohol cycle ended Oct 21-22; Wednesday consistently alcohol-free in his pattern",
+            "Last night's metrics (7h sleep, 71% efficiency, HRV 34) show baseline recovery",
+            "No stacking stressors visible in recent data"
+          ]
+        },
+        {
+          "date": "2024-10-31",
+          "day_label": "Thu Oct 31",
+          "risk": "low",
+          "one_liner": "Mid-week stable window continues; Halloween may be a social wildcard but no historical Thursday drinking.",
+          "drivers": [
+            "Thursday is consistently clean in 12-week pattern",
+            "Expected continued baseline sleep and HRV",
+            "Holiday social context is unknown but not flagged historically"
+          ]
+        },
+        {
+          "date": "2024-11-01",
+          "day_label": "Fri Nov 1",
+          "risk": "low",
+          "one_liner": "Friday has been reliably alcohol-free despite being a typical social drinking night.",
+          "drivers": [
+            "Zero Friday alcohol flags in 90-day history",
+            "Pattern is strictly Monday-Tuesday, not weekend",
+            "Physiological metrics should remain at baseline"
+          ]
+        },
+        {
+          "date": "2024-11-02",
+          "day_label": "Sat Nov 2",
+          "risk": "low",
+          "one_liner": "Weekend day with no historical alcohol pattern; expect stable metrics.",
+          "drivers": [
+            "Saturday consistently clean across all 12 weeks of data",
+            "Sleep and HRV typically at their best Fri-Sun nights"
+          ]
+        },
+        {
+          "date": "2024-11-03",
+          "day_label": "Sun Nov 3",
+          "risk": "watch",
+          "one_liner": "Last stable day before predicted Monday alcohol night; physiologically fine but entering risk window.",
+          "drivers": [
+            "Sunday itself is clean in pattern",
+            "Daylight saving time ends (if US) — minor sleep disruption possible",
+            "Tomorrow begins the high-probability alcohol window"
+          ]
+        },
+        {
+          "date": "2024-11-04",
+          "day_label": "Mon Nov 4",
+          "risk": "elevated",
+          "one_liner": "First predicted alcohol night — expect sleep drop to ~5.4h, HR spike to ~85, HRV crash to ~27ms.",
+          "drivers": [
+            "Monday alcohol night has occurred 12/12 weeks without exception",
+            "Predicted metrics: sleep 5.3-5.6h, efficiency 56-62%, resting HR 83-85, HRV 27-28ms",
+            "Pattern is behavioral — the physiological hit is highly predictable"
+          ]
+        },
+        {
+          "date": "2024-11-05",
+          "day_label": "Tue Nov 5",
+          "risk": "high",
+          "one_liner": "Second consecutive alcohol night with compounded sleep debt; worst physiological day of the week.",
+          "drivers": [
+            "Tuesday alcohol has occurred 12/12 weeks, always following Monday",
+            "Cumulative effect: sleep efficiency often hits weekly low (57-62%)",
+            "HRV typically bottoms out (24-28ms), awakening count peaks (5-7 times)",
+            "Two consecutive nights creates measurable 2-3 day recovery lag"
+          ]
+        }
+      ]
+    }
+  }
+}
