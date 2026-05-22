@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "insights": "tsx scripts/precompute-insights.ts",
-    "eval": "tsx scripts/eval.ts"
+    "eval": "tsx scripts/eval.ts",
+    "forecasts": "tsx scripts/precompute-forecasts.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",

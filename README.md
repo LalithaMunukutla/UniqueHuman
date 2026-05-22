@@ -10,6 +10,7 @@ The product wedge: **the system speaks first**, then lets you interrogate any al
 pnpm install
 cp .env.local.example .env.local        # then paste your Claude API key
 pnpm run insights                        # one-time: generates cache/insights.json
+pnpm run forecasts                       # one-time: generates cache/forecasts.json (7-day risk outlook per user)
 pnpm run eval                            # optional: scores every insight (LLM-as-judge + grounding); writes cache/eval-report.json
 pnpm dev                                 # open http://localhost:3000
 ```
@@ -46,7 +47,9 @@ data/                            source-of-truth: 4 files from the assignment
 cache/insights.json              pre-computed alerts, regenerated via `pnpm run insights`
 scripts/precompute-insights.ts   `pnpm run insights` entrypoint
 scripts/eval.ts                  `pnpm run eval` entrypoint
+scripts/precompute-forecasts.ts  `pnpm run forecasts` entrypoint
 cache/eval-report.json           per-insight + cohort scores, regenerated via `pnpm run eval`
+cache/forecasts.json             7-day per-user risk forecasts, regenerated via `pnpm run forecasts`
 src/lib/
   data.ts                        load + cache the 4 files in memory at server start
   baselines.ts                   per-user mean/std for HR/HRV/sleep/stress/SpO2
@@ -57,6 +60,7 @@ src/lib/
   plan.ts                        Claude — turns an alert into a structured plan; runs check-ins against recent data
   quality.ts                     Pre-flight scan for implausible wearable values + missing-day gaps; recency tags
   eval.ts                        Programmatic grounding check + LLM-as-judge scoring; cohort summary
+  forecast.ts                    Claude Opus — 7-day per-user risk forecast with drivers + watch-for items
 src/app/
   page.tsx                       server component: load users + insight counts
   App.tsx                        client component: rail + inbox + chat + share modal + plans strip
@@ -85,7 +89,9 @@ cache/plans.json                 persisted user plans (created at runtime)
 
 **7. Discrepancy handling and per-insight confidence.** A pre-flight pass in `src/lib/quality.ts` scans the wearable stream for implausible readings (HRV<5ms, SpO2<70%, etc.) and missing-day windows, and stamps recency tags onto every record/lab date (e.g. `(2.1 years ago)`). All of that is rolled into the insight prompt. The model is then asked to self-report `confidence: low | medium | high` with a one-line reason, and to populate a `discrepancies` array whenever sources visibly disagree (e.g. "HbA1c improved to 6.9% but recent wearable shows stress trending the wrong way"). Both fields are surfaced as chips on every alert card. When the model has nothing to say about tension, the array is empty — no false positives.
 
-**8. Eval pipeline.** `pnpm run eval` runs `scripts/eval.ts`, which scores every cached insight on two axes:
+**8. 7-day risk forecast.** Above each user's alert inbox sits a heat-strip of the next 7 days, color-coded by predicted risk level (low / watch / elevated / high) for *their specific failure mode* — PEM crashes for Priya, glucose dysregulation for Marcus, migraine for Sarah, etc. Expand to see the per-day rationale: which drivers contribute, what to watch for. The model brings real world knowledge into the prediction — Priya's forecast caught Halloween (Oct 31) as an activity-risk driver and DST fall-back (Nov 3) as a sleep-architecture risk, neither of which is in the dataset. Generated via `pnpm run forecasts`, cached to `cache/forecasts.json`. Shifts the platform from descriptive → predictive.
+
+**9. Eval pipeline.** `pnpm run eval` runs `scripts/eval.ts`, which scores every cached insight on two axes:
   - *Programmatic grounding:* extracts every number from the generated text (regex-aware of date ranges like "Aug 9-10") and verifies each appears in the user's source context. Catches the dominant hallucination mode.
   - *LLM-as-judge:* a separate Claude Sonnet call rates each insight 1–5 on specificity, grounding, actionability, and safety, with a one-line justification per axis.
   Writes `cache/eval-report.json` and prints a console scorecard. Current numbers: **judge 4.7/5, grounding 99% across 28 insights, 28/28 distinct headlines**. The eval scores are pulled into the UI as small `judge X.X/5` and `grounded YY%` chips on every alert card — reviewers see the model self-rating live.

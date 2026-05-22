@@ -1,7 +1,21 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import type { Insight, Plan, PlanCheckIn, UserProfile } from "@/lib/types";
+import type {
+  Forecast,
+  Insight,
+  Plan,
+  PlanCheckIn,
+  RiskLevel,
+  UserProfile,
+} from "@/lib/types";
+
+const RISK_STYLES: Record<RiskLevel, { dot: string; bg: string; text: string; label: string }> = {
+  low: { dot: "bg-emerald-400", bg: "bg-emerald-50", text: "text-emerald-800", label: "low" },
+  watch: { dot: "bg-amber-300", bg: "bg-amber-50", text: "text-amber-800", label: "watch" },
+  elevated: { dot: "bg-accent", bg: "bg-accent-soft", text: "text-accent", label: "elevated" },
+  high: { dot: "bg-red-500", bg: "bg-red-50", text: "text-red-800", label: "high" },
+};
 
 type Audience = "doctor" | "partner" | "friend";
 
@@ -87,6 +101,9 @@ export default function App({ profiles, insightCounts, evalByInsight }: Props) {
   const [expandedPlanId, setExpandedPlanId] = useState<string | null>(null);
   const [checkInLoadingId, setCheckInLoadingId] = useState<string | null>(null);
 
+  const [forecast, setForecast] = useState<Forecast | null>(null);
+  const [forecastExpanded, setForecastExpanded] = useState(false);
+
   const selectedProfile = useMemo(
     () => profiles.find((p) => p.id === selectedUserId) ?? null,
     [profiles, selectedUserId],
@@ -120,6 +137,15 @@ export default function App({ profiles, insightCounts, evalByInsight }: Props) {
       .then((data: { plans: Plan[] }) => {
         if (cancelled) return;
         setPlans(data.plans);
+      })
+      .catch(() => {});
+    setForecast(null);
+    setForecastExpanded(false);
+    fetch(`/api/forecast/${selectedUserId}`)
+      .then((r) => r.json())
+      .then((data: { forecast: Forecast | null }) => {
+        if (cancelled) return;
+        setForecast(data.forecast);
       })
       .catch(() => {});
     return () => {
@@ -385,6 +411,103 @@ export default function App({ profiles, insightCounts, evalByInsight }: Props) {
             {loadingInsights && (
               <div className="text-[13px] text-ink-400 animate-pulse-soft">
                 scanning your last 90 days…
+              </div>
+            )}
+
+            {forecast && (
+              <div className="max-w-[680px] mb-6 bg-white rounded-xl border border-ink-200 overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setForecastExpanded((v) => !v)}
+                  className="w-full text-left px-5 py-3 flex items-center gap-3 hover:bg-ink-50/60 transition-colors"
+                >
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                      <path
+                        d="M2 13L5 9L8 11L13 5M13 5H10M13 5V8"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-[11px] uppercase tracking-wider text-ink-500 font-semibold">
+                      Next 7 days
+                    </span>
+                  </div>
+                  <div className="flex gap-1 flex-1 min-w-0">
+                    {forecast.days.map((d) => {
+                      const s = RISK_STYLES[d.risk];
+                      return (
+                        <div
+                          key={d.date}
+                          title={`${d.day_label} · ${d.risk}: ${d.one_liner}`}
+                          className={`flex-1 h-7 rounded-md ${s.bg} ${s.text} flex items-center justify-center text-[10px] font-semibold uppercase tracking-wider`}
+                        >
+                          <span className={`inline-block h-1.5 w-1.5 rounded-full mr-1 ${s.dot}`} />
+                          {d.day_label.split(" ")[0]}
+                        </div>
+                      );
+                    })}
+                  </div>
+                  <div className="text-ink-400 text-[12px] shrink-0">
+                    {forecastExpanded ? "▾" : "▸"}
+                  </div>
+                </button>
+                {forecastExpanded && (
+                  <div className="px-5 pb-4 pt-1 border-t border-ink-100">
+                    <div className="text-[13px] text-ink-700 leading-relaxed mb-3">
+                      {forecast.summary}
+                    </div>
+                    {forecast.watch_for.length > 0 && (
+                      <div className="mb-3">
+                        <div className="text-[10px] uppercase tracking-wider text-ink-400 mb-1">
+                          Watch for
+                        </div>
+                        <ul className="space-y-0.5">
+                          {forecast.watch_for.map((w, i) => (
+                            <li
+                              key={i}
+                              className="text-[12px] text-ink-700 flex items-start gap-2"
+                            >
+                              <span className="text-accent mt-0.5">•</span>
+                              <span>{w}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    <div className="space-y-1.5">
+                      {forecast.days.map((d) => {
+                        const s = RISK_STYLES[d.risk];
+                        return (
+                          <div
+                            key={d.date}
+                            className="text-[12px] flex items-start gap-3"
+                          >
+                            <div className="w-20 shrink-0 text-ink-500 font-medium">
+                              {d.day_label}
+                            </div>
+                            <span
+                              className={`shrink-0 text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 rounded ${s.bg} ${s.text}`}
+                            >
+                              {s.label}
+                            </span>
+                            <div className="text-ink-700 leading-snug">
+                              {d.one_liner}
+                              {d.drivers.length > 0 && (
+                                <span className="text-ink-400">
+                                  {" "}
+                                  · {d.drivers.join("; ")}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
               </div>
             )}
 

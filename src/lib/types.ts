@@ -98,6 +98,24 @@ export type Baselines = {
 
 export type Severity = "info" | "watch" | "act" | "urgent";
 
+export type RiskLevel = "low" | "watch" | "elevated" | "high";
+
+export type ForecastDay = {
+  date: string;
+  day_label: string;
+  risk: RiskLevel;
+  one_liner: string;
+  drivers: string[];
+};
+
+export type Forecast = {
+  user_id: string;
+  generated_for: string;
+  summary: string;
+  watch_for: string[];
+  days: ForecastDay[];
+};
+
 export type Confidence = "low" | "medium" | "high";
 
 export type Discrepancy = {
