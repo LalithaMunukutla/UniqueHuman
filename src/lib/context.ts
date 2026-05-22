@@ -5,6 +5,7 @@ import {
   getWearableFor,
 } from "./data";
 import { computeBaselines } from "./baselines";
+import { formatQualityNotes, recencyTag, scanWearable } from "./quality";
 import type { UserContext, WearableRow } from "./types";
 
 const RECENT_DAYS = 30;
@@ -84,6 +85,7 @@ export function formatWearableRowsAsTable(rows: WearableRow[]): string {
 
 export function formatContextForPrompt(ctx: UserContext): string {
   const { profile, records, labs, wearable_recent, baselines, symptom_flag_events, today } = ctx;
+  const qualityNotes = formatQualityNotes(scanWearable(wearable_recent));
 
   const profileBlock = `## Profile
 - id: ${profile.id}
@@ -93,13 +95,13 @@ export function formatContextForPrompt(ctx: UserContext): string {
 - current medications: ${profile.medications.length ? profile.medications.join("; ") : "none"}
 - known triggers: ${profile.known_triggers.length ? profile.known_triggers.join("; ") : "none reported"}`;
 
-  const recordsBlock = `## Medical records (chronological)
+  const recordsBlock = `## Medical records (chronological — note recency tags)
 ${
     records.length
       ? records
           .map(
             (r) =>
-              `- ${r.date} | ${r.visit_type} | ${r.provider.specialty} (${r.provider.name})
+              `- ${r.date}${recencyTag(r.date, today)} | ${r.visit_type} | ${r.provider.specialty} (${r.provider.name})
   complaint: ${r.chief_complaint}
   vitals: BP ${r.vitals.bp ?? "—"}, HR ${r.vitals.hr ?? "—"}, weight ${r.vitals.weight_lbs ?? "—"} lbs, SpO2 ${r.vitals.spo2_pct ?? "—"}%
   diagnoses: ${r.diagnoses.join("; ")}
@@ -117,7 +119,7 @@ ${
       ? labs
           .map(
             (l) =>
-              `- ${l.date} | ${l.panel} (ordered by ${l.ordered_by})
+              `- ${l.date}${recencyTag(l.date, today)} | ${l.panel} (ordered by ${l.ordered_by})
 ${l.tests
   .map(
     (t) =>
@@ -144,6 +146,9 @@ ${symptom_flag_events.length ? symptom_flag_events.map((e) => `- ${e.date}: ${e.
   const wearableBlock = `## Recent wearable data (last ${wearable_recent.length} days)
 ${formatWearableRowsAsTable(wearable_recent)}`;
 
+  const qualityBlock = `## Data quality notes
+${qualityNotes}`;
+
   return [
     `# UniqueHuman context for ${profile.name} (${profile.id})`,
     `Anchor date ("today"): ${today}`,
@@ -152,6 +157,7 @@ ${formatWearableRowsAsTable(wearable_recent)}`;
     labsBlock,
     baselinesBlock,
     symptomBlock,
+    qualityBlock,
     wearableBlock,
   ].join("\n\n");
 }

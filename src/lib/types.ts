@@ -98,6 +98,13 @@ export type Baselines = {
 
 export type Severity = "info" | "watch" | "act" | "urgent";
 
+export type Confidence = "low" | "medium" | "high";
+
+export type Discrepancy = {
+  description: string;
+  sources: string[];
+};
+
 export type Insight = {
   id: string;
   user_id: string;
@@ -108,6 +115,9 @@ export type Insight = {
   suggested_action: string;
   noticed_at: string;
   data_sources: string[];
+  confidence?: Confidence;
+  confidence_reason?: string;
+  discrepancies?: Discrepancy[];
 };
 
 export type PlanTask = {

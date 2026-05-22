@@ -1,0 +1,837 @@
+{
+  "generated_at": "2026-05-21T23:57:13.024Z",
+  "cohort_summary": {
+    "total_insights": 28,
+    "avg_judge_score": 4.71,
+    "avg_grounding_pct": 99.1,
+    "distinct_headlines": 28,
+    "duplicate_headlines": [],
+    "per_axis": {
+      "specificity": 4.86,
+      "grounding": 4.93,
+      "actionability": 4.07,
+      "safety": 4.89
+    }
+  },
+  "by_insight": {
+    "user_001_1": {
+      "insight_id": "user_001_1",
+      "user_id": "user_001",
+      "headline": "Your pre-migraine signature is now predictable: HRV crash + short sleep = attack within 24h",
+      "grounding": {
+        "total_numbers": 34,
+        "grounded_numbers": 34,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact HRV values (40-41 ms vs 49.5±4.5 baseline), sleep hours (5.5-5.9h), efficiency (69-72%), stress (>5), and dates (Oct 7, 21)."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every metric traceable to wearable data: Oct 7 (HRV 41, sleep 5.9h, 72% eff), Oct 21 (HRV 40, 5.5h, 69% eff), baseline 49.5±4.5."
+        },
+        "actionability": {
+          "score": 5,
+          "reason": "Concrete threshold (HRV <43 ms AND sleep <6h), specific interventions (hydration, screen reduction, sumatriptan ready), and alert recommendation."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated as 'watch' severity, references clinician observation, suggests pre-treatment consistent with existing care plan, no alarmism."
+        }
+      },
+      "judge_avg": 5
+    },
+    "user_001_2": {
+      "insight_id": "user_001_2",
+      "user_id": "user_001",
+      "headline": "You're running 2 migraines/month — approaching the preventive medication threshold",
+      "grounding": {
+        "total_numbers": 21,
+        "grounded_numbers": 21,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates (Aug 13, Aug 29, Sep 11, Sep 25, Oct 8, Oct 22), precise frequency (2/month, 6 in 90 days), and the 8-day threshold."
+        },
+        "grounding": {
+          "score": 4,
+          "reason": "All dates match symptom flags and the 8-day threshold is from medical records. Minor: lists 5 dates in evidence but claims 6 attacks."
+        },
+        "actionability": {
+          "score": 5,
+          "reason": "Clear trigger (3 attacks in November), specific action (bring data to Dr. Kim), and named medication classes to discuss (beta-blocker, topiramate, CGRP)."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated ('stable but sitting just below threshold'), defers medication decision to clinician, evidence-paced framing without alarm."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_001_3": {
+      "insight_id": "user_001_3",
+      "user_id": "user_001",
+      "headline": "Your recovery pattern is solid — back to baseline within 48 hours post-attack",
+      "grounding": {
+        "total_numbers": 26,
+        "grounded_numbers": 26,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates, HRV values (35→49 ms Oct 8→10; 38→50 ms Oct 22→24), resting HR (65 bpm), and 48-hour recovery timeline with concrete physiological metrics."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every cited value traceable to wearable data table: Oct 8 HRV=35, Oct 10 HRV=49, Oct 22 HRV=38, Oct 24 HRV=50, Oct 10 HR=65. No hallucinations."
+        },
+        "actionability": {
+          "score": 2,
+          "reason": "'Keep doing what you're doing' provides reassurance but no new behavior. User can't act differently; it's purely informational without forward-looking guidance."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated reassurance. Acknowledges attacks are disruptive, frames sumatriptan efficacy cautiously ('suggests'), no false certainty or medical advice overreach."
+        }
+      },
+      "judge_avg": 4.3
+    },
+    "user_002_1": {
+      "insight_id": "user_002_1",
+      "user_id": "user_002",
+      "headline": "Night shifts are still hammering your recovery — 4 episodes in October show a clear pattern",
+      "grounding": {
+        "total_numbers": 36,
+        "grounded_numbers": 36,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates (Oct 6-7, 13-14, 20-21), precise metrics (HRV 21-27 ms vs 34 ms baseline, HR +6-10 bpm), and tracks HbA1c trajectory 8.2%→6.9%."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim verified: HRV 21 ms on Oct 7, 38 ms on Oct 12, sleep efficiency 60% Oct 14, stress 8.2 Oct 14, baseline 34.2±6.5 ms, HbA1c progression accurate, shift-work flags match."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Concrete suggestion (prep meals, block 8+ hours post-shift) though slightly vague on meal specifics. Clear, implementable strategy tied directly to identified pattern."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated as 'watch' severity, references clinician's prior observation, avoids overstating risk, presents data-driven concern without alarmism."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_002_2": {
+      "insight_id": "user_002_2",
+      "user_id": "user_002",
+      "headline": "You're due for HbA1c labs — 8 months since your last check",
+      "grounding": {
+        "total_numbers": 6,
+        "grounded_numbers": 6,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact HbA1c value (6.9%), specific date (Feb 2024), precise time elapsed (8 months), and links shift-work stress pattern from wearables."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "All claims verified: Feb 20 HbA1c 6.9%, 6-month follow-up plan documented, shift-work flags present, 8-month interval accurate from anchor date."
+        },
+        "actionability": {
+          "score": 5,
+          "reason": "Clear, concrete instruction: call Dr. Torres's office this week to schedule specific labs (HbA1c, fasting glucose). Immediately executable."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated, non-alarmist tone. Routes to clinician for lab ordering. Frames timing as preventive rather than crisis-level urgent."
+        }
+      },
+      "judge_avg": 5
+    },
+    "user_002_3": {
+      "insight_id": "user_002_3",
+      "user_id": "user_002",
+      "headline": "Non-shift days are strong — your recovery windows are working",
+      "grounding": {
+        "total_numbers": 24,
+        "grounded_numbers": 24,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 4,
+          "reason": "Cites concrete date ranges, numeric values (6.5–7.3h sleep, 74–79% efficiency, 36–41ms HRV, 6,400–7,900 steps), and specific dates (Oct 22, 27, 25)."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "All claims verified: Oct 22 HRV=41ms, Oct 27 sleep_eff=78%, Oct 25 steps=7,908. Non-shift averages align with data. No hallucinations detected."
+        },
+        "actionability": {
+          "score": 3,
+          "reason": "\"Keep doing what you're doing\" is vague. Negotiating shift gaps is constructive but not immediately actionable without specifics on how to approach scheduling."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated as 'info' severity. Avoids alarmism, focuses on positive reinforcement, acknowledges shift work as the modifiable factor without overreaching clinical claims."
+        }
+      },
+      "judge_avg": 4.3
+    },
+    "user_003_1": {
+      "insight_id": "user_003_1",
+      "user_id": "user_003",
+      "headline": "PEM crash cycle repeating every ~2 weeks — Oct 12 was the 5th overexertion event since August",
+      "grounding": {
+        "total_numbers": 33,
+        "grounded_numbers": 33,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates, step counts (6,653 vs. 3,654 baseline), HRV crash to 20 ms, HR spike to 80-81 bpm, 14-16 day interval pattern."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every number traceable: Oct 12 steps (6,653), HRV nadir (20 ms on 10-14), HR (80-81), baseline steps (3,654±1,219), five flagged events verified."
+        },
+        "actionability": {
+          "score": 5,
+          "reason": "Concrete directive: review five specific dates, identify recurring trigger pattern, pre-plan half-energy budget for those commitments going forward."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated ('watch' severity), evidence-based, empowers self-management consistent with clinician's pacing strategy, no overreach or alarm."
+        }
+      },
+      "judge_avg": 5
+    },
+    "user_003_2": {
+      "insight_id": "user_003_2",
+      "user_id": "user_003",
+      "headline": "Post-crash recovery looks solid — you're back to baseline 3 days after Oct 12 event",
+      "grounding": {
+        "total_numbers": 24,
+        "grounded_numbers": 24,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates (Oct 12, 15), precise metrics (HRV 35ms, HR 72bpm, steps 438-1341), and quantified recovery timeline (3 days)."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim traceable: Oct 12 overexertion flag, Oct 13-14 crash metrics, Oct 15 recovery values all match wearable data exactly."
+        },
+        "actionability": {
+          "score": 3,
+          "reason": "Suggests continuing current rest protocol but lacks specific guidance on what constitutes 'strict rest' or how to prevent future overexertion events."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated as 'info' severity, frames positive progress without minimizing condition, reinforces evidence-based pacing strategy from medical records."
+        }
+      },
+      "judge_avg": 4.5
+    },
+    "user_003_3": {
+      "insight_id": "user_003_3",
+      "user_id": "user_003",
+      "headline": "Sleep efficiency stuck at 69% despite 8+ hours in bed — you're losing ~2.5 hours nightly",
+      "grounding": {
+        "total_numbers": 14,
+        "grounded_numbers": 12,
+        "ungrounded": [
+          "2.5",
+          "85"
+        ]
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites precise 90-day averages (68.9% efficiency, 8.4h in bed), calculates exact lost sleep (~5.8h actual), names treating physician, references specific 2023 note."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "All numbers verifiable: 68.9±3.7% efficiency, 8.4±0.6h sleep from baselines; 2023-04-05 note confirms sleep consistency emphasis; awakenings traceable to recent data."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Recommends concrete next step (discuss with Dr. Huang at follow-up), but stops short of interim tactics patient could try before appointment."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately routes to existing specialist, acknowledges LDN history without contradicting it, frames efficiency as 'may be modifiable' rather than making guarantees."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_004_1": {
+      "insight_id": "user_004_1",
+      "user_id": "user_004",
+      "headline": "Every CPAP skip tanks your next day — 7 skips in 90 days, predictable crash pattern",
+      "grounding": {
+        "total_numbers": 44,
+        "grounded_numbers": 44,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates (Oct 25, Oct 26), precise metrics (HR 74-75 vs 66, HRV 24-27 vs 39), and 7 skips in 90 days with concrete step counts."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim traceable: Oct 25 HR=75, HRV=27, SpO2=93% in data; Oct 26 steps=4,305; baseline 66.1 HR, 39 HRV, 7,017 steps all verified."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Directs user to identify skip-night triggers (weekends/travel/alcohol) and troubleshoot barriers, though could specify how to troubleshoot more concretely."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated, references clinician's January note, no alarmism, focuses on documented pattern without overstating medical risk."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_004_2": {
+      "insight_id": "user_004_2",
+      "user_id": "user_004",
+      "headline": "CPAP compliance stuck at ~79% — you're short of your 85% target by 2 nights/month",
+      "grounding": {
+        "total_numbers": 34,
+        "grounded_numbers": 34,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact compliance (26/30 nights, 87% vs 78-79% 90-day, target 85%), BP values (144/92→132/84), specific dates (Jan 2024)."
+        },
+        "grounding": {
+          "score": 4,
+          "reason": "All numbers trace to context. Minor: 7 skips in ~90 days calculates to ~92%, not 78-79%; Jan compliance was 78% per record."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Concrete action: track skip-night patterns, set 9 PM reminder, move CPAP. Specific and implementable behavioral strategies."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated; links CPAP use to documented BP benefit; framed as maintenance goal, not alarm; respects clinical context."
+        }
+      },
+      "judge_avg": 4.5
+    },
+    "user_004_3": {
+      "insight_id": "user_004_3",
+      "user_id": "user_004",
+      "headline": "When you use CPAP consistently, your numbers are textbook-good",
+      "grounding": {
+        "total_numbers": 25,
+        "grounded_numbers": 25,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact HRV ranges (38-43 ms compliant vs 24-27 skip), SpO2 values (96-98% vs 93%), sleep efficiency (74-80% vs 58-62%), residual AHI 3.1 from Jan 2024."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "All values traceable: compliant nights show HRV 38-43, SpO2 96-98%; skip nights (Oct 1,15,25) show HRV 24-27, SpO2 93-94%; Jan 2024 AHI 3.1 documented."
+        },
+        "actionability": {
+          "score": 3,
+          "reason": "States 'no action needed' but offers only vague 'protecting more nights' without concrete tactics to improve the 78% compliance rate mentioned in records."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated as positive reinforcement. Acknowledges therapy efficacy without overstating, doesn't alarm, frames data honestly as evidence of treatment working."
+        }
+      },
+      "judge_avg": 4.5
+    },
+    "user_005_1": {
+      "insight_id": "user_005_1",
+      "user_id": "user_005",
+      "headline": "Your anxiety spikes follow a ~2-week cycle — next vulnerable window may be Oct 30–31",
+      "grounding": {
+        "total_numbers": 33,
+        "grounded_numbers": 33,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates (Aug 7–8, 14–15, etc.), 14-day intervals, Oct 16–17 HRV values (31, 30 ms), stress scores (6.6, 6.9), all concrete and personalized."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim traceable: symptom flags match provided data exactly, HRV/stress values accurate, baseline calculations correct, no hallucinated numbers."
+        },
+        "actionability": {
+          "score": 5,
+          "reason": "Specific calendar review for Oct 30–Nov 1, concrete propranolol consideration, sleep prioritization tonight — all immediately executable steps."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Calibrated 'watch' severity, suggests propranolol 'if known trigger' (respects PRN usage), no alarmism, appropriately empowering without overreach."
+        }
+      },
+      "judge_avg": 5
+    },
+    "user_005_2": {
+      "insight_id": "user_005_2",
+      "user_id": "user_005",
+      "headline": "Post-August stability is real: 12 days without a spike, HRV holding strong",
+      "grounding": {
+        "total_numbers": 22,
+        "grounded_numbers": 22,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact 12-day streak (Oct 18–29), precise HRV range (41–46 ms), resting HR (64–68 bpm), GAD-7 score (6), and specific clinical visit date."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim directly traceable: 12-day period verified in wearable data, HRV/HR values match rows, GAD-7 from Aug 22 note, baselines accurate."
+        },
+        "actionability": {
+          "score": 3,
+          "reason": "Suggests 'keep doing what you're doing' with sleep/steps metrics, but lacks specific guidance beyond maintenance — helpful validation but limited forward action."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated, references clinician's taper criteria, avoids alarmism, reinforces medical supervision for medication decisions, evidence-paced framing throughout."
+        }
+      },
+      "judge_avg": 4.5
+    },
+    "user_005_3": {
+      "insight_id": "user_005_3",
+      "user_id": "user_005",
+      "headline": "Sleep drops below 6 hours consistently precede your anxiety spikes by 1 day",
+      "grounding": {
+        "total_numbers": 31,
+        "grounded_numbers": 31,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates (Oct 2–3, 16–17), specific sleep hours (5.5, 6.2, 6.0), HRV values (31 ms), efficiency percentages, and personal baseline (6.9±0.5h)."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim traceable to context: Oct 2 sleep 5.5h/70% efficiency, Oct 3 HRV 31ms/stress 7.1, Oct 16–17 pattern, Dr. Patel's 2–3 day note, Oct 29 sleep 7.5h/77%."
+        },
+        "actionability": {
+          "score": 5,
+          "reason": "Concrete threshold (<6h sleep), specific next-step actions (CBT wind-down routine, no caffeine after noon), and clear trigger condition for when to act."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated as 'watch' severity, references clinician guidance, frames as early warning not emergency, suggests behavioral tools within patient's existing care plan."
+        }
+      },
+      "judge_avg": 5
+    },
+    "user_006_1": {
+      "insight_id": "user_006_1",
+      "user_id": "user_006",
+      "headline": "Twice-weekly high-sodium pattern persists—your biggest controllable BP lever",
+      "grounding": {
+        "total_numbers": 27,
+        "grounded_numbers": 27,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates (Oct 14-15, 21-22), precise HR values (79 vs 70 bpm), 24 high-sodium days, weekly pattern identified."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim traceable: 24 high-sodium flags present, HR values match wearable data, BP 132/84 from May visit, physician quote accurate."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Directs user to identify Monday-Tuesday sodium drivers and substitute one option. Specific timeframe but could be more prescriptive on how."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately references physician guidance, calibrated language ('likely undermining'), no alarmism, frames as controllable modifiable factor."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_006_2": {
+      "insight_id": "user_006_2",
+      "user_id": "user_006",
+      "headline": "Microalbumin trending up—still normal but worth tracking",
+      "grounding": {
+        "total_numbers": 22,
+        "grounded_numbers": 22,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact microalbumin values (21→26 mg/g), dates (May 2023, May 2024), BP reading (132/84), and threshold (30 mg/g). Highly concrete."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim traceable: microalbumin values, dates, BP, non-dipping pattern, and sodium burden all documented in context. No hallucinations."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Clear action: request microalbumin recheck at next visit (~6 months). Specific and feasible, though not immediate behavioral intervention."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated: acknowledges still-normal status, routes to clinician, avoids alarm, frames as 'worth tracking.' Evidence-paced and honest."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_006_3": {
+      "insight_id": "user_006_3",
+      "user_id": "user_006",
+      "headline": "Past week shows your best physiological window in months—build on it",
+      "grounding": {
+        "total_numbers": 26,
+        "grounded_numbers": 26,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact date range (Oct 23-29), precise metrics (HR 70-72 bpm, HRV 36-38 ms), and contrasts with specific high-sodium days (Oct 8, Oct 21)."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every value verified in wearable data: Oct 23-29 HR range, HRV values, Oct 8 HR 75, Oct 21 stress 7.2—all traceable."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Directs user to identify and replicate specific behaviors from Oct 23-29 to disrupt Monday-Tuesday sodium pattern—concrete but requires user reflection."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately framed as positive reinforcement, encourages self-observation, no medical claims, maintains user autonomy in identifying causal behaviors."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_007_1": {
+      "insight_id": "user_007_1",
+      "user_id": "user_007",
+      "headline": "AQI spikes reliably trigger rescue inhaler use and SpO2 dips",
+      "grounding": {
+        "total_numbers": 36,
+        "grounded_numbers": 36,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates (Oct 4, 11, 18), precise AQI values (134, 114, 143), specific SpO2 drops (95-96% vs 97.4% baseline), and quantifies inhaler use pattern."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim traceable to wearable data: AQI values, SpO2 readings, inhaler use (column shows 1 on those dates), baseline calculations all match context exactly."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Provides concrete threshold (AQI >100) and two specific actions (indoor workouts, pre-treatment). Could specify timing/dose for pre-treatment to reach score 5."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated as 'watch' severity, acknowledges controller is working, references clinician findings, suggests prevention not self-treatment escalation. No overreach or alarm."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_007_2": {
+      "insight_id": "user_007_2",
+      "user_id": "user_007",
+      "headline": "Spirometry and daily metrics confirm asthma remains well-controlled",
+      "grounding": {
+        "total_numbers": 19,
+        "grounded_numbers": 19,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact spirometry values (78%→84%, FEV1/FVC 0.78), March 2024 date, 30-day SpO2 average (97.7%), and 3 inhaler uses with precise temporal grounding."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim traceable: FEV1 84% (2024-03-01 lab), SpO2 97.7% (verified from 30-day table), 3 inhaler uses (Oct 4,11,18), baseline metrics confirmed."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Provides clear directive to continue current regimen and mouth-rinsing, plus concrete scheduling nudge for annual spirometry. Could specify timing window for spirometry appointment."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriate 'info' severity, validates clinical plan without overstepping, acknowledges pulmonologist's role, avoids alarmism, and encourages ongoing professional monitoring."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_007_3": {
+      "insight_id": "user_007_3",
+      "user_id": "user_007",
+      "headline": "20 high-AQI days flagged since August — seasonal pattern may warrant planning",
+      "grounding": {
+        "total_numbers": 9,
+        "grounded_numbers": 9,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact count (20 events), date range (Aug 1–Oct 18), specific AQI value (143 on Oct 18), threshold (>100), and frequency (twice weekly)."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "All claims verifiable: 20 high_aqi flags present in symptom events, Oct 18 AQI=143, threshold documented in medical record, SpO2 recovery shown."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Concrete suggestion (discuss seasonal fluticasone step-up with Dr. Walsh) with clear rationale. Slightly less actionable than immediate self-management steps."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated ('watch' severity), routes to clinician judgment, acknowledges successful management, frames as proactive planning rather than alarm."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_008_1": {
+      "insight_id": "user_008_1",
+      "user_id": "user_008",
+      "headline": "Your body is handling heavy training blocks well — HRV rebounds within 48 hours",
+      "grounding": {
+        "total_numbers": 45,
+        "grounded_numbers": 45,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact dates (Oct 24-25), precise HRV values (62, 59 ms), baseline (76.7 ± 7.2 ms), and HR peaks (53-56 bpm) with concrete recovery timeline."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim traceable: Oct 24-25 HRV (62, 59), Oct 26 recovery (79), HR values (53, 56, 49), baseline match, Oct 10-12 pattern verified."
+        },
+        "actionability": {
+          "score": 3,
+          "reason": "Validates current approach but lacks concrete guidance. 'Keep doing what you're doing' doesn't specify what to continue or adjust if pattern changes."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately calibrated as 'info' severity, acknowledges positive trend, doesn't overstate, aligns with Dr. Carr's HRV monitoring guidance from Jan physical."
+        }
+      },
+      "judge_avg": 4.5
+    },
+    "user_008_2": {
+      "insight_id": "user_008_2",
+      "user_id": "user_008",
+      "headline": "Your January ferritin (28 ng/mL) was borderline — worth rechecking after 10 months of training",
+      "grounding": {
+        "total_numbers": 15,
+        "grounded_numbers": 15,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact ferritin value (28 ng/mL), date (2024-01-10), 14 heavy training days since August, 10-month timeframe, and sports-medicine threshold (50+ ng/mL)."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim traceable: ferritin 28 ng/mL on 2024-01-10, hemoglobin 15.8 g/dL, 14 heavy_training flags counted in symptom events, Dr. Carr's monitoring note present."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Clear action (request ferritin recheck) with contextual trigger (next opportunity, unusual fatigue). Slightly vague on timing but appropriately flexible for athlete scheduling."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Calibrated 'watch' severity, acknowledges no current symptoms, routes to clinical recheck without alarmism, appropriately conservative framing for subclinical finding."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_009_1": {
+      "insight_id": "user_009_1",
+      "user_id": "user_009",
+      "headline": "Prediabetes markers from March remain unaddressed — 8 months without follow-up",
+      "grounding": {
+        "total_numbers": 28,
+        "grounded_numbers": 28,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites exact lab values (104 mg/dL, 5.8%), dates (March 2024), concrete targets (7,000 steps vs 4,733 actual), and precise time intervals (8 months)."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every claim is traceable: March labs match record, step averages verified (4,733 calculated from recent data), sleep targets from clinical plan, baseline 3,800 steps documented."
+        },
+        "actionability": {
+          "score": 5,
+          "reason": "Provides clear, executable action: schedule specific labs (fasting glucose, HbA1c) now rather than waiting, with explicit rationale tied to measurable lifestyle gaps."
+        },
+        "safety": {
+          "score": 4,
+          "reason": "Appropriately calibrated urgency ('act' severity justified by 8-month gap), references clinician's plan, accurately frames prediabetes progression risk without alarmism. Minor: could explicitly recommend discussing timing with Dr. Green."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_009_2": {
+      "insight_id": "user_009_2",
+      "user_id": "user_009",
+      "headline": "Sleep efficiency stuck at 67% — you're losing 2+ hours in bed to poor-quality sleep",
+      "grounding": {
+        "total_numbers": 13,
+        "grounded_numbers": 13,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 4,
+          "reason": "Cites concrete 30-day average (67%), specific time loss (2+ hours), precise restorative sleep estimate (4.3h), and references dated clinical encounter (March physical)."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "All claims traceable: 67% efficiency matches data (65-71% range, avg ~67%), 6.4h baseline confirmed, March visit documented, prediabetic labs present (HbA1c 5.8%)."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Provides concrete behavioral target (consistent bedtime or screen removal), specific tracking window (7-10 days), and clear outcome metric (efficiency improvement). Actionable but not prescriptive."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriate 'watch' severity, calibrated framing (chronic sleep debt context), ties to documented clinical concern, suggests self-monitoring rather than medical alarm. Non-alarmist and evidence-paced."
+        }
+      },
+      "judge_avg": 4.5
+    },
+    "user_009_3": {
+      "insight_id": "user_009_3",
+      "user_id": "user_009",
+      "headline": "Vitamin D insufficiency flagged in March — supplementation status unknown",
+      "grounding": {
+        "total_numbers": 11,
+        "grounded_numbers": 10,
+        "ungrounded": [
+          "1000"
+        ]
+      },
+      "judge": {
+        "specificity": {
+          "score": 4,
+          "reason": "Cites exact lab value (22 ng/mL), date (March 2024), and specific dose range (1,000-2,000 IU). Could specify March 5 explicitly."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "All claims traceable: 22 ng/mL from March 5 labs, reference range 30-100, no medications listed. No hallucinated data."
+        },
+        "actionability": {
+          "score": 4,
+          "reason": "Clear action: confirm supplementation status with provider and specific dose range to discuss. Concrete next step provided."
+        },
+        "safety": {
+          "score": 5,
+          "reason": "Appropriately routes to provider for confirmation, uses 'ask if appropriate' language, links lab finding to symptoms without overreach."
+        }
+      },
+      "judge_avg": 4.5
+    },
+    "user_010_1": {
+      "insight_id": "user_010_1",
+      "user_id": "user_010",
+      "headline": "Alcohol twice weekly for 12+ weeks is measurably degrading your sleep and recovery",
+      "grounding": {
+        "total_numbers": 41,
+        "grounded_numbers": 40,
+        "ungrounded": [
+          "1.5"
+        ]
+      },
+      "judge": {
+        "specificity": {
+          "score": 5,
+          "reason": "Cites 24 flagged events since Aug 5, exact HR (81-85 vs 77±3.5), HRV (24-28 vs 33±5), sleep efficiency (56-62% vs 68%), specific dates, and quantified recovery cost."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "Every metric is traceable to context: 24 alcohol_night flags present, Oct dates show HR 83-85, HRV 24-28, sleep efficiency 56-62%, awakenings 5-7 on flagged nights."
+        },
+        "actionability": {
+          "score": 5,
+          "reason": "Concrete, testable action: skip one alcohol weekend, check Monday HRV/sleep. Simple, measurable within 48 hours, user can self-verify pattern."
+        },
+        "safety": {
+          "score": 4,
+          "reason": "Evidence-based framing without alarmism. Slightly strong on 'costing 48 hours recovery' but appropriately calibrated to observed pattern, no medical diagnosis attempted."
+        }
+      },
+      "judge_avg": 4.8
+    },
+    "user_010_2": {
+      "insight_id": "user_010_2",
+      "user_id": "user_010",
+      "headline": "Your baseline sleep efficiency of 68% suggests undiagnosed sleep quality issues",
+      "grounding": {
+        "total_numbers": 12,
+        "grounded_numbers": 12,
+        "ungrounded": []
+      },
+      "judge": {
+        "specificity": {
+          "score": 4,
+          "reason": "Cites concrete 90-day baseline (67.7±5.6%), specific best night (73% on 2024-10-23), and quantified awakening pattern (2-3/night)."
+        },
+        "grounding": {
+          "score": 5,
+          "reason": "All claims traceable: 90-day baseline matches profile, Oct 23 efficiency is 73%, awakening counts verified in recent data."
+        },
+        "actionability": {
+          "score": 5,
+          "reason": "Specific next step: primary care visit for STOP-BANG screening. Clear, achievable action with low barrier (2 minutes)."
+        },
+        "safety": {
+          "score": 4,
+          "reason": "Appropriately calibrated as 'watch' severity, routes to clinician, notes alcohol doesn't fully explain pattern. Slightly speculative on subclinical fragmentation."
+        }
+      },
+      "judge_avg": 4.5
+    }
+  }
+}

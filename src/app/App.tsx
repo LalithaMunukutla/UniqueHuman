@@ -5,9 +5,21 @@ import type { Insight, Plan, PlanCheckIn, UserProfile } from "@/lib/types";
 
 type Audience = "doctor" | "partner" | "friend";
 
+export type InsightEvalSlim = {
+  judge_avg: number;
+  grounding_pct: number;
+  per_axis: {
+    specificity: number;
+    grounding: number;
+    actionability: number;
+    safety: number;
+  };
+};
+
 type Props = {
   profiles: UserProfile[];
   insightCounts: Record<string, number>;
+  evalByInsight: Record<string, InsightEvalSlim>;
 };
 
 type ChatMsg = { role: "user" | "assistant"; content: string };
@@ -52,7 +64,7 @@ function noticedRelative(_dateStr: string): string {
   return "noticed this morning";
 }
 
-export default function App({ profiles, insightCounts }: Props) {
+export default function App({ profiles, insightCounts, evalByInsight }: Props) {
   const [selectedUserId, setSelectedUserId] = useState<string>(profiles[0]?.id ?? "");
   const [insights, setInsights] = useState<Insight[]>([]);
   const [loadingInsights, setLoadingInsights] = useState(false);
@@ -557,7 +569,7 @@ export default function App({ profiles, insightCounts }: Props) {
                     }`}
                   >
                     <div className="p-5">
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center gap-2 mb-2 flex-wrap">
                         <span
                           className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${sev.chip}`}
                         >
@@ -566,6 +578,20 @@ export default function App({ profiles, insightCounts }: Props) {
                           />
                           {sev.label}
                         </span>
+                        {ins.confidence && (
+                          <span
+                            title={ins.confidence_reason}
+                            className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${
+                              ins.confidence === "high"
+                                ? "bg-emerald-50 text-emerald-800 border-emerald-200"
+                                : ins.confidence === "medium"
+                                  ? "bg-amber-50 text-amber-800 border-amber-200"
+                                  : "bg-ink-100 text-ink-600 border-ink-200"
+                            }`}
+                          >
+                            confidence: {ins.confidence}
+                          </span>
+                        )}
                         <span className="text-[11px] text-ink-400">
                           {noticedRelative(ins.noticed_at)}
                         </span>
@@ -592,6 +618,26 @@ export default function App({ profiles, insightCounts }: Props) {
                               )}
                             </span>
                           ))}
+                        </div>
+                      )}
+                      {ins.discrepancies && ins.discrepancies.length > 0 && (
+                        <div className="mt-3 pt-3 border-t border-ink-100">
+                          <div className="text-[10px] uppercase tracking-wider text-amber-700 font-semibold mb-1">
+                            ⚠ Cross-source tension
+                          </div>
+                          <ul className="space-y-1">
+                            {ins.discrepancies.map((d, i) => (
+                              <li
+                                key={i}
+                                className="text-[12px] text-ink-700 leading-snug"
+                              >
+                                {d.description}{" "}
+                                <span className="text-ink-400">
+                                  ({d.sources.join(" vs ")})
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       )}
                       <div className="mt-3 pt-3 border-t border-ink-100 flex items-start gap-2">
@@ -638,6 +684,25 @@ export default function App({ profiles, insightCounts }: Props) {
                           </button>
                         </div>
                       </div>
+                      {evalByInsight[ins.id] && (
+                        <div className="mt-3 pt-3 border-t border-ink-100 flex items-center gap-2 flex-wrap">
+                          <span className="text-[10px] uppercase tracking-wider text-ink-400">
+                            Eval
+                          </span>
+                          <span
+                            title={`spec ${evalByInsight[ins.id].per_axis.specificity} · grounding ${evalByInsight[ins.id].per_axis.grounding} · actionability ${evalByInsight[ins.id].per_axis.actionability} · safety ${evalByInsight[ins.id].per_axis.safety}`}
+                            className="text-[11px] font-medium bg-ink-50 border border-ink-200 rounded-md px-2 py-0.5 text-ink-700"
+                          >
+                            judge {evalByInsight[ins.id].judge_avg.toFixed(1)}/5
+                          </span>
+                          <span
+                            title="Fraction of numbers in the alert that appear in the user's source data."
+                            className="text-[11px] font-medium bg-ink-50 border border-ink-200 rounded-md px-2 py-0.5 text-ink-700"
+                          >
+                            grounded {evalByInsight[ins.id].grounding_pct}%
+                          </span>
+                        </div>
+                      )}
                       <div className="mt-3 flex items-center justify-between gap-2">
                         <div className="text-[11px] text-ink-400 flex items-center gap-1.5 flex-wrap min-w-0">
                           <span>Sources:</span>

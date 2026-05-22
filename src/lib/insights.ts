@@ -24,6 +24,16 @@ const LLMInsightSchema = z.object({
     .min(1),
   suggested_action: z.string().min(8),
   data_sources: z.array(z.string()).min(1),
+  confidence: z.enum(["low", "medium", "high"]),
+  confidence_reason: z.string().min(8),
+  discrepancies: z
+    .array(
+      z.object({
+        description: z.string(),
+        sources: z.array(z.string()).min(1),
+      }),
+    )
+    .default([]),
 });
 
 const LLMOutputSchema = z.object({
@@ -47,13 +57,20 @@ What NOT to do:
 - Don't produce alerts where the only evidence is "this person has X condition." We need a *pattern in their data*.
 - Don't hallucinate values. Every number in your output must appear in the provided context.
 
+Handling data quality and conflict:
+- If the "Data quality notes" section flags implausible readings or missing windows, treat those values with skepticism and prefer evidence that doesn't depend on them. Do not anchor an alert on a single artifactual reading.
+- If sources disagree (e.g., a record says one thing and the wearable shows another, or an old dx note conflicts with a more recent lab), name the disagreement in the "discrepancies" field rather than silently picking one side. Recency tags are included beside record/lab dates — newer signal generally wins for current state, but old context still matters for trajectory.
+
 Output a JSON object: { "insights": Insight[] } where each insight has:
 - severity: "info" | "watch" | "act" | "urgent"
-- headline: ≤ 90 chars, attention-grabbing, specific (e.g., "Activity ceiling breached — energy crash likely 24–48h ahead")
+- headline: ≤ 90 chars, attention-grabbing, specific
 - body: 2–4 sentences. What you noticed, the causal hypothesis, why it matters for this person.
-- evidence: 2–5 items, each { label, value, date? }. Concrete numbers from the data with dates. E.g., { "label": "Steps", "value": "7,107 then 552", "date": "Aug 9 → Aug 10" }
+- evidence: 2–5 items, each { label, value, date? }. Concrete numbers from the data with dates.
 - suggested_action: one sentence, concrete, doable.
 - data_sources: which sources informed this — any of "wearable", "medical_records", "lab_results", "symptom_flags", "profile"
+- confidence: "low" | "medium" | "high". Be honest. High = multiple independent signals point the same way. Low = a hunch from sparse or possibly-artifactual data.
+- confidence_reason: ≤30 words. Why that confidence level. Example: "Five confirmed crash events with consistent physiological signature."
+- discrepancies: array (can be empty) of { description, sources }. Use when sources visibly disagree. Example: { "description": "HbA1c dropped to 6.9% but recent wearable shows stress/HRV trending the wrong way", "sources": ["lab_results", "wearable"] }.
 
 Return ONLY valid JSON. No markdown, no commentary.`;
 
@@ -106,5 +123,8 @@ export async function generateInsightsForUser(userId: string): Promise<Insight[]
     suggested_action: ins.suggested_action,
     noticed_at: ctx.today,
     data_sources: ins.data_sources,
+    confidence: ins.confidence,
+    confidence_reason: ins.confidence_reason,
+    discrepancies: ins.discrepancies,
   }));
 }
